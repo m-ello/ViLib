@@ -1,0 +1,36 @@
+# Visual Studio Files
+.vs/
+*.suo
+*.user
+*.cache
+*.vsp
+
+# Build Outputs
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+# NuGet
+packages/
+*.nupkg
+
+# Executables and PDBs
+*.exe
+*.dll
+*.pdb
+*.config
+
+# Temp/Generated Files
+*.csproj.user
+*.userprefs
+*.log
+*.cache
+
+# VS Code (optional)
+.vscode/
+
+# File-specific (keep books.txt if it's a data file)
+# !books.txt  # Uncomment if you want to keep it
