@@ -1,17 +1,32 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35825.156 d17.13
+VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViLibMain", "ViLibMain\ViLibMain.csproj", "{411012B4-6C66-4F38-A961-C7183FE4FE75}"
+	ProjectSection(ProjectDependencies) = postProject
+		{46B235E8-D68A-47EA-8CA9-2B73FD696287} = {46B235E8-D68A-47EA-8CA9-2B73FD696287}
+		{5559A9A9-FAFE-4E51-88E3-68EBD0FFCD06} = {5559A9A9-FAFE-4E51-88E3-68EBD0FFCD06}
+		{92055BCF-4DAD-4CFE-805F-8DE5EE05F447} = {92055BCF-4DAD-4CFE-805F-8DE5EE05F447}
+		{D29EF954-985C-41CB-9520-9F31D44D8C7A} = {D29EF954-985C-41CB-9520-9F31D44D8C7A}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commons", "Commons\Commons.csproj", "{46B235E8-D68A-47EA-8CA9-2B73FD696287}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{92055BCF-4DAD-4CFE-805F-8DE5EE05F447}"
+	ProjectSection(ProjectDependencies) = postProject
+		{46B235E8-D68A-47EA-8CA9-2B73FD696287} = {46B235E8-D68A-47EA-8CA9-2B73FD696287}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presenter", "Presenter\Presenter.csproj", "{5559A9A9-FAFE-4E51-88E3-68EBD0FFCD06}"
+	ProjectSection(ProjectDependencies) = postProject
+		{46B235E8-D68A-47EA-8CA9-2B73FD696287} = {46B235E8-D68A-47EA-8CA9-2B73FD696287}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View", "View\View.csproj", "{D29EF954-985C-41CB-9520-9F31D44D8C7A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{46B235E8-D68A-47EA-8CA9-2B73FD696287} = {46B235E8-D68A-47EA-8CA9-2B73FD696287}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
