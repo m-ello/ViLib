@@ -7,17 +7,19 @@ using System.Threading.Tasks;
 
 namespace Commons
 {
-    public struct Book
+    public class Book
     {
         public readonly string author;
         public readonly string title;
         public readonly string publisher;// read only, so the structure is immutable
-
+        public bool IsAvailable;
+        public List<BorrowRecord> BorrowHistory { get; set; } = new List<BorrowRecord>();
         public Book(string _title, string _author, string _publisher)
         {
             title = _title;
             author = _author;
             publisher = _publisher;
+            IsAvailable = true;
         }
     }
 }
