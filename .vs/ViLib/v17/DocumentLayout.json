@@ -1,0 +1,190 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\sandu\\source\\repos\\ViLib\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\View\\ConsoleView.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ViLib\\View\\ConsoleView.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\View\\Menus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ViLib\\View\\Menus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\ViLib\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ViLib\\ViLib\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\ViLib\\ViLib.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ViLib\\ViLib\\ViLib.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\Presenter\\Presenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ViLib\\Presenter\\Presenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\Model\\Model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ViLib\\Model\\Model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\Commons\\IView.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ViLib\\Commons\\IView.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\Commons\\IPresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ViLib\\Commons\\IPresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\Commons\\IModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ViLib\\Commons\\IModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\Commons\\Book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ViLib\\Commons\\Book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 334,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ViLib.csproj",
+              "DocumentMoniker": "C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\ViLib\\ViLib.csproj",
+              "RelativeDocumentMoniker": "ViLib\\ViLib\\ViLib.csproj",
+              "ToolTip": "C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\ViLib\\ViLib.csproj",
+              "RelativeToolTip": "ViLib\\ViLib\\ViLib.csproj",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-30T09:28:41.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\ViLib\\Program.cs",
+              "RelativeDocumentMoniker": "ViLib\\ViLib\\Program.cs",
+              "ToolTip": "C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\ViLib\\Program.cs",
+              "RelativeToolTip": "ViLib\\ViLib\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T09:28:19.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Menus.cs",
+              "DocumentMoniker": "C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\View\\Menus.cs",
+              "RelativeDocumentMoniker": "ViLib\\View\\Menus.cs",
+              "ToolTip": "C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\View\\Menus.cs",
+              "RelativeToolTip": "ViLib\\View\\Menus.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T09:26:06.785Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ConsoleView.cs",
+              "DocumentMoniker": "C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\View\\ConsoleView.cs",
+              "RelativeDocumentMoniker": "ViLib\\View\\ConsoleView.cs",
+              "ToolTip": "C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\View\\ConsoleView.cs",
+              "RelativeToolTip": "ViLib\\View\\ConsoleView.cs",
+              "ViewState": "AgIAAL0AAAAAAAAAAAAAAM0AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T09:19:20.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Presenter.cs",
+              "DocumentMoniker": "C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\Presenter\\Presenter.cs",
+              "RelativeDocumentMoniker": "ViLib\\Presenter\\Presenter.cs",
+              "ToolTip": "C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\Presenter\\Presenter.cs",
+              "RelativeToolTip": "ViLib\\Presenter\\Presenter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T09:16:14.575Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Model.cs",
+              "DocumentMoniker": "C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\Model\\Model.cs",
+              "RelativeDocumentMoniker": "ViLib\\Model\\Model.cs",
+              "ToolTip": "C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\Model\\Model.cs",
+              "RelativeToolTip": "ViLib\\Model\\Model.cs",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAowL0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T09:00:40.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IView.cs",
+              "DocumentMoniker": "C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\Commons\\IView.cs",
+              "RelativeDocumentMoniker": "ViLib\\Commons\\IView.cs",
+              "ToolTip": "C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\Commons\\IView.cs",
+              "RelativeToolTip": "ViLib\\Commons\\IView.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T09:00:33.842Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IPresenter.cs",
+              "DocumentMoniker": "C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\Commons\\IPresenter.cs",
+              "RelativeDocumentMoniker": "ViLib\\Commons\\IPresenter.cs",
+              "ToolTip": "C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\Commons\\IPresenter.cs",
+              "RelativeToolTip": "ViLib\\Commons\\IPresenter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T08:59:34.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IModel.cs",
+              "DocumentMoniker": "C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\Commons\\IModel.cs",
+              "RelativeDocumentMoniker": "ViLib\\Commons\\IModel.cs",
+              "ToolTip": "C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\Commons\\IModel.cs",
+              "RelativeToolTip": "ViLib\\Commons\\IModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T08:59:06.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\Commons\\Book.cs",
+              "RelativeDocumentMoniker": "ViLib\\Commons\\Book.cs",
+              "ToolTip": "C:\\Users\\sandu\\source\\repos\\ViLib\\ViLib\\Commons\\Book.cs",
+              "RelativeToolTip": "ViLib\\Commons\\Book.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T08:55:39.705Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
