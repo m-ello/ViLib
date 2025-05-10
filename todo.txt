@@ -1,9 +1,0 @@
-- ui (start with Lab6 bonus instructions)
-- create an SRS doc (based on /src/srs_template-1.doc) 
-- create Client class 
-- create a login page so that only an admin can manage the data 
-- add next options for admin: 
-        Add a client
-        Delete client
-        Register/unregister a book loan
-        
