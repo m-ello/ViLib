@@ -127,11 +127,6 @@ namespace View
                     Display("Not implemented yet", "red");
                     break;
 
-                case UserChoice.List:
-                    // List all books using model
-                    string bookList = _model.ListAll();
-                    Display("Book List:\n" + bookList, "blue");
-                    break;
 
                 case UserChoice.AddBook:
                     // Create book with random data
@@ -147,6 +142,14 @@ namespace View
                 case UserChoice.RemoveBook:
                     Display("Not implemented yet", "red");
                     break;
+
+                case UserChoice.List:
+                default:
+                    // List all books using model
+                    string bookList = _model.ListAll();
+                    Display("Book List:\n" + bookList, "blue");
+                    break;
+
             }
         }
 
