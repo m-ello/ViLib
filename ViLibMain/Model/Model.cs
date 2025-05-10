@@ -133,7 +133,7 @@ namespace ViLib
                     return _bookList[i];
             }
 
-            return null;
+            return new Book();
         }
 
         /// <summary>
