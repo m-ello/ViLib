@@ -23,36 +23,7 @@ namespace View
         }
         public void Start()
         {
-            string filePath = "books.txt";
-
-            if (File.Exists(filePath))
-            {
-                string[] lines = File.ReadAllLines(filePath);
-                foreach (string line in lines)
-                {
-                    string[] parts = line.Split('\t');
-                    if (parts.Length == 3)
-                    {
-                        string title = parts[0].Trim();
-                        string author = parts[1].Trim();
-                        string publisher = parts[2].Trim();
-
-                        Book book = new Book(title, author, publisher);
-                        _presenter.AddBook(book);
-                    }
-                    else
-                    {
-                        Display("Invalid line format in books.txt", "red");
-                    }
-                }
-
-                Console.Clear();
-                Display("Fisierul a fost incarcat.", "green");
-            }
-            else
-            {
-                Display("Book data file not found. Starting with an empty model.", "yellow");
-            }
+            _presenter.Init();
 
             Menus.UserChoice choice = Menus.UserChoice.Undefined;
             Menus.MenuState menuState = Menus.MenuState.Main;

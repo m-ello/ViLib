@@ -13,7 +13,7 @@ namespace View
         public enum UserChoice { AdminMenu, PreviousMenu, Info, AddBook, RemoveBook, Exit, List, Undefined };
         public enum MenuState { Main, Administrator };
 
-        public struct MenuOption
+        public readonly struct MenuOption
         {
             // structura pentru construirea dinamica a unui meniu
             // reprezinta o optiune intr-un meniu
@@ -34,20 +34,24 @@ namespace View
         public static void MainMenu(out List<MenuOption> options, out string action)
         {
             action = "Selectati rolul";
-            options = new List<MenuOption>(2);
-            options.Add(new MenuOption("1", "Administrator", UserChoice.AdminMenu));
-            options.Add(new MenuOption("2", "Iesire", UserChoice.Exit));
+            options = new List<MenuOption>(2)
+            {
+                new MenuOption("1", "Administrator", UserChoice.AdminMenu),
+                new MenuOption("2", "Iesire", UserChoice.Exit)
+            };
         }
 
         public static void AdminMenu(out List<MenuOption> options, out string action)
         {
             action = "Selectati actiunea dorita";
-            options = new List<MenuOption>(5);
-            options.Add(new MenuOption("1", "Informatii despre o carte", UserChoice.Info));
-            options.Add(new MenuOption("2", "Afisarea tuturor cartilor", UserChoice.List));
-            options.Add(new MenuOption("3", "Introducerea unei carti noi", UserChoice.AddBook));
-            options.Add(new MenuOption("4", "Stergerea unei carti", UserChoice.RemoveBook));
-            options.Add(new MenuOption("5", "Iesire", UserChoice.Exit));
+            options = new List<MenuOption>(5)
+            {
+                new MenuOption("1", "Informatii despre o carte", UserChoice.Info),
+                new MenuOption("2", "Afisarea tuturor cartilor", UserChoice.List),
+                new MenuOption("3", "Introducerea unei carti noi", UserChoice.AddBook),
+                new MenuOption("4", "Stergerea unei carti", UserChoice.RemoveBook),
+                new MenuOption("5", "Iesire", UserChoice.Exit)
+            };
         }
 
     }
