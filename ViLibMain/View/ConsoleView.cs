@@ -126,7 +126,7 @@ namespace View
 
         private void ListAll()
         {
-            Console.WriteLine(_model.ListAll());
+            Console.WriteLine(_model.ListAllBooks());
         }
         private Book InputBook()
         {

@@ -30,10 +30,10 @@
         {
             this.StatusBox = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.AdminModeButton = new System.Windows.Forms.Button();
-            this.ActionComboBox = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.ExecuteButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ActionComboBox = new System.Windows.Forms.ComboBox();
+            this.AdminModeButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -60,22 +60,14 @@
             this.groupBox1.Text = "Administrator Options";
             this.groupBox1.Visible = false;
             // 
-            // AdminModeButton
+            // ExecuteButton
             // 
-            this.AdminModeButton.Location = new System.Drawing.Point(12, 12);
-            this.AdminModeButton.Name = "AdminModeButton";
-            this.AdminModeButton.Size = new System.Drawing.Size(109, 31);
-            this.AdminModeButton.TabIndex = 3;
-            this.AdminModeButton.Text = "Administrator Mode";
-            this.AdminModeButton.UseVisualStyleBackColor = true;
-            // 
-            // ActionComboBox
-            // 
-            this.ActionComboBox.FormattingEnabled = true;
-            this.ActionComboBox.Location = new System.Drawing.Point(81, 17);
-            this.ActionComboBox.Name = "ActionComboBox";
-            this.ActionComboBox.Size = new System.Drawing.Size(193, 21);
-            this.ActionComboBox.TabIndex = 0;
+            this.ExecuteButton.Location = new System.Drawing.Point(281, 17);
+            this.ExecuteButton.Name = "ExecuteButton";
+            this.ExecuteButton.Size = new System.Drawing.Size(75, 23);
+            this.ExecuteButton.TabIndex = 2;
+            this.ExecuteButton.Text = "Execute";
+            this.ExecuteButton.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -86,14 +78,23 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Select action";
             // 
-            // ExecuteButton
+            // ActionComboBox
             // 
-            this.ExecuteButton.Location = new System.Drawing.Point(281, 17);
-            this.ExecuteButton.Name = "ExecuteButton";
-            this.ExecuteButton.Size = new System.Drawing.Size(75, 23);
-            this.ExecuteButton.TabIndex = 2;
-            this.ExecuteButton.Text = "Execute";
-            this.ExecuteButton.UseVisualStyleBackColor = true;
+            this.ActionComboBox.FormattingEnabled = true;
+            this.ActionComboBox.Location = new System.Drawing.Point(81, 17);
+            this.ActionComboBox.Name = "ActionComboBox";
+            this.ActionComboBox.Size = new System.Drawing.Size(193, 21);
+            this.ActionComboBox.TabIndex = 0;
+            this.ActionComboBox.SelectedIndexChanged += new System.EventHandler(this.ActionComboBox_SelectedIndexChanged_1);
+            // 
+            // AdminModeButton
+            // 
+            this.AdminModeButton.Location = new System.Drawing.Point(12, 12);
+            this.AdminModeButton.Name = "AdminModeButton";
+            this.AdminModeButton.Size = new System.Drawing.Size(109, 31);
+            this.AdminModeButton.TabIndex = 3;
+            this.AdminModeButton.Text = "Administrator Mode";
+            this.AdminModeButton.UseVisualStyleBackColor = true;
             // 
             // label2
             // 

@@ -54,6 +54,7 @@
       <DependentUpon>FormView.cs</DependentUpon>
     </Compile>
     <Compile Include="Menus.cs" />
+    <Compile Include="Prompt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

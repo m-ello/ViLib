@@ -140,13 +140,22 @@ namespace View
                     break;
 
                 case UserChoice.RemoveBook:
-                    Display("Not implemented yet", "red");
+                    string bookTitle = Prompt.ShowDialog("Enter the title of the book to remove:", "Remove Book");
+
+                    if (!string.IsNullOrWhiteSpace(bookTitle))
+                    {
+                        _presenter.RemoveBook(bookTitle);
+                    }
+                    else
+                    {
+                        Display("Book title cannot be empty.", "red");
+                    }
                     break;
 
                 case UserChoice.List:
                 default:
                     // List all books using model
-                    string bookList = _model.ListAll();
+                    string bookList = _model.ListAllBooks();
                     Display("Book List:\n" + bookList, "blue");
                     break;
 
@@ -201,6 +210,11 @@ namespace View
         private void FormView_Load(object sender, EventArgs e)
         {
             // No need for this since Init is called in SetPresenter
+        }
+
+        private void ActionComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 
