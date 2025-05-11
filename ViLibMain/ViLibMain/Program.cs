@@ -22,7 +22,6 @@ namespace ViLibMain
 
             // Initialize MVP components
             IModel model = new Model();
-            //IView view = new ConsoleView(model);
             IView view = new FormView(model);
             IPresenter presenter = new Presenter(view, model);
 
@@ -31,7 +30,6 @@ namespace ViLibMain
 
             // Run the Windows Forms application with the FormView
             Application.Run((FormView)view);
-            //((ConsoleView)view).Start();
 
         }
     }
