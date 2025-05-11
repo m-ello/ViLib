@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Commons;
 using System.Windows.Forms;
 using Timer = System.Windows.Forms.Timer;
+using System.Xml.Linq;
 
 namespace PresenterNamespace
 {
@@ -23,7 +24,7 @@ namespace PresenterNamespace
         }
         public void Init()//trebuie apelata pentru a initializa prezentarea
         {
-            if (!_model.DataExists())
+            if (!_model.BookDataExists())
             {
                 _view.Display("Fisierul cu carti nu exista." + Environment.NewLine, "red");
             }
@@ -31,6 +32,24 @@ namespace PresenterNamespace
             {
                 _model.InitializeData();
                 _view.Display("Fisier incarcat: " + _model.BookCount + " carti." + Environment.NewLine, "magenta");
+            }
+            if (!_model.ClientDataExists())
+            {
+                _view.Display("Fisierul cu clienti nu exista." + Environment.NewLine, "red");
+            }
+            else
+            {
+                _model.InitializeData();
+                _view.Display("Fisier incarcat: " + _model.ClientCount + " clienti." + Environment.NewLine, "magenta");
+            }
+            if (!_model.BorrowHistoryDataExists())
+            {
+                _view.Display("Fișierul cu istoricul împrumuturilor nu există." + Environment.NewLine, "red");
+            }
+            else
+            {
+                _model.InitializeData();
+                _view.Display($"Istoric încărcat: {_model.GetBorrowHistory().Count} înregistrări." + Environment.NewLine, "magenta");
             }
         }
         public void Exit()
@@ -70,7 +89,7 @@ namespace PresenterNamespace
         }
         public void AddBook(Book b)
         {
-            if (!_model.Add(b))
+            if (!_model.AddBook(b))
             {
                 _view.Display($"Cartea {b.title} a fost suprascrisa", "red");
             }
@@ -81,15 +100,15 @@ namespace PresenterNamespace
         }
         public bool BookExists(string name)
         {
-            return _model.Exists(name);
+            return _model.BookExists(name);
         }
         public Book GetBook(string name)
         {
-            return _model.Search(name);
+            return _model.SearchBook(name);
         }
         public void RemoveBook(string name)
         {
-            if (_model.Delete(name))
+            if (_model.DeleteBook(name))
             {
                 _view.Display($"Cartea a fost stearsa.", "blue");
             }
@@ -97,6 +116,83 @@ namespace PresenterNamespace
             {
                 _view.Display($"Cartea nu a fost gasita in lista.", "red");
             }
+        }
+        public bool ClientExists(string CNP)
+        {
+            return _model.ClientExists(CNP);
+        }
+        public void AddClient(Client c)
+        {
+            if (!_model.AddClient(c))
+            {
+                _view.Display($"Cartea {c.familyName} {c.firstName} a fost suprascris", "red");
+            }
+            else
+            {
+                _view.Display($"Clientul {c.familyName} {c.firstName} a fost adaugat", "blue");
+            }
+        }
+        public void RemoveClient(string cnp)
+        {
+            if (_model.DeleteClient(cnp))
+            {
+                _view.Display($"Clientul a fost sters.", "blue");
+            }
+            else
+            {
+                _view.Display($"Clientul nu a fost gasit in lista.", "red");
+            }
+        }
+        public Client GetClient(string cnp)
+        {
+            return _model.SearchClient(cnp);
+        }
+        public bool BorrowBook(string bookTitle, string clientCNP)
+        {
+            bool success = _model.BorrowBook(bookTitle, clientCNP);
+            if (success)
+            {
+                _view.Display($"Cartea '{bookTitle}' a fost împrumutată cu succes.", "blue");
+            }
+            else
+            {
+                _view.Display($"Nu s-a putut împrumuta cartea '{bookTitle}'. Verificați disponibilitatea sau datele clientului.", "red");
+            }
+            return success;
+        }
+
+        public bool ReturnBook(string bookTitle)
+        {
+            bool success = _model.ReturnBook(bookTitle);
+            if (success)
+            {
+                _view.Display($"Cartea '{bookTitle}' a fost returnată cu succes.", "blue");
+            }
+            else
+            {
+                _view.Display($"Nu s-a putut returna cartea '{bookTitle}'. Verificați dacă este împrumutată.", "red");
+            }
+            return success;
+        }
+
+        public string GetBorrowHistory(string bookTitle = null, string clientCNP = null)
+        {
+            var history = _model.GetBorrowHistory(bookTitle, clientCNP);
+            if (history.Count == 0)
+                return "Nu există istoric pentru criteriile specificate.";
+
+            var sb = new StringBuilder();
+            foreach (var record in history)
+            {
+                sb.AppendLine($"ID: {record.Id}");
+                sb.AppendLine($"Carte: {record.Book.title}");
+                sb.AppendLine($"Client: {record.Client.firstName} {record.Client.familyName}");
+                sb.AppendLine($"CNP Client: {record.Client.CNP}");
+                sb.AppendLine($"Data împrumut: {record.BorrowDate}");
+                sb.AppendLine($"Data returnare: {(record.ReturnDate.HasValue ? record.ReturnDate.ToString() : "Încă împrumutată")}");
+                sb.AppendLine("---------------------");
+            }
+            return sb.ToString();
         }
     }
 }

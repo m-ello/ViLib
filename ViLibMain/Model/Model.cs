@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text;
 using Commons;
 
@@ -29,25 +30,41 @@ namespace ViLib
     public class Model : IModel
     {
         private const string _BookFileName = "books.txt";
-        private List<Book> _bookList;
-        private bool _wasModified; // the booklist will be saved in the end only if it was modified
+        private const string _ClientFileName = "clients.txt";
+        private const string _BorrowHistoryFileName = "borrow_history.txt";
 
-        public int BookCount => _bookList.Count;
+        private Library _library = new Library();
+
+        private bool _borrowHistoryFileWasModified;
+        private bool _bookFileWasModified; // the booklist will be saved in the end only if it was modified
+        private bool _clientFileWasModified;
+        public int BookCount => _library.Books.Count;
+        public int ClientCount => _library.Clients.Count;
 
         public Model()
         {
-            _bookList = new List<Book>();
-            _wasModified = false;
+            _bookFileWasModified = false;
+            _clientFileWasModified = false;
+            _borrowHistoryFileWasModified = false;
+        }
+        public bool BorrowHistoryDataExists()
+        {
+            if (!File.Exists(_BorrowHistoryFileName))
+            {
+                _borrowHistoryFileWasModified = true;
+                return false;
+            }
+            return true;
         }
 
         /// <summary>
         /// Checks whether the file with the books exists
         /// </summary>
-        public bool DataExists()
+        public bool BookDataExists()
         {
             if (!File.Exists(_BookFileName))
             {
-                _wasModified = true;
+                _bookFileWasModified = true;
                 return false;
             }
             else
@@ -59,102 +76,117 @@ namespace ViLib
         /// </summary>
         public void InitializeData()
         {
-            var sr = new StreamReader(_BookFileName);
-            string line;
-            while ((line = sr.ReadLine()) != null)
-                _bookList.Add(ParseBookLine(line));
-            sr.Close();
+            // Load books
+            if (File.Exists(_BookFileName))
+            {
+                var sr = new StreamReader(_BookFileName);
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    _library.Books.Add(ParseBookLine(line));
+                }
+                sr.Close();
+            }
+
+            // Load clients
+            if (File.Exists(_ClientFileName))
+            {
+                var sr = new StreamReader(_ClientFileName);
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    _library.Clients.Add(ParseClientLine(line));
+                }
+                sr.Close();
+            }
+
+            // Load borrow history
+            if (File.Exists(_BorrowHistoryFileName))
+            {
+                var sr = new StreamReader(_BorrowHistoryFileName);
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    var record = ParseBorrowRecordLine(line, _library.Books,_library.Clients);
+                    _library.AllBorrowRecords.Add(record);
+
+                    // Link to book and client
+                    var book = _library.Books.FirstOrDefault(b => b.title == record.BookTitle);
+                    var client = _library.Clients.FirstOrDefault(c => c.CNP == record.ClientCNP);
+
+                    if (book != null) book.BorrowHistory.Add(record);
+                    if (client != null) client.BorrowHistory.Add(record);
+
+                    // Update book availability
+                    if (book != null && record.IsActive) book.IsAvailable = false;
+                }
+                sr.Close();
+            }
         }
 
         /// <summary>
         /// Adds a book to the book list
         /// </summary>
-        public bool Add(Book book)
+        public bool AddBook(Book book)
         {
-            // daca o carte cu acelasi title exista deja, el va fi sters
-            bool overwrite = false;
-
-            for (int i = 0; i < _bookList.Count; i++)
-            {
-                if (_bookList[i].title.Trim().ToUpper() == book.title.Trim().ToUpper())
-                {
-                    _bookList.RemoveAt(i--);
-                    overwrite = true;
-                }
-            }
-
-            // adugarea cartii
-            _bookList.Add(book);
-            _wasModified = true;
+            bool overwrite = _library.Books.Any(b => b.title.Trim().ToUpper() == book.title.Trim().ToUpper());
+            _library.Books.RemoveAll(b => b.title.Trim().ToUpper() == book.title.Trim().ToUpper());
+            _library.Books.Add(book);
+            _bookFileWasModified = true;
             return !overwrite;
         }
 
         /// <summary>
         /// Deletes a book identified by title from the booklist
         /// </summary>
-        public bool Delete(string title)
+        public bool DeleteBook(string title)
         {
-            for (int i = 0; i < _bookList.Count; i++)
+            var book = _library.Books.FirstOrDefault(b => b.title == title);
+            if (book != null)
             {
-                if (_bookList[i].title == title)
-                {
-                    _bookList.RemoveAt(i);
-                    _wasModified = true;
-                    return true;
-                }
+                _library.Books.Remove(book);
+                _bookFileWasModified = true;
+                return true;
             }
-
             return false;
         }
 
         /// <summary>
         /// Checks whether a book identified by title exists
         /// </summary>
-        public bool Exists(string title)
+        public bool BookExists(string title)
         {
-            for (int i = 0; i < _bookList.Count; i++)
-            {
-                if (_bookList[i].title == title)
-                    return true;
-            }
-
-            return false;
+            return _library.Books.Any(b => b.title == title);
         }
 
         /// <summary>
         /// Returns a Book object whose title is the string title
         /// </summary>
-        public Book Search(string title)
+        public Book SearchBook(string title)
         {
-            // cauta p carte dupa titlu si returneaza obiectul corespunzator
-            for (int i = 0; i < _bookList.Count; i++)
-            {
-                if (_bookList[i].title == title)
-                    return _bookList[i];
-            }
-
-            return null;
+            return _library.Books.FirstOrDefault(b => b.title == title);
         }
 
         /// <summary>
         /// Returns a string with all the titles of books concatenated
         /// </summary>
-        public string ListAll()
+        public string ListAllBooks()
         {
-            if (_bookList.Count == 0)
+            if (_library.Books.Count == 0)
                 return string.Empty;
 
             var sb = new StringBuilder();
-            sb.Append(_bookList[0].title);
 
-            for (int i = 1; i < _bookList.Count; i++)
+            foreach (var book in _library.Books)
             {
-                sb.Append(", ");
-                sb.Append(_bookList[i].title);
+                // Include availability status in the output
+                string availability = book.IsAvailable ? "(Available)" : "(Borrowed)";
+                sb.AppendLine($"{book.title} {availability}");
             }
 
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Saves the data only if the book list was modified
@@ -162,31 +194,234 @@ namespace ViLib
         /// <returns>Returns true if the new data was saved</returns>
         public bool SaveData()
         {
-            if (_wasModified)
+            bool saved = false;
+
+            if (_bookFileWasModified)
             {
                 var sw = new StreamWriter(_BookFileName);
-
-                for (int i = 0; i < _bookList.Count; i++)
+                foreach (var book in _library.Books)
                 {
-                    Book b = _bookList[i];
-                    sw.WriteLine(b.title + "\t" + b.author + "\t" + b.publisher);
+                    sw.WriteLine($"{book.title}\t{book.author}\t{book.publisher}");
                 }
-
                 sw.Close();
-                return true;
+                saved = true;
             }
-            else
-                return false;
+
+            if (_clientFileWasModified)
+            {
+                var sw = new StreamWriter(_ClientFileName);
+                foreach (var client in _library.Clients)
+                {
+                    sw.WriteLine($"{client.familyName}\t{client.firstName}\t{client.CNP}\t{client.address}");
+                }
+                sw.Close();
+                saved = true;
+            }
+
+            if (_borrowHistoryFileWasModified)
+            {
+                var sw = new StreamWriter(_BorrowHistoryFileName);
+                foreach (var record in _library.AllBorrowRecords)
+                {
+                    sw.WriteLine($"{record.Id}\t{record.Book.title}\t{record.Client.CNP}\t" +
+                                 $"{record.BorrowDate}\t{(record.ReturnDate.HasValue ? record.ReturnDate.ToString() : "")}");
+                }
+                sw.Close();
+                saved = true;
+            }
+
+            return saved;
         }
 
+        private static Client ParseClientLine(string line)
+        {
+            string[] toks = line.Split('\t');
+            return new Client(toks[0], toks[1], toks[2], toks[3]);
+        }
         private static Book ParseBookLine(string line)
         {
-            // citeste informatiile unei carti de pe o linie din fisier
-
+            string[] toks = line.Split('\t');
+            return new Book(toks[0], toks[1], toks[2]);
+        }
+        private BorrowRecord ParseBorrowRecordLine(string line, List<Book> books, List<Client> clients)
+        {
             string[] toks = line.Split('\t');
 
-            Book book = new Book(toks[0], toks[1], toks[2]);
-            return book;
+            // Find the actual Book and Client objects from the library
+            var book = books.FirstOrDefault(b => b.title == toks[1]);
+            var client = clients.FirstOrDefault(c => c.CNP == toks[2]);
+
+            // Handle case where book or client might not be found
+            if (book == null || client == null)
+            {
+                // You might want to log this or handle it differently
+                return null;
+            }
+
+            return new BorrowRecord
+            {
+                Id = int.Parse(toks[0]),
+                Book = book,  // Assign the Book object
+                Client = client,  // Assign the Client object
+                BorrowDate = DateTime.Parse(toks[3]),
+                ReturnDate = string.IsNullOrEmpty(toks[4]) ? null : (DateTime?)DateTime.Parse(toks[4])
+            };
         }
+        public bool AddClient(Client client)
+        {
+            bool overwrite = false;
+
+            for (int i = 0; i < _library.Clients.Count; i++)
+            {
+                if (_library.Clients[i].CNP == client.CNP)
+                {
+                    _library.Clients.RemoveAt(i--);
+                    overwrite = true;
+                }
+            }
+
+            // adugarea cartii
+            _library.Clients.Add(client);
+            _clientFileWasModified = true;
+            return !overwrite;
+        }
+        public bool ClientDataExists()
+        {
+            if (!File.Exists(_ClientFileName))
+            {
+                _clientFileWasModified = true;
+                return false;
+            }
+            else
+                return true;
+        }
+        public bool DeleteClient(string cnp)
+        {
+            for (int i = 0; i < _library.Clients.Count; i++)
+            {
+                if (_library.Clients[i].CNP == cnp)
+                {
+                    _library.Clients.RemoveAt(i);
+                    _clientFileWasModified = true;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        public bool ClientExists(string cnp)
+        {
+            for (int i = 0; i < _library.Books.Count; i++)
+            {
+                if (_library.Clients[i].CNP == cnp)
+                    return true;
+            }
+
+            return false;
+        }
+        public string ListAllClients()
+        {
+            if (_library.Clients.Count == 0)
+                return string.Empty;
+
+            var sb = new StringBuilder();
+
+            foreach (var client in _library.Clients)
+            {
+                sb.AppendLine($"{client.firstName} {client.familyName}");
+            }
+
+            return sb.ToString();
+        }
+        public Client SearchClient(string cnp)
+        {
+            // cauta un client dupa cnp si returneaza obiectul corespunzator
+            for (int i = 0; i < _library.Clients.Count; i++)
+            {
+                if (_library.Clients[i].CNP == cnp)
+                    return _library.Clients[i];
+            }
+
+            return null;
+        }
+        public bool BorrowBook(string bookTitle, string clientCNP)
+        {
+            var book = _library.Books.FirstOrDefault(b => b.title == bookTitle);
+            var client = _library.Clients.FirstOrDefault(c => c.CNP == clientCNP);
+
+            if (book == null || client == null || !book.IsAvailable)
+                return false;
+
+            try
+            {
+                _library.BorrowBook(client, book);
+                _borrowHistoryFileWasModified = true;
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool ReturnBook(string bookTitle)
+        {
+            var book = _library.Books.FirstOrDefault(b => b.title == bookTitle);
+            if (book == null) return false;
+
+            var record = _library.AllBorrowRecords.FirstOrDefault(r =>
+                r.Book == book && r.IsActive);
+            if (record == null) return false;
+
+            try
+            {
+                _library.ReturnBook(record.Client, book);
+                _borrowHistoryFileWasModified = true;
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public List<BorrowRecord> GetBorrowHistory(string bookTitle = null, string clientCNP = null)
+        {
+            // If both filters are null, return all records
+            if (string.IsNullOrEmpty(bookTitle) && string.IsNullOrEmpty(clientCNP))
+                return _library.AllBorrowRecords.ToList();
+
+            // Filter by book title if specified
+            if (!string.IsNullOrEmpty(bookTitle))
+            {
+                return _library.AllBorrowRecords
+                    .Where(r => r.Book != null && r.Book.title.Equals(bookTitle, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+            }
+
+            // Filter by client CNP if specified
+            if (!string.IsNullOrEmpty(clientCNP))
+            {
+                return _library.AllBorrowRecords
+                    .Where(r => r.Client != null && r.Client.CNP.Equals(clientCNP, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+            }
+
+            return new List<BorrowRecord>();
+        }
+        public List<BorrowRecord> GetActiveBorrows()
+        {
+            return _library.GetActiveBorrows();
+        }
+
+        public List<Book> GetAvailableBooks()
+        {
+            return _library.GetAvailableBooks();
+        }
+
+        public List<Book> GetBorrowedBooksByClient(string clientCNP)
+        {
+            var client = _library.Clients.FirstOrDefault(c => c.CNP == clientCNP);
+            return client?.BorrowedBooks ?? new List<Book>();
+        }
+
     }
 }
