@@ -15,5 +15,9 @@ namespace Commons
         Book GetBook(string title);
         void Init();
         void RemoveBook(string title);
+        void AddClient(Client c);
+        bool ClientExists(string cnp);
+        void RemoveClient(string cnp);
+        Client GetClient(string cnp);
     }
 }

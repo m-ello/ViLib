@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Commons
 {
-    class Library
+    public class Library
     {
         public List<Book> Books { get; set; } = new List<Book>();
         public List<Client> Clients { get; set; } = new List<Client>();

@@ -8,18 +8,33 @@ namespace Commons
 {
     public interface IModel
     {
-        bool Add(Book book);
+        bool AddBook(Book book);
         int BookCount
         {
             get;
         }
-        bool DataExists();
-        bool Delete(string title);
-        bool Exists(string title);
+        bool BookDataExists();
+        bool DeleteBook(string title);
+        bool BookExists(string title);
         void InitializeData();
-        string ListAll();
+        string ListAllBooks();
         bool SaveData();
-        Book Search(string title);
+        Book SearchBook(string title);
+
+        bool AddClient(Client client);
+        int ClientCount
+        {
+            get;
+        }
+        bool ClientDataExists();
+        bool DeleteClient(string cnp);
+        bool ClientExists(string cnp);
+        string ListAllClients();
+        Client SearchClient(string cnp);
+        bool BorrowHistoryDataExists();
+        bool BorrowBook(string bookTitle, string clientCNP);
+        bool ReturnBook(string bookTitle);
+        List<BorrowRecord> GetBorrowHistory(string bookTitle = null, string clientCNP = null);
     }
 
 }
