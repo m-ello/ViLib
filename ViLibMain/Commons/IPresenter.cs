@@ -19,5 +19,7 @@ namespace Commons
         bool ClientExists(string cnp);
         void RemoveClient(string cnp);
         Client GetClient(string cnp);
+        bool ReturnBook(string bookTitle);
+        string GetBorrowHistory(string bookTitle = null, string clientCNP = null);
     }
 }

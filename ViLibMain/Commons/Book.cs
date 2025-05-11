@@ -11,7 +11,7 @@ namespace Commons
     {
         public readonly string author;
         public readonly string title;
-        public readonly string publisher;// read only, so the structure is immutable
+        public readonly string publisher;
         public bool IsAvailable;
         public List<BorrowRecord> BorrowHistory { get; set; } = new List<BorrowRecord>();
         public Book(string _title, string _author, string _publisher)
