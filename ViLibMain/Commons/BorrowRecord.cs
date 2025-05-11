@@ -14,5 +14,8 @@ namespace Commons
         public DateTime BorrowDate { get; set; }
         public DateTime? ReturnDate { get; set; }
         public bool IsActive => ReturnDate == null;
+
+        public string BookTitle => Book?.title;
+        public string ClientCNP => Client?.CNP;
     }
 }
