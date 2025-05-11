@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Commons;
+using System.Windows.Forms;
+using Timer = System.Windows.Forms.Timer;
 
 namespace PresenterNamespace
 {
@@ -36,9 +38,35 @@ namespace PresenterNamespace
             if (_model.SaveData())
                 _view.Display("Fisierul a fost salvat." + Environment.NewLine, "magenta");
             _view.Display("La revedere.", "default");
-            // Application.DoEvents(); // numai pentru Windows Forms
-            Thread.Sleep(1000);
-            Environment.Exit(0);
+
+            // Check if we're in a Windows Forms environment
+            bool isWindowsFormsView =
+                Application.OpenForms.Count > 0 ||
+                _view is Control;
+
+            if (isWindowsFormsView)
+            {
+                // Use a Windows Forms timer to delay exit without blocking the UI thread
+                Timer exitTimer = new Timer
+                {
+                    Interval = 1000 // 1 second
+                };
+                exitTimer.Tick += (sender, e) =>
+                {
+                    exitTimer.Stop();
+                    Environment.Exit(0);
+                };
+                exitTimer.Start();
+
+                // This allows the UI to show the goodbye message before exiting
+                Application.DoEvents();
+            }
+            else
+            {
+                // For non-Windows Forms applications, use Thread.Sleep
+                Thread.Sleep(1000);
+                Environment.Exit(0);
+            }
         }
         public void AddBook(Book b)
         {
