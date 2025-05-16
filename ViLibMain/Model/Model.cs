@@ -207,6 +207,13 @@ namespace ViLib
 
             if (_bookFileWasModified)
             {
+                // Delete the file if it exists
+                if (File.Exists(_BookFileName))
+                {
+                    File.Delete(_BookFileName);
+                }
+
+                // Create a new file and write the book data
                 var sw = new StreamWriter(_BookFileName);
                 foreach (var book in _library.Books)
                 {

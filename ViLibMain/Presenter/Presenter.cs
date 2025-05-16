@@ -30,31 +30,22 @@ namespace PresenterNamespace
             {
                 _view.LogStatus("Fisierul cu carti nu exista." + Environment.NewLine, "red");
             }
-            else
-            {
-                _model.InitializeData();
-                _view.LogStatus("Fisier incarcat: " + _model.BookCount + " carti." + Environment.NewLine, "magenta");
-            }
 
             if (!_model.ClientDataExists())
             {
                 _view.LogStatus("Fisierul cu clienti nu exista." + Environment.NewLine, "red");
-            }
-            else
-            {
-                _model.InitializeData();
-                _view.LogStatus("Fisier incarcat: " + _model.ClientCount + " clienti." + Environment.NewLine, "magenta");
             }
 
             if (!_model.BorrowHistoryDataExists())
             {
                 _view.LogStatus("Fișierul cu istoricul împrumuturilor nu există." + Environment.NewLine, "red");
             }
-            else
-            {
-                _model.InitializeData();
-                _view.LogStatus($"Istoric încărcat: {_model.GetBorrowHistory().Count} înregistrări." + Environment.NewLine, "magenta");
-            }
+
+            _model.InitializeData();
+
+            _view.LogStatus("Fisier incarcat: " + _model.BookCount + " carti.", "magenta");
+            _view.LogStatus("Fisier incarcat: " + _model.ClientCount + " clienti.", "magenta");
+            _view.LogStatus($"Istoric încărcat: {_model.GetBorrowHistory().Count} înregistrări.", "magenta");
 
             ((IPresenter)this).ShowAllBooks();
         }

@@ -91,9 +91,9 @@
             // 
             // deleteBookButton
             // 
-            this.deleteBookButton.Location = new System.Drawing.Point(282, 127);
+            this.deleteBookButton.Location = new System.Drawing.Point(282, 268);
             this.deleteBookButton.Name = "deleteBookButton";
-            this.deleteBookButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteBookButton.Size = new System.Drawing.Size(75, 24);
             this.deleteBookButton.TabIndex = 5;
             this.deleteBookButton.Text = "Șterge";
             this.deleteBookButton.UseVisualStyleBackColor = true;
@@ -101,9 +101,9 @@
             // 
             // detailsBookButton
             // 
-            this.detailsBookButton.Location = new System.Drawing.Point(201, 127);
+            this.detailsBookButton.Location = new System.Drawing.Point(201, 268);
             this.detailsBookButton.Name = "detailsBookButton";
-            this.detailsBookButton.Size = new System.Drawing.Size(75, 23);
+            this.detailsBookButton.Size = new System.Drawing.Size(75, 24);
             this.detailsBookButton.TabIndex = 4;
             this.detailsBookButton.Text = "Detalii";
             this.detailsBookButton.UseVisualStyleBackColor = true;
@@ -111,9 +111,9 @@
             // 
             // editBookButton
             // 
-            this.editBookButton.Location = new System.Drawing.Point(81, 127);
+            this.editBookButton.Location = new System.Drawing.Point(81, 268);
             this.editBookButton.Name = "editBookButton";
-            this.editBookButton.Size = new System.Drawing.Size(75, 23);
+            this.editBookButton.Size = new System.Drawing.Size(75, 24);
             this.editBookButton.TabIndex = 3;
             this.editBookButton.Text = "Editează";
             this.editBookButton.UseVisualStyleBackColor = true;
@@ -121,9 +121,9 @@
             // 
             // addBookButton
             // 
-            this.addBookButton.Location = new System.Drawing.Point(0, 127);
+            this.addBookButton.Location = new System.Drawing.Point(0, 268);
             this.addBookButton.Name = "addBookButton";
-            this.addBookButton.Size = new System.Drawing.Size(75, 23);
+            this.addBookButton.Size = new System.Drawing.Size(75, 24);
             this.addBookButton.TabIndex = 2;
             this.addBookButton.Text = "Adaugă";
             this.addBookButton.UseVisualStyleBackColor = true;
@@ -143,7 +143,7 @@
             this.bookListBox.FormattingEnabled = true;
             this.bookListBox.Location = new System.Drawing.Point(0, 26);
             this.bookListBox.Name = "bookListBox";
-            this.bookListBox.Size = new System.Drawing.Size(360, 95);
+            this.bookListBox.Size = new System.Drawing.Size(360, 238);
             this.bookListBox.TabIndex = 0;
             // 
             // ClientsPage
