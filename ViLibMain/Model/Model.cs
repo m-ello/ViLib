@@ -187,6 +187,15 @@ namespace ViLib
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Get a list of all books (cloned)
+        /// </summary>
+        /// <returns>List of all books</returns>
+        public List<Book> GetAllBooks()
+        {
+            // Return a new list containing all books from the library
+            return new List<Book>(_library.Books);
+        }
 
         /// <summary>
         /// Saves the data only if the book list was modified
@@ -198,6 +207,13 @@ namespace ViLib
 
             if (_bookFileWasModified)
             {
+                // Delete the file if it exists
+                if (File.Exists(_BookFileName))
+                {
+                    File.Delete(_BookFileName);
+                }
+
+                // Create a new file and write the book data
                 var sw = new StreamWriter(_BookFileName);
                 foreach (var book in _library.Books)
                 {

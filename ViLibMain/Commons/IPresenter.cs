@@ -16,8 +16,14 @@ namespace Commons
         void Init();
         void RemoveBook(string title);
         void AddClient(Client c);
+        void EditBook(string title, Book b);
         bool ClientExists(string cnp);
         void RemoveClient(string cnp);
         Client GetClient(string cnp);
+        bool ReturnBook(string bookTitle);
+        string GetBorrowHistory(string bookTitle = null, string clientCNP = null);
+        void ShowBookDetails(Book book);
+        void ShowAllBooks();
+        bool BorrowBook(string bookTitle, string clientCNP);
     }
 }

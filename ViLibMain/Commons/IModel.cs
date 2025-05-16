@@ -35,6 +35,7 @@ namespace Commons
         bool BorrowBook(string bookTitle, string clientCNP);
         bool ReturnBook(string bookTitle);
         List<BorrowRecord> GetBorrowHistory(string bookTitle = null, string clientCNP = null);
+        List<Book> GetAllBooks();
     }
 
 }

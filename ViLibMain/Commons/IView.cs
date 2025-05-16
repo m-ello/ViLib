@@ -8,7 +8,13 @@ namespace Commons
 {
     public interface IView
     {
-        void Display(string text, string color);
+        void LogStatus(string text, string color);
+        void ShowBooks(List<Book> books);
+        void ShowClients(List<Client> clients);
+        void ShowBorrowHistory(List<BorrowRecord> borrowRecords);
+        void ShowBookDetails(Book book);
+        void ShowClientDetails(Client client);
+        void ShowBorrowRecordDetails(BorrowRecord record);
         void SetPresenter(IPresenter presenter);
     }
 }

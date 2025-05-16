@@ -29,96 +29,160 @@
         private void InitializeComponent()
         {
             this.StatusBox = new System.Windows.Forms.RichTextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ExecuteButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ActionComboBox = new System.Windows.Forms.ComboBox();
-            this.AdminModeButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.OptionsTabControl = new System.Windows.Forms.TabControl();
+            this.booksTab = new System.Windows.Forms.TabPage();
+            this.deleteBookButton = new System.Windows.Forms.Button();
+            this.detailsBookButton = new System.Windows.Forms.Button();
+            this.editBookButton = new System.Windows.Forms.Button();
+            this.addBookButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.bookListBox = new System.Windows.Forms.ListBox();
+            this.ClientsPage = new System.Windows.Forms.TabPage();
+            this.borrowTab = new System.Windows.Forms.TabPage();
+            this.OptionsTabControl.SuspendLayout();
+            this.booksTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // StatusBox
             // 
-            this.StatusBox.Location = new System.Drawing.Point(12, 130);
+            this.StatusBox.Location = new System.Drawing.Point(12, 353);
             this.StatusBox.Name = "StatusBox";
             this.StatusBox.ReadOnly = true;
-            this.StatusBox.Size = new System.Drawing.Size(369, 293);
+            this.StatusBox.Size = new System.Drawing.Size(369, 70);
             this.StatusBox.TabIndex = 1;
             this.StatusBox.Text = "";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.ExecuteButton);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.ActionComboBox);
-            this.groupBox1.Location = new System.Drawing.Point(12, 49);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(369, 56);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Administrator Options";
-            this.groupBox1.Visible = false;
-            // 
-            // ExecuteButton
-            // 
-            this.ExecuteButton.Location = new System.Drawing.Point(281, 17);
-            this.ExecuteButton.Name = "ExecuteButton";
-            this.ExecuteButton.Size = new System.Drawing.Size(75, 23);
-            this.ExecuteButton.TabIndex = 2;
-            this.ExecuteButton.Text = "Execute";
-            this.ExecuteButton.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Select action";
-            // 
-            // ActionComboBox
-            // 
-            this.ActionComboBox.FormattingEnabled = true;
-            this.ActionComboBox.Location = new System.Drawing.Point(81, 17);
-            this.ActionComboBox.Name = "ActionComboBox";
-            this.ActionComboBox.Size = new System.Drawing.Size(193, 21);
-            this.ActionComboBox.TabIndex = 0;
-            this.ActionComboBox.SelectedIndexChanged += new System.EventHandler(this.ActionComboBox_SelectedIndexChanged_1);
-            // 
-            // AdminModeButton
-            // 
-            this.AdminModeButton.Location = new System.Drawing.Point(12, 12);
-            this.AdminModeButton.Name = "AdminModeButton";
-            this.AdminModeButton.Size = new System.Drawing.Size(109, 31);
-            this.AdminModeButton.TabIndex = 3;
-            this.AdminModeButton.Text = "Administrator Mode";
-            this.AdminModeButton.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 112);
+            this.label2.Location = new System.Drawing.Point(12, 337);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Status";
+            // 
+            // OptionsTabControl
+            // 
+            this.OptionsTabControl.Controls.Add(this.booksTab);
+            this.OptionsTabControl.Controls.Add(this.ClientsPage);
+            this.OptionsTabControl.Controls.Add(this.borrowTab);
+            this.OptionsTabControl.Location = new System.Drawing.Point(13, 13);
+            this.OptionsTabControl.Name = "OptionsTabControl";
+            this.OptionsTabControl.SelectedIndex = 0;
+            this.OptionsTabControl.Size = new System.Drawing.Size(368, 321);
+            this.OptionsTabControl.TabIndex = 5;
+            // 
+            // booksTab
+            // 
+            this.booksTab.Controls.Add(this.deleteBookButton);
+            this.booksTab.Controls.Add(this.detailsBookButton);
+            this.booksTab.Controls.Add(this.editBookButton);
+            this.booksTab.Controls.Add(this.addBookButton);
+            this.booksTab.Controls.Add(this.label1);
+            this.booksTab.Controls.Add(this.bookListBox);
+            this.booksTab.Location = new System.Drawing.Point(4, 22);
+            this.booksTab.Name = "booksTab";
+            this.booksTab.Padding = new System.Windows.Forms.Padding(3);
+            this.booksTab.Size = new System.Drawing.Size(360, 295);
+            this.booksTab.TabIndex = 1;
+            this.booksTab.Text = "Cărți";
+            this.booksTab.UseVisualStyleBackColor = true;
+            // 
+            // deleteBookButton
+            // 
+            this.deleteBookButton.Location = new System.Drawing.Point(282, 268);
+            this.deleteBookButton.Name = "deleteBookButton";
+            this.deleteBookButton.Size = new System.Drawing.Size(75, 24);
+            this.deleteBookButton.TabIndex = 5;
+            this.deleteBookButton.Text = "Șterge";
+            this.deleteBookButton.UseVisualStyleBackColor = true;
+            this.deleteBookButton.Click += new System.EventHandler(this.deleteBookButton_Click);
+            // 
+            // detailsBookButton
+            // 
+            this.detailsBookButton.Location = new System.Drawing.Point(201, 268);
+            this.detailsBookButton.Name = "detailsBookButton";
+            this.detailsBookButton.Size = new System.Drawing.Size(75, 24);
+            this.detailsBookButton.TabIndex = 4;
+            this.detailsBookButton.Text = "Detalii";
+            this.detailsBookButton.UseVisualStyleBackColor = true;
+            this.detailsBookButton.Click += new System.EventHandler(this.detailsBookButton_Click);
+            // 
+            // editBookButton
+            // 
+            this.editBookButton.Location = new System.Drawing.Point(81, 268);
+            this.editBookButton.Name = "editBookButton";
+            this.editBookButton.Size = new System.Drawing.Size(75, 24);
+            this.editBookButton.TabIndex = 3;
+            this.editBookButton.Text = "Editează";
+            this.editBookButton.UseVisualStyleBackColor = true;
+            this.editBookButton.Click += new System.EventHandler(this.editBookButton_Click);
+            // 
+            // addBookButton
+            // 
+            this.addBookButton.Location = new System.Drawing.Point(0, 268);
+            this.addBookButton.Name = "addBookButton";
+            this.addBookButton.Size = new System.Drawing.Size(75, 24);
+            this.addBookButton.TabIndex = 2;
+            this.addBookButton.Text = "Adaugă";
+            this.addBookButton.UseVisualStyleBackColor = true;
+            this.addBookButton.Click += new System.EventHandler(this.addBookButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Cărțile curente";
+            // 
+            // bookListBox
+            // 
+            this.bookListBox.FormattingEnabled = true;
+            this.bookListBox.Location = new System.Drawing.Point(0, 26);
+            this.bookListBox.Name = "bookListBox";
+            this.bookListBox.Size = new System.Drawing.Size(360, 238);
+            this.bookListBox.TabIndex = 0;
+            // 
+            // ClientsPage
+            // 
+            this.ClientsPage.Location = new System.Drawing.Point(4, 22);
+            this.ClientsPage.Name = "ClientsPage";
+            this.ClientsPage.Padding = new System.Windows.Forms.Padding(3);
+            this.ClientsPage.Size = new System.Drawing.Size(360, 295);
+            this.ClientsPage.TabIndex = 2;
+            this.ClientsPage.Text = "Clienți";
+            this.ClientsPage.UseVisualStyleBackColor = true;
+            // 
+            // borrowTab
+            // 
+            this.borrowTab.Location = new System.Drawing.Point(4, 22);
+            this.borrowTab.Name = "borrowTab";
+            this.borrowTab.Padding = new System.Windows.Forms.Padding(3);
+            this.borrowTab.Size = new System.Drawing.Size(360, 295);
+            this.borrowTab.TabIndex = 3;
+            this.borrowTab.Text = "Împrumuturi";
+            this.borrowTab.UseVisualStyleBackColor = true;
             // 
             // FormView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(393, 435);
+            this.Controls.Add(this.OptionsTabControl);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.AdminModeButton);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.StatusBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(409, 474);
+            this.MinimumSize = new System.Drawing.Size(409, 474);
             this.Name = "FormView";
-            this.Text = "FormView";
-            this.Load += new System.EventHandler(this.FormView_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Text = "Gestionare Librărie";
+            this.OptionsTabControl.ResumeLayout(false);
+            this.booksTab.ResumeLayout(false);
+            this.booksTab.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,11 +191,16 @@
         #endregion
 
         private System.Windows.Forms.RichTextBox StatusBox;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button AdminModeButton;
-        private System.Windows.Forms.ComboBox ActionComboBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button ExecuteButton;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TabControl OptionsTabControl;
+        private System.Windows.Forms.TabPage booksTab;
+        private System.Windows.Forms.TabPage ClientsPage;
+        private System.Windows.Forms.TabPage borrowTab;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox bookListBox;
+        private System.Windows.Forms.Button deleteBookButton;
+        private System.Windows.Forms.Button detailsBookButton;
+        private System.Windows.Forms.Button editBookButton;
+        private System.Windows.Forms.Button addBookButton;
     }
 }

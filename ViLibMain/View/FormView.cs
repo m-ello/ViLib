@@ -8,38 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Commons;
-using static View.Menus;
 
 namespace View
 {
     public partial class FormView : Form, IView
     {
         private IPresenter _presenter;
-        public IModel _model;
-        public List<MenuOption> _menuOptions;
+        private List<Book> _books = new List<Book>(); // Store the books displayed in the list box
 
-        // Track the current menu state and user choice
-        private MenuState _currentMenuState = MenuState.Main;
-        private UserChoice _currentChoice = UserChoice.Undefined;
 
         // Random generator for creating random books
         private Random _random = new Random();
 
-        public FormView(IModel model)
+        public FormView()
         {
-            _model = model;
             InitializeComponent();
 
             // Subscribe to the FormClosing event
             this.FormClosing += FormView_FormClosing;
-
-            // Subscribe to form events
-            AdminModeButton.Click += AdminModeButton_Click;
-            ActionComboBox.SelectedIndexChanged += ActionComboBox_SelectedIndexChanged;
-            ExecuteButton.Click += ExecuteButton_Click;
-
-            // Initialize menu state
-            UpdateMenuState(MenuState.Main);
         }
 
         // Handle the form closing event
@@ -60,108 +46,6 @@ namespace View
             }
         }
 
-        private void AdminModeButton_Click(object sender, EventArgs e)
-        {
-            if (_currentMenuState == MenuState.Main)
-            {
-                UpdateMenuState(MenuState.Administrator);
-
-                // Disable the button to prevent re-entering admin mode
-                AdminModeButton.Enabled = false;
-            }
-        }
-
-        private void UpdateMenuState(MenuState menuState)
-        {
-            _currentMenuState = menuState;
-            string action = "";
-
-            // Update menu options based on current state
-            switch (menuState)
-            {
-                case MenuState.Main:
-                    Menus.MainMenu(out _menuOptions, out action);
-                    groupBox1.Visible = false; // Hide admin options
-                    AdminModeButton.Text = "Administrator Mode";
-                    break;
-
-                case MenuState.Administrator:
-                    Menus.AdminMenu(out _menuOptions, out action);
-                    groupBox1.Visible = true; // Show admin options
-
-                    // Populate action combo box with admin options
-                    ActionComboBox.Items.Clear();
-                    foreach (var option in _menuOptions)
-                    {
-                        if (option.Choice != UserChoice.Exit) // Skip Exit option in combobox
-                        {
-                            // Add each menu option to the combobox
-                            ActionComboBox.Items.Add(new ComboBoxItem { Text = option.Text, Value = option.Choice });
-                        }
-                    }
-
-                    // Select first item by default
-                    if (ActionComboBox.Items.Count > 0)
-                        ActionComboBox.SelectedIndex = 0;
-                    break;
-            }
-
-            Display($"Mode changed to {menuState}", "blue");
-        }
-
-        private void ActionComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ActionComboBox.SelectedItem != null)
-            {
-                ComboBoxItem item = (ComboBoxItem)ActionComboBox.SelectedItem;
-                _currentChoice = (UserChoice)item.Value;
-            }
-        }
-
-        private void ExecuteButton_Click(object sender, EventArgs e)
-        {
-            // Execute the selected action
-            switch (_currentChoice)
-            {
-                case UserChoice.Info:
-                    Display("Not implemented yet", "red");
-                    break;
-
-
-                case UserChoice.AddBook:
-                    // Create book with random data
-                    string title = "Book_" + GenerateRandomString(5);
-                    string author = "Author_" + GenerateRandomString(8);
-                    string publisher = "Publisher_" + GenerateRandomString(6);
-
-                    Book newBook = new Book(title, author, publisher);
-                    _presenter.AddBook(newBook);
-                    Display($"Created random book: {title} by {author}", "green");
-                    break;
-
-                case UserChoice.RemoveBook:
-                    string bookTitle = Prompt.ShowDialog("Enter the title of the book to remove:", "Remove Book");
-
-                    if (!string.IsNullOrWhiteSpace(bookTitle))
-                    {
-                        _presenter.RemoveBook(bookTitle);
-                    }
-                    else
-                    {
-                        Display("Book title cannot be empty.", "red");
-                    }
-                    break;
-
-                case UserChoice.List:
-                default:
-                    // List all books using model
-                    string bookList = _model.ListAllBooks();
-                    Display("Book List:\n" + bookList, "blue");
-                    break;
-
-            }
-        }
-
         // Helper method to generate random strings
         private string GenerateRandomString(int length)
         {
@@ -170,7 +54,7 @@ namespace View
                 .Select(s => s[_random.Next(s.Length)]).ToArray());
         }
 
-        public void Display(string text, string color)
+        public void LogStatus(string text, string color)
         {
             // Map the color string to a System.Drawing.Color
             Color textColor = Color.Black;
@@ -207,26 +91,131 @@ namespace View
             _presenter?.Init();
         }
 
-        private void FormView_Load(object sender, EventArgs e)
+        void IView.ShowBooks(List<Book> books)
         {
-            // No need for this since Init is called in SetPresenter
+            _books = books; // Store the books for later reference
+            bookListBox.Items.Clear();
+            foreach (var book in books)
+            {
+                string bookDetails = $"\"{book.title}\" de {book.author}, publicat de {book.publisher}";
+                bookListBox.Items.Add(bookDetails);
+            }
         }
 
-        private void ActionComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        void IView.ShowClients(List<Client> clients)
         {
-
+            throw new NotImplementedException();
         }
-    }
 
-    // Helper class for combo box items
-    public class ComboBoxItem
-    {
-        public string Text { get; set; }
-        public object Value { get; set; }
-
-        public override string ToString()
+        void IView.ShowBorrowHistory(List<BorrowRecord> borrowRecords)
         {
-            return Text;
+            throw new NotImplementedException();
+        }
+
+        void IView.ShowBookDetails(Book book)
+        {
+            using (var bookDetailsForm = new BookDetailsForm())
+            {
+                bookDetailsForm.SetBookDetails(book);
+                bookDetailsForm.ShowDialog();
+            }
+        }
+
+        void IView.ShowClientDetails(Client client)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IView.ShowBorrowRecordDetails(BorrowRecord record)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void detailsBookButton_Click(object sender, EventArgs e)
+        {
+            // Check if an item is selected
+            if (bookListBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecteaza o carte, te rog.", "Nicio selectie", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Get the selected book
+            var selectedBook = _books[bookListBox.SelectedIndex];
+
+            // Ask the presenter to show the book details
+            _presenter.ShowBookDetails(selectedBook);
+        }
+
+        private void deleteBookButton_Click(object sender, EventArgs e)
+        {
+            // Check if an item is selected
+            if (bookListBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecteaza o carte, te rog.", "Nicio selectie", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Get the selected book
+            var selectedBook = _books[bookListBox.SelectedIndex];
+
+            // Confirm deletion
+            var result = MessageBox.Show($"Esti sigur ca vrei sa stergi cartea \"{selectedBook.title}\"?",
+                                          "Confirmare stergere",
+                                          MessageBoxButtons.YesNo,
+                                          MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Ask the presenter to delete the book
+                _presenter.RemoveBook(selectedBook.title);
+
+                // Refresh the book list
+                _presenter.ShowAllBooks();
+            }
+        }
+
+        private void addBookButton_Click(object sender, EventArgs e)
+        {
+            using (var bookAddForm = new BookAddForm())
+            {
+                // Show the form as a dialog
+                if (bookAddForm.ShowDialog() == DialogResult.OK)
+                {
+                    // Get the new book from the form
+                    var newBook = bookAddForm.NewBook;
+
+                   _presenter.AddBook(newBook);
+                }
+            }
+        }
+
+        private void editBookButton_Click(object sender, EventArgs e)
+        {
+            // Check if an item is selected
+            if (bookListBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecteaza o carte, te rog.", "Nicio selectie", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Get the selected book
+            var selectedBook = _books[bookListBox.SelectedIndex];
+
+            // Open the BookEditForm with the selected book's details
+            using (var bookEditForm = new BookEditForm())
+            {
+                bookEditForm.SetBookDetails(selectedBook); // Pre-fill the form with the book's details
+
+                if (bookEditForm.ShowDialog() == DialogResult.OK)
+                {
+                    // Get the updated book details from the form
+                    var updatedBook = bookEditForm.UpdatedBook;
+
+                    // Delegate the update to the presenter
+                    _presenter.EditBook(selectedBook.title, updatedBook);
+                }
+            }
         }
     }
 }

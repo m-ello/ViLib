@@ -15,57 +15,53 @@ namespace PresenterNamespace
 {
     public class Presenter : IPresenter
     {
-        public IModel _model;
-        public IView _view;
+        private readonly IModel _model;
+        private readonly IView _view;
+
         public Presenter(IView view, IModel model)
         {
             _model = model;
             _view = view;
         }
-        public void Init()//trebuie apelata pentru a initializa prezentarea
+
+        void IPresenter.Init()
         {
             if (!_model.BookDataExists())
             {
-                _view.Display("Fisierul cu carti nu exista." + Environment.NewLine, "red");
+                _view.LogStatus("Fisierul cu carti nu exista." + Environment.NewLine, "red");
             }
-            else
-            {
-                _model.InitializeData();
-                _view.Display("Fisier incarcat: " + _model.BookCount + " carti." + Environment.NewLine, "magenta");
-            }
+
             if (!_model.ClientDataExists())
             {
-                _view.Display("Fisierul cu clienti nu exista." + Environment.NewLine, "red");
+                _view.LogStatus("Fisierul cu clienti nu exista." + Environment.NewLine, "red");
             }
-            else
-            {
-                _model.InitializeData();
-                _view.Display("Fisier incarcat: " + _model.ClientCount + " clienti." + Environment.NewLine, "magenta");
-            }
+
             if (!_model.BorrowHistoryDataExists())
             {
-                _view.Display("Fișierul cu istoricul împrumuturilor nu există." + Environment.NewLine, "red");
+                _view.LogStatus("Fișierul cu istoricul împrumuturilor nu există." + Environment.NewLine, "red");
             }
-            else
-            {
-                _model.InitializeData();
-                _view.Display($"Istoric încărcat: {_model.GetBorrowHistory().Count} înregistrări." + Environment.NewLine, "magenta");
-            }
+
+            _model.InitializeData();
+
+            _view.LogStatus("Fisier incarcat: " + _model.BookCount + " carti.", "magenta");
+            _view.LogStatus("Fisier incarcat: " + _model.ClientCount + " clienti.", "magenta");
+            _view.LogStatus($"Istoric încărcat: {_model.GetBorrowHistory().Count} înregistrări.", "magenta");
+
+            ((IPresenter)this).ShowAllBooks();
         }
-        public void Exit()
+
+        void IPresenter.Exit()
         {
             if (_model.SaveData())
-                _view.Display("Fisierul a fost salvat." + Environment.NewLine, "magenta");
-            _view.Display("La revedere.", "default");
+                _view.LogStatus("Fisierul a fost salvat." + Environment.NewLine, "magenta");
+            _view.LogStatus("La revedere.", "default");
 
-            // Check if we're in a Windows Forms environment
             bool isWindowsFormsView =
                 Application.OpenForms.Count > 0 ||
                 _view is Control;
 
             if (isWindowsFormsView)
             {
-                // Use a Windows Forms timer to delay exit without blocking the UI thread
                 Timer exitTimer = new Timer
                 {
                     Interval = 1000 // 1 second
@@ -77,105 +73,105 @@ namespace PresenterNamespace
                 };
                 exitTimer.Start();
 
-                // This allows the UI to show the goodbye message before exiting
                 Application.DoEvents();
             }
             else
             {
-                // For non-Windows Forms applications, use Thread.Sleep
                 Thread.Sleep(1000);
                 Environment.Exit(0);
             }
         }
-        public void AddBook(Book b)
-        {
-            if (!_model.AddBook(b))
-            {
-                _view.Display($"Cartea {b.title} a fost suprascrisa", "red");
-            }
-            else
-            {
-                _view.Display($"Cartea {b.title} a fost adaugata", "blue");
-            }
-        }
-        public bool BookExists(string name)
+
+        bool IPresenter.BookExists(string name)
         {
             return _model.BookExists(name);
         }
-        public Book GetBook(string name)
+
+        Book IPresenter.GetBook(string name)
         {
             return _model.SearchBook(name);
         }
-        public void RemoveBook(string name)
+
+        void IPresenter.ShowAllBooks()
+        {
+            _view.ShowBooks(_model.GetAllBooks());
+        }
+
+        void IPresenter.RemoveBook(string name)
         {
             if (_model.DeleteBook(name))
             {
-                _view.Display($"Cartea a fost stearsa.", "blue");
+                _view.LogStatus($"Cartea a fost stearsa.", "blue");
             }
             else
             {
-                _view.Display($"Cartea nu a fost gasita in lista.", "red");
+                _view.LogStatus($"Cartea nu a fost gasita in lista.", "red");
             }
         }
-        public bool ClientExists(string CNP)
+
+        bool IPresenter.ClientExists(string CNP)
         {
             return _model.ClientExists(CNP);
         }
-        public void AddClient(Client c)
+
+        void IPresenter.AddClient(Client c)
         {
             if (!_model.AddClient(c))
             {
-                _view.Display($"Cartea {c.familyName} {c.firstName} a fost suprascris", "red");
+                _view.LogStatus($"Cartea {c.familyName} {c.firstName} a fost suprascris", "red");
             }
             else
             {
-                _view.Display($"Clientul {c.familyName} {c.firstName} a fost adaugat", "blue");
+                _view.LogStatus($"Clientul {c.familyName} {c.firstName} a fost adaugat", "blue");
             }
         }
-        public void RemoveClient(string cnp)
+
+        void IPresenter.RemoveClient(string cnp)
         {
             if (_model.DeleteClient(cnp))
             {
-                _view.Display($"Clientul a fost sters.", "blue");
+                _view.LogStatus($"Clientul a fost sters.", "blue");
             }
             else
             {
-                _view.Display($"Clientul nu a fost gasit in lista.", "red");
+                _view.LogStatus($"Clientul nu a fost gasit in lista.", "red");
             }
         }
-        public Client GetClient(string cnp)
+
+        Client IPresenter.GetClient(string cnp)
         {
             return _model.SearchClient(cnp);
         }
-        public bool BorrowBook(string bookTitle, string clientCNP)
+
+        bool IPresenter.BorrowBook(string bookTitle, string clientCNP)
         {
             bool success = _model.BorrowBook(bookTitle, clientCNP);
             if (success)
             {
-                _view.Display($"Cartea '{bookTitle}' a fost împrumutată cu succes.", "blue");
+                _view.LogStatus($"Cartea '{bookTitle}' a fost împrumutată cu succes.", "blue");
             }
             else
             {
-                _view.Display($"Nu s-a putut împrumuta cartea '{bookTitle}'. Verificați disponibilitatea sau datele clientului.", "red");
+                _view.LogStatus($"Nu s-a putut împrumuta cartea '{bookTitle}'. Verificați disponibilitatea sau datele clientului.", "red");
             }
             return success;
         }
 
-        public bool ReturnBook(string bookTitle)
+        bool IPresenter.ReturnBook(string bookTitle)
         {
             bool success = _model.ReturnBook(bookTitle);
             if (success)
             {
-                _view.Display($"Cartea '{bookTitle}' a fost returnată cu succes.", "blue");
+                _view.LogStatus($"Cartea '{bookTitle}' a fost returnată cu succes.", "blue");
             }
             else
             {
-                _view.Display($"Nu s-a putut returna cartea '{bookTitle}'. Verificați dacă este împrumutată.", "red");
+                _view.LogStatus($"Nu s-a putut returna cartea '{bookTitle}'. Verificați dacă este împrumutată.", "red");
             }
             return success;
         }
 
-        public string GetBorrowHistory(string bookTitle = null, string clientCNP = null)
+        string IPresenter.GetBorrowHistory(string bookTitle, string clientCNP)
         {
             var history = _model.GetBorrowHistory(bookTitle, clientCNP);
             if (history.Count == 0)
@@ -193,6 +189,53 @@ namespace PresenterNamespace
                 sb.AppendLine("---------------------");
             }
             return sb.ToString();
+        }
+
+        void IPresenter.ShowBookDetails(Book book)
+        {
+            _view.ShowBookDetails(book);
+        }
+
+        void IPresenter.AddBook(Book b)
+        {
+            bool success = _model.AddBook(b);
+
+            if (success)
+            {
+                _view.LogStatus($"Cartea \"{b.title}\" a fost adaugata.", "green");
+                ((IPresenter)this).ShowAllBooks();
+            }
+            else
+            {
+                _view.LogStatus($"Cartea \"{b.title}\" exista deja.", "red");
+            }
+        }
+
+        void IPresenter.EditBook(string oldTitle, Book updatedBook)
+        {
+            
+            // Check if the book exists
+            if (!_model.BookExists(oldTitle))
+            {
+                _view.LogStatus($"Cartea \"{oldTitle}\" nu exista.", "red");
+                return;
+            }
+
+            // Update the book in the model
+            _model.DeleteBook(oldTitle); // Remove the old book
+            bool success = _model.AddBook(updatedBook); // Add the updated book
+
+            // Notify the user of the result
+            if (success)
+            {
+                _view.LogStatus($"Cartea \"{oldTitle}\" a fost actualizata.", "green");
+                ((IPresenter)this).ShowAllBooks();
+            }
+            else
+            {
+                _view.LogStatus($"Eroare la actualizarea cartii \"{oldTitle}\".", "red");
+            }
+            
         }
     }
 }

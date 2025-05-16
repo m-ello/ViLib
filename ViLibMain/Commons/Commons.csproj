@@ -33,6 +33,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,6 +44,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Book.cs" />
+    <Compile Include="BookAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookAddForm.Designer.cs">
+      <DependentUpon>BookAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookDetailsForm.Designer.cs">
+      <DependentUpon>BookDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookEditForm.Designer.cs">
+      <DependentUpon>BookEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BorrowRecord.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="IModel.cs" />
@@ -49,6 +69,17 @@
     <Compile Include="IView.cs" />
     <Compile Include="Library.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BookAddForm.resx">
+      <DependentUpon>BookAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookDetailsForm.resx">
+      <DependentUpon>BookDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookEditForm.resx">
+      <DependentUpon>BookEditForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
