@@ -14,6 +14,8 @@ namespace View
     public partial class FormView : Form, IView
     {
         private IPresenter _presenter;
+        private List<Book> _books = new List<Book>(); // Store the books displayed in the list box
+
 
         // Random generator for creating random books
         private Random _random = new Random();
@@ -91,6 +93,7 @@ namespace View
 
         void IView.ShowBooks(List<Book> books)
         {
+            _books = books; // Store the books for later reference
             bookListBox.Items.Clear();
             foreach (var book in books)
             {
@@ -111,7 +114,11 @@ namespace View
 
         void IView.ShowBookDetails(Book book)
         {
-            throw new NotImplementedException();
+            using (var bookDetailsForm = new BookDetailsForm())
+            {
+                bookDetailsForm.SetBookDetails(book);
+                bookDetailsForm.ShowDialog();
+            }
         }
 
         void IView.ShowClientDetails(Client client)
@@ -122,6 +129,93 @@ namespace View
         void IView.ShowBorrowRecordDetails(BorrowRecord record)
         {
             throw new NotImplementedException();
+        }
+
+        private void detailsBookButton_Click(object sender, EventArgs e)
+        {
+            // Check if an item is selected
+            if (bookListBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecteaza o carte, te rog.", "Nicio selectie", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Get the selected book
+            var selectedBook = _books[bookListBox.SelectedIndex];
+
+            // Ask the presenter to show the book details
+            _presenter.ShowBookDetails(selectedBook);
+        }
+
+        private void deleteBookButton_Click(object sender, EventArgs e)
+        {
+            // Check if an item is selected
+            if (bookListBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecteaza o carte, te rog.", "Nicio selectie", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Get the selected book
+            var selectedBook = _books[bookListBox.SelectedIndex];
+
+            // Confirm deletion
+            var result = MessageBox.Show($"Esti sigur ca vrei sa stergi cartea \"{selectedBook.title}\"?",
+                                          "Confirmare stergere",
+                                          MessageBoxButtons.YesNo,
+                                          MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Ask the presenter to delete the book
+                _presenter.RemoveBook(selectedBook.title);
+
+                // Refresh the book list
+                _presenter.ShowAllBooks();
+            }
+        }
+
+        private void addBookButton_Click(object sender, EventArgs e)
+        {
+            using (var bookAddForm = new BookAddForm())
+            {
+                // Show the form as a dialog
+                if (bookAddForm.ShowDialog() == DialogResult.OK)
+                {
+                    // Get the new book from the form
+                    var newBook = bookAddForm.NewBook;
+
+                   _presenter.AddBook(newBook);
+                }
+            }
+        }
+
+        private void editBookButton_Click(object sender, EventArgs e)
+        {
+            // Check if an item is selected
+            if (bookListBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecteaza o carte, te rog.", "Nicio selectie", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Get the selected book
+            var selectedBook = _books[bookListBox.SelectedIndex];
+
+            // Open the BookEditForm with the selected book's details
+            using (var bookEditForm = new BookEditForm())
+            {
+                bookEditForm.SetBookDetails(selectedBook); // Pre-fill the form with the book's details
+
+                if (bookEditForm.ShowDialog() == DialogResult.OK)
+                {
+                    // Get the updated book details from the form
+                    var updatedBook = bookEditForm.UpdatedBook;
+
+                    // Delegate the update to the presenter
+                    _presenter.EditBook(selectedBook.title, updatedBook);
+                }
+            }
         }
     }
 }

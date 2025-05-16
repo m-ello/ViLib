@@ -97,6 +97,7 @@
             this.deleteBookButton.TabIndex = 5;
             this.deleteBookButton.Text = "Șterge";
             this.deleteBookButton.UseVisualStyleBackColor = true;
+            this.deleteBookButton.Click += new System.EventHandler(this.deleteBookButton_Click);
             // 
             // detailsBookButton
             // 
@@ -106,6 +107,7 @@
             this.detailsBookButton.TabIndex = 4;
             this.detailsBookButton.Text = "Detalii";
             this.detailsBookButton.UseVisualStyleBackColor = true;
+            this.detailsBookButton.Click += new System.EventHandler(this.detailsBookButton_Click);
             // 
             // editBookButton
             // 
@@ -115,6 +117,7 @@
             this.editBookButton.TabIndex = 3;
             this.editBookButton.Text = "Editează";
             this.editBookButton.UseVisualStyleBackColor = true;
+            this.editBookButton.Click += new System.EventHandler(this.editBookButton_Click);
             // 
             // addBookButton
             // 
@@ -124,6 +127,7 @@
             this.addBookButton.TabIndex = 2;
             this.addBookButton.Text = "Adaugă";
             this.addBookButton.UseVisualStyleBackColor = true;
+            this.addBookButton.Click += new System.EventHandler(this.addBookButton_Click);
             // 
             // label1
             // 
