@@ -1,0 +1,152 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\sandu\\OneDrive\\Desktop\\ViLib\\ViLibMain\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{92055BCF-4DAD-4CFE-805F-8DE5EE05F447}|Model\\Model.csproj|c:\\users\\sandu\\onedrive\\desktop\\vilib\\vilibmain\\model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92055BCF-4DAD-4CFE-805F-8DE5EE05F447}|Model\\Model.csproj|solutionrelative:model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|c:\\users\\sandu\\onedrive\\desktop\\vilib\\vilibmain\\commons\\library.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|solutionrelative:commons\\library.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5559A9A9-FAFE-4E51-88E3-68EBD0FFCD06}|Presenter\\Presenter.csproj|C:\\Users\\sandu\\OneDrive\\Desktop\\ViLib\\ViLibMain\\presenter\\presenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5559A9A9-FAFE-4E51-88E3-68EBD0FFCD06}|Presenter\\Presenter.csproj|solutionrelative:presenter\\presenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|c:\\users\\sandu\\onedrive\\desktop\\vilib\\vilibmain\\commons\\borrowrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|solutionrelative:commons\\borrowrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|C:\\Users\\sandu\\OneDrive\\Desktop\\ViLib\\ViLibMain\\commons\\ipresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|solutionrelative:commons\\ipresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|C:\\Users\\sandu\\OneDrive\\Desktop\\ViLib\\ViLibMain\\view\\consoleview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|solutionrelative:view\\consoleview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|C:\\Users\\sandu\\OneDrive\\Desktop\\ViLib\\ViLibMain\\view\\formview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|solutionrelative:view\\formview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|C:\\Users\\sandu\\OneDrive\\Desktop\\ViLib\\ViLibMain\\view\\formview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|solutionrelative:view\\formview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 334,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Model.cs",
+              "DocumentMoniker": "C:\\Users\\sandu\\OneDrive\\Desktop\\ViLib\\ViLibMain\\Model\\Model.cs",
+              "RelativeDocumentMoniker": "Model\\Model.cs",
+              "ToolTip": "C:\\Users\\sandu\\OneDrive\\Desktop\\ViLib\\ViLibMain\\Model\\Model.cs",
+              "RelativeToolTip": "Model\\Model.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAUwG0AAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T15:49:45.19Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Library.cs",
+              "DocumentMoniker": "C:\\Users\\sandu\\OneDrive\\Desktop\\ViLib\\ViLibMain\\Commons\\Library.cs",
+              "RelativeDocumentMoniker": "Commons\\Library.cs",
+              "ToolTip": "C:\\Users\\sandu\\OneDrive\\Desktop\\ViLib\\ViLibMain\\Commons\\Library.cs",
+              "RelativeToolTip": "Commons\\Library.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T15:42:06.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BorrowRecord.cs",
+              "DocumentMoniker": "C:\\Users\\sandu\\OneDrive\\Desktop\\ViLib\\ViLibMain\\Commons\\BorrowRecord.cs",
+              "RelativeDocumentMoniker": "Commons\\BorrowRecord.cs",
+              "ToolTip": "C:\\Users\\sandu\\OneDrive\\Desktop\\ViLib\\ViLibMain\\Commons\\BorrowRecord.cs",
+              "RelativeToolTip": "Commons\\BorrowRecord.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T15:05:55.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IPresenter.cs",
+              "DocumentMoniker": "C:\\Users\\sandu\\OneDrive\\Desktop\\ViLib\\ViLibMain\\Commons\\IPresenter.cs",
+              "RelativeDocumentMoniker": "Commons\\IPresenter.cs",
+              "ToolTip": "C:\\Users\\sandu\\OneDrive\\Desktop\\ViLib\\ViLibMain\\Commons\\IPresenter.cs",
+              "RelativeToolTip": "Commons\\IPresenter.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T11:40:43.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Presenter.cs",
+              "DocumentMoniker": "C:\\Users\\sandu\\OneDrive\\Desktop\\ViLib\\ViLibMain\\Presenter\\Presenter.cs",
+              "RelativeDocumentMoniker": "Presenter\\Presenter.cs",
+              "ToolTip": "C:\\Users\\sandu\\OneDrive\\Desktop\\ViLib\\ViLibMain\\Presenter\\Presenter.cs",
+              "RelativeToolTip": "Presenter\\Presenter.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAA7wMMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T11:16:26.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormView.cs",
+              "DocumentMoniker": "C:\\Users\\sandu\\OneDrive\\Desktop\\ViLib\\ViLibMain\\View\\FormView.cs",
+              "RelativeDocumentMoniker": "View\\FormView.cs",
+              "ToolTip": "C:\\Users\\sandu\\OneDrive\\Desktop\\ViLib\\ViLibMain\\View\\FormView.cs",
+              "RelativeToolTip": "View\\FormView.cs",
+              "ViewState": "AgIAAJsAAAAAAAAAAAAmwJ0AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T11:13:09.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ConsoleView.cs",
+              "DocumentMoniker": "C:\\Users\\sandu\\OneDrive\\Desktop\\ViLib\\ViLibMain\\View\\ConsoleView.cs",
+              "RelativeDocumentMoniker": "View\\ConsoleView.cs",
+              "ToolTip": "C:\\Users\\sandu\\OneDrive\\Desktop\\ViLib\\ViLibMain\\View\\ConsoleView.cs",
+              "RelativeToolTip": "View\\ConsoleView.cs",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAAAIAAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T11:12:30.454Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FormView.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\sandu\\OneDrive\\Desktop\\ViLib\\ViLibMain\\View\\FormView.cs",
+              "RelativeDocumentMoniker": "View\\FormView.cs",
+              "ToolTip": "C:\\Users\\sandu\\OneDrive\\Desktop\\ViLib\\ViLibMain\\View\\FormView.cs [Design]",
+              "RelativeToolTip": "View\\FormView.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T11:29:59.253Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
