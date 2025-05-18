@@ -109,6 +109,7 @@
             this.Controls.Add(this.AuthorTextBox);
             this.Name = "BookEditForm";
             this.Text = "BookEditForm";
+            this.Load += new System.EventHandler(this.BookEditForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

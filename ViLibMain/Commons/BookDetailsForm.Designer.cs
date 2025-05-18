@@ -100,6 +100,7 @@
             this.Controls.Add(this.AuthorTextBox);
             this.Name = "BookDetailsForm";
             this.Text = "BookDetailsForm";
+            this.Load += new System.EventHandler(this.BookDetailsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

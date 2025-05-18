@@ -13,19 +13,33 @@ using System.Xml.Linq;
 
 namespace PresenterNamespace
 {
+    /// <summary>
+    /// The Presenter class acts as the mediator between the View and Model,
+    /// handling all business logic and user interaction flow.
+    /// Implements the IPresenter interface to provide concrete functionality.
+    /// </summary>
     public class Presenter : IPresenter
     {
-        private readonly IModel _model;
-        private readonly IView _view;
+        private readonly IModel _model;  // Reference to the data/model layer
+        private readonly IView _view;    // Reference to the view/UI layer
 
+        /// <summary>
+        /// Initializes a new instance of the Presenter class
+        /// </summary>
+        /// <param name="view">The view interface implementation</param>
+        /// <param name="model">The model interface implementation</param>
         public Presenter(IView view, IModel model)
         {
             _model = model;
             _view = view;
         }
 
+        /// <summary>
+        /// Initializes the application by loading data and setting up the initial state
+        /// </summary>
         void IPresenter.Init()
         {
+            // Check and report missing data files
             if (!_model.BookDataExists())
             {
                 _view.LogStatus("Fisierul cu carti nu exista." + Environment.NewLine, "red");
@@ -41,30 +55,41 @@ namespace PresenterNamespace
                 _view.LogStatus("Fișierul cu istoricul împrumuturilor nu există." + Environment.NewLine, "red");
             }
 
+            // Load data from model
             _model.InitializeData();
 
+            // Report loaded data statistics
             _view.LogStatus("Fisier incarcat: " + _model.BookCount + " carti.", "magenta");
             _view.LogStatus("Fisier incarcat: " + _model.ClientCount + " clienti.", "magenta");
             _view.LogStatus($"Istoric încărcat: {_model.GetBorrowHistory().Count} înregistrări.", "magenta");
 
+            // Display all books in the view
             ((IPresenter)this).ShowAllBooks();
         }
 
+        /// <summary>
+        /// Handles application exit procedure with data saving and cleanup
+        /// </summary>
         void IPresenter.Exit()
         {
+            // Attempt to save data
             if (_model.SaveData())
                 _view.LogStatus("Fisierul a fost salvat." + Environment.NewLine, "magenta");
+
             _view.LogStatus("La revedere.", "default");
 
+            // Determine if we're running in a Windows Forms context
             bool isWindowsFormsView =
                 Application.OpenForms.Count > 0 ||
                 _view is Control;
 
+            // Handle exit differently based on application type
             if (isWindowsFormsView)
             {
+                // Use timer for graceful exit in WinForms
                 Timer exitTimer = new Timer
                 {
-                    Interval = 1000 // 1 second
+                    Interval = 1000 // 1 second delay
                 };
                 exitTimer.Tick += (sender, e) =>
                 {
@@ -77,26 +102,44 @@ namespace PresenterNamespace
             }
             else
             {
+                // Simple exit for non-WinForms applications
                 Thread.Sleep(1000);
                 Environment.Exit(0);
             }
         }
 
+        /// <summary>
+        /// Checks if a book with the specified title exists
+        /// </summary>
+        /// <param name="name">Title of the book to check</param>
+        /// <returns>True if book exists, false otherwise</returns>
         bool IPresenter.BookExists(string name)
         {
             return _model.BookExists(name);
         }
 
+        /// <summary>
+        /// Retrieves a book by its title
+        /// </summary>
+        /// <param name="name">Title of the book to retrieve</param>
+        /// <returns>The Book object if found, null otherwise</returns>
         Book IPresenter.GetBook(string name)
         {
             return _model.SearchBook(name);
         }
 
+        /// <summary>
+        /// Displays all books in the view
+        /// </summary>
         void IPresenter.ShowAllBooks()
         {
             _view.ShowBooks(_model.GetAllBooks());
         }
 
+        /// <summary>
+        /// Removes a book from the library
+        /// </summary>
+        /// <param name="name">Title of the book to remove</param>
         void IPresenter.RemoveBook(string name)
         {
             if (_model.DeleteBook(name))
@@ -109,16 +152,25 @@ namespace PresenterNamespace
             }
         }
 
+        /// <summary>
+        /// Checks if a client with the specified CNP exists
+        /// </summary>
+        /// <param name="CNP">Client's Personal Numeric Code</param>
+        /// <returns>True if client exists, false otherwise</returns>
         bool IPresenter.ClientExists(string CNP)
         {
             return _model.ClientExists(CNP);
         }
 
+        /// <summary>
+        /// Adds a new client to the system
+        /// </summary>
+        /// <param name="c">Client object to add</param>
         void IPresenter.AddClient(Client c)
         {
             if (!_model.AddClient(c))
             {
-                _view.LogStatus($"Cartea {c.familyName} {c.firstName} a fost suprascris", "red");
+                _view.LogStatus($"Clientul {c.familyName} {c.firstName} a fost suprascris", "red");
             }
             else
             {
@@ -126,6 +178,10 @@ namespace PresenterNamespace
             }
         }
 
+        /// <summary>
+        /// Removes a client from the system
+        /// </summary>
+        /// <param name="cnp">Personal Numeric Code of the client to remove</param>
         void IPresenter.RemoveClient(string cnp)
         {
             if (_model.DeleteClient(cnp))
@@ -138,11 +194,22 @@ namespace PresenterNamespace
             }
         }
 
+        /// <summary>
+        /// Retrieves a client by CNP
+        /// </summary>
+        /// <param name="cnp">Personal Numeric Code of the client to retrieve</param>
+        /// <returns>The Client object if found, null otherwise</returns>
         Client IPresenter.GetClient(string cnp)
         {
             return _model.SearchClient(cnp);
         }
 
+        /// <summary>
+        /// Handles the book borrowing process
+        /// </summary>
+        /// <param name="bookTitle">Title of the book to borrow</param>
+        /// <param name="clientCNP">Personal Numeric Code of the borrowing client</param>
+        /// <returns>True if borrowing was successful, false otherwise</returns>
         bool IPresenter.BorrowBook(string bookTitle, string clientCNP)
         {
             bool success = _model.BorrowBook(bookTitle, clientCNP);
@@ -157,6 +224,11 @@ namespace PresenterNamespace
             return success;
         }
 
+        /// <summary>
+        /// Handles the book return process
+        /// </summary>
+        /// <param name="bookTitle">Title of the book being returned</param>
+        /// <returns>True if return was successful, false otherwise</returns>
         bool IPresenter.ReturnBook(string bookTitle)
         {
             bool success = _model.ReturnBook(bookTitle);
@@ -171,6 +243,12 @@ namespace PresenterNamespace
             return success;
         }
 
+        /// <summary>
+        /// Retrieves and formats borrowing history with optional filters
+        /// </summary>
+        /// <param name="bookTitle">Optional filter by book title</param>
+        /// <param name="clientCNP">Optional filter by client CNP</param>
+        /// <returns>Formatted string containing the filtered borrowing history</returns>
         string IPresenter.GetBorrowHistory(string bookTitle, string clientCNP)
         {
             var history = _model.GetBorrowHistory(bookTitle, clientCNP);
@@ -191,11 +269,19 @@ namespace PresenterNamespace
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Displays detailed information about a specific book
+        /// </summary>
+        /// <param name="book">Book object to display</param>
         void IPresenter.ShowBookDetails(Book book)
         {
             _view.ShowBookDetails(book);
         }
 
+        /// <summary>
+        /// Adds a new book to the library
+        /// </summary>
+        /// <param name="b">Book object to add</param>
         void IPresenter.AddBook(Book b)
         {
             bool success = _model.AddBook(b);
@@ -211,9 +297,13 @@ namespace PresenterNamespace
             }
         }
 
+        /// <summary>
+        /// Updates an existing book's information
+        /// </summary>
+        /// <param name="oldTitle">Current title of the book to update</param>
+        /// <param name="updatedBook">Updated Book object with new information</param>
         void IPresenter.EditBook(string oldTitle, Book updatedBook)
         {
-            
             // Check if the book exists
             if (!_model.BookExists(oldTitle))
             {
@@ -235,7 +325,6 @@ namespace PresenterNamespace
             {
                 _view.LogStatus($"Eroare la actualizarea cartii \"{oldTitle}\".", "red");
             }
-            
         }
     }
 }

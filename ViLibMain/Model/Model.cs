@@ -27,26 +27,51 @@ using Commons;
 
 namespace ViLib
 {
+    /// <summary>
+    /// The Model class implements the IModel interface and serves as the data layer
+    /// of the application, managing all data persistence and business logic operations.
+    /// </summary>
     public class Model : IModel
     {
+        // File names for data persistence
         private const string _BookFileName = "books.txt";
         private const string _ClientFileName = "clients.txt";
         private const string _BorrowHistoryFileName = "borrow_history.txt";
 
+        /// <summary>
+        /// Core library data structure
+        /// </summary>
         private Library _library = new Library();
 
+        // Flags to track file modifications for efficient saving
         private bool _borrowHistoryFileWasModified;
-        private bool _bookFileWasModified; // the booklist will be saved in the end only if it was modified
+        private bool _bookFileWasModified;
         private bool _clientFileWasModified;
+
+        /// <summary>
+        /// Property exposing book count
+        /// </summary>
         public int BookCount => _library.Books.Count;
+
+        /// <summary>
+        /// Property exposing client count
+        /// </summary>
         public int ClientCount => _library.Clients.Count;
 
+        /// <summary>
+        /// Initializes a new instance of the Model class
+        /// </summary>
         public Model()
         {
             _bookFileWasModified = false;
             _clientFileWasModified = false;
             _borrowHistoryFileWasModified = false;
         }
+
+        /// <summary>
+        /// Checks if the borrow history data file exists
+        /// </summary>
+        /// <returns>True if file exists, false otherwise</returns>
         public bool BorrowHistoryDataExists()
         {
             if (!File.Exists(_BorrowHistoryFileName))
@@ -58,8 +83,9 @@ namespace ViLib
         }
 
         /// <summary>
-        /// Checks whether the file with the books exists
+        /// Checks if the book data file exists
         /// </summary>
+        /// <returns>True if file exists, false otherwise</returns>
         public bool BookDataExists()
         {
             if (!File.Exists(_BookFileName))
@@ -67,66 +93,73 @@ namespace ViLib
                 _bookFileWasModified = true;
                 return false;
             }
-            else
-                return true;
+            return true;
         }
 
         /// <summary>
-        /// Reads the books from the file
+        /// Initializes the model by loading all data from files
         /// </summary>
         public void InitializeData()
         {
             // Load books
             if (File.Exists(_BookFileName))
             {
-                var sr = new StreamReader(_BookFileName);
-                string line;
-                while ((line = sr.ReadLine()) != null)
+                using (var sr = new StreamReader(_BookFileName))
                 {
-                    _library.Books.Add(ParseBookLine(line));
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        _library.Books.Add(ParseBookLine(line));
+                    }
                 }
-                sr.Close();
             }
 
             // Load clients
             if (File.Exists(_ClientFileName))
             {
-                var sr = new StreamReader(_ClientFileName);
-                string line;
-                while ((line = sr.ReadLine()) != null)
+                using (var sr = new StreamReader(_ClientFileName))
                 {
-                    _library.Clients.Add(ParseClientLine(line));
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        _library.Clients.Add(ParseClientLine(line));
+                    }
                 }
-                sr.Close();
             }
 
             // Load borrow history
             if (File.Exists(_BorrowHistoryFileName))
             {
-                var sr = new StreamReader(_BorrowHistoryFileName);
-                string line;
-                while ((line = sr.ReadLine()) != null)
+                using (var sr = new StreamReader(_BorrowHistoryFileName))
                 {
-                    var record = ParseBorrowRecordLine(line, _library.Books,_library.Clients);
-                    _library.AllBorrowRecords.Add(record);
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        var record = ParseBorrowRecordLine(line, _library.Books, _library.Clients);
+                        if (record != null)
+                        {
+                            _library.AllBorrowRecords.Add(record);
 
-                    // Link to book and client
-                    var book = _library.Books.FirstOrDefault(b => b.title == record.BookTitle);
-                    var client = _library.Clients.FirstOrDefault(c => c.CNP == record.ClientCNP);
+                            // Link to book and client
+                            var book = _library.Books.FirstOrDefault(b => b.title == record.BookTitle);
+                            var client = _library.Clients.FirstOrDefault(c => c.CNP == record.ClientCNP);
 
-                    if (book != null) book.BorrowHistory.Add(record);
-                    if (client != null) client.BorrowHistory.Add(record);
+                            if (book != null) book.BorrowHistory.Add(record);
+                            if (client != null) client.BorrowHistory.Add(record);
 
-                    // Update book availability
-                    if (book != null && record.IsActive) book.IsAvailable = false;
+                            // Update book availability
+                            if (book != null && record.IsActive) book.IsAvailable = false;
+                        }
+                    }
                 }
-                sr.Close();
             }
         }
 
         /// <summary>
-        /// Adds a book to the book list
+        /// Adds a book to the library collection
         /// </summary>
+        /// <param name="book">Book to add</param>
+        /// <returns>True if book didn't exist before, false if it was overwritten</returns>
         public bool AddBook(Book book)
         {
             bool overwrite = _library.Books.Any(b => b.title.Trim().ToUpper() == book.title.Trim().ToUpper());
@@ -137,8 +170,10 @@ namespace ViLib
         }
 
         /// <summary>
-        /// Deletes a book identified by title from the booklist
+        /// Deletes a book by title
         /// </summary>
+        /// <param name="title">Title of book to delete</param>
+        /// <returns>True if book was found and deleted, false otherwise</returns>
         public bool DeleteBook(string title)
         {
             var book = _library.Books.FirstOrDefault(b => b.title == title);
@@ -152,24 +187,29 @@ namespace ViLib
         }
 
         /// <summary>
-        /// Checks whether a book identified by title exists
+        /// Checks if a book exists by title
         /// </summary>
+        /// <param name="title">Title to check</param>
+        /// <returns>True if book exists, false otherwise</returns>
         public bool BookExists(string title)
         {
             return _library.Books.Any(b => b.title == title);
         }
 
         /// <summary>
-        /// Returns a Book object whose title is the string title
+        /// Searches for a book by title
         /// </summary>
+        /// <param name="title">Title to search for</param>
+        /// <returns>Book object if found, null otherwise</returns>
         public Book SearchBook(string title)
         {
             return _library.Books.FirstOrDefault(b => b.title == title);
         }
 
         /// <summary>
-        /// Returns a string with all the titles of books concatenated
+        /// Lists all books with their availability status
         /// </summary>
+        /// <returns>Formatted string of all books</returns>
         public string ListAllBooks()
         {
             if (_library.Books.Count == 0)
@@ -179,7 +219,6 @@ namespace ViLib
 
             foreach (var book in _library.Books)
             {
-                // Include availability status in the output
                 string availability = book.IsAvailable ? "(Available)" : "(Borrowed)";
                 sb.AppendLine($"{book.title} {availability}");
             }
@@ -188,105 +227,121 @@ namespace ViLib
         }
 
         /// <summary>
-        /// Get a list of all books (cloned)
+        /// Gets all books in the library
         /// </summary>
         /// <returns>List of all books</returns>
         public List<Book> GetAllBooks()
         {
-            // Return a new list containing all books from the library
             return new List<Book>(_library.Books);
         }
 
         /// <summary>
-        /// Saves the data only if the book list was modified
+        /// Saves all modified data to files
         /// </summary>
-        /// <returns>Returns true if the new data was saved</returns>
+        /// <returns>True if any data was saved, false otherwise</returns>
         public bool SaveData()
         {
             bool saved = false;
 
+            // Save books if modified
             if (_bookFileWasModified)
             {
-                // Delete the file if it exists
                 if (File.Exists(_BookFileName))
                 {
                     File.Delete(_BookFileName);
                 }
 
-                // Create a new file and write the book data
-                var sw = new StreamWriter(_BookFileName);
-                foreach (var book in _library.Books)
+                using (var sw = new StreamWriter(_BookFileName))
                 {
-                    sw.WriteLine($"{book.title}\t{book.author}\t{book.publisher}");
+                    foreach (var book in _library.Books)
+                    {
+                        sw.WriteLine($"{book.title}\t{book.author}\t{book.publisher}");
+                    }
                 }
-                sw.Close();
                 saved = true;
             }
 
+            // Save clients if modified
             if (_clientFileWasModified)
             {
-                var sw = new StreamWriter(_ClientFileName);
-                foreach (var client in _library.Clients)
+                using (var sw = new StreamWriter(_ClientFileName))
                 {
-                    sw.WriteLine($"{client.familyName}\t{client.firstName}\t{client.CNP}\t{client.address}");
+                    foreach (var client in _library.Clients)
+                    {
+                        sw.WriteLine($"{client.familyName}\t{client.firstName}\t{client.CNP}\t{client.address}");
+                    }
                 }
-                sw.Close();
                 saved = true;
             }
 
+            // Save borrow history if modified
             if (_borrowHistoryFileWasModified)
             {
-                var sw = new StreamWriter(_BorrowHistoryFileName);
-                foreach (var record in _library.AllBorrowRecords)
+                using (var sw = new StreamWriter(_BorrowHistoryFileName))
                 {
-                    sw.WriteLine($"{record.Id}\t{record.Book.title}\t{record.Client.CNP}\t" +
-                                 $"{record.BorrowDate}\t{(record.ReturnDate.HasValue ? record.ReturnDate.ToString() : "")}");
+                    foreach (var record in _library.AllBorrowRecords)
+                    {
+                        sw.WriteLine($"{record.Id}\t{record.Book.title}\t{record.Client.CNP}\t" +
+                                     $"{record.BorrowDate}\t{(record.ReturnDate.HasValue ? record.ReturnDate.ToString() : "")}");
+                    }
                 }
-                sw.Close();
                 saved = true;
             }
 
             return saved;
         }
 
+        /// <summary>
+        /// Parses a client record from a file line
+        /// </summary>
         private static Client ParseClientLine(string line)
         {
             string[] toks = line.Split('\t');
             return new Client(toks[0], toks[1], toks[2], toks[3]);
         }
+
+        /// <summary>
+        /// Parses a book record from a file line
+        /// </summary>
         private static Book ParseBookLine(string line)
         {
             string[] toks = line.Split('\t');
             return new Book(toks[0], toks[1], toks[2]);
         }
+
+        /// <summary>
+        /// Parses a borrow record from a file line
+        /// </summary>
         private BorrowRecord ParseBorrowRecordLine(string line, List<Book> books, List<Client> clients)
         {
             string[] toks = line.Split('\t');
 
-            // Find the actual Book and Client objects from the library
             var book = books.FirstOrDefault(b => b.title == toks[1]);
             var client = clients.FirstOrDefault(c => c.CNP == toks[2]);
 
-            // Handle case where book or client might not be found
             if (book == null || client == null)
             {
-                // You might want to log this or handle it differently
                 return null;
             }
 
             return new BorrowRecord
             {
                 Id = int.Parse(toks[0]),
-                Book = book,  // Assign the Book object
-                Client = client,  // Assign the Client object
+                Book = book,
+                Client = client,
                 BorrowDate = DateTime.Parse(toks[3]),
                 ReturnDate = string.IsNullOrEmpty(toks[4]) ? null : (DateTime?)DateTime.Parse(toks[4])
             };
         }
+
+        /// <summary>
+        /// Adds a client to the library
+        /// </summary>
         public bool AddClient(Client client)
         {
             bool overwrite = false;
 
+            // Remove existing client with same CNP if exists
             for (int i = 0; i < _library.Clients.Count; i++)
             {
                 if (_library.Clients[i].CNP == client.CNP)
@@ -296,11 +351,14 @@ namespace ViLib
                 }
             }
 
-            // adugarea cartii
             _library.Clients.Add(client);
             _clientFileWasModified = true;
             return !overwrite;
         }
+
+        /// <summary>
+        /// Checks if client data file exists
+        /// </summary>
         public bool ClientDataExists()
         {
             if (!File.Exists(_ClientFileName))
@@ -308,9 +366,12 @@ namespace ViLib
                 _clientFileWasModified = true;
                 return false;
             }
-            else
-                return true;
+            return true;
         }
+
+        /// <summary>
+        /// Deletes a client by CNP
+        /// </summary>
         public bool DeleteClient(string cnp)
         {
             for (int i = 0; i < _library.Clients.Count; i++)
@@ -322,44 +383,44 @@ namespace ViLib
                     return true;
                 }
             }
-
             return false;
         }
+
+        /// <summary>
+        /// Checks if a client exists by CNP
+        /// </summary>
         public bool ClientExists(string cnp)
         {
-            for (int i = 0; i < _library.Books.Count; i++)
-            {
-                if (_library.Clients[i].CNP == cnp)
-                    return true;
-            }
-
-            return false;
+            return _library.Clients.Any(c => c.CNP == cnp);
         }
+
+        /// <summary>
+        /// Lists all clients
+        /// </summary>
         public string ListAllClients()
         {
             if (_library.Clients.Count == 0)
                 return string.Empty;
 
             var sb = new StringBuilder();
-
             foreach (var client in _library.Clients)
             {
                 sb.AppendLine($"{client.firstName} {client.familyName}");
             }
-
             return sb.ToString();
         }
+
+        /// <summary>
+        /// Searches for a client by CNP
+        /// </summary>
         public Client SearchClient(string cnp)
         {
-            // cauta un client dupa cnp si returneaza obiectul corespunzator
-            for (int i = 0; i < _library.Clients.Count; i++)
-            {
-                if (_library.Clients[i].CNP == cnp)
-                    return _library.Clients[i];
-            }
-
-            return null;
+            return _library.Clients.FirstOrDefault(c => c.CNP == cnp);
         }
+
+        /// <summary>
+        /// Processes a book borrowing operation
+        /// </summary>
         public bool BorrowBook(string bookTitle, string clientCNP)
         {
             var book = _library.Books.FirstOrDefault(b => b.title == bookTitle);
@@ -379,6 +440,10 @@ namespace ViLib
                 return false;
             }
         }
+
+        /// <summary>
+        /// Processes a book return operation
+        /// </summary>
         public bool ReturnBook(string bookTitle)
         {
             var book = _library.Books.FirstOrDefault(b => b.title == bookTitle);
@@ -399,13 +464,15 @@ namespace ViLib
                 return false;
             }
         }
+
+        /// <summary>
+        /// Gets borrow history with optional filters
+        /// </summary>
         public List<BorrowRecord> GetBorrowHistory(string bookTitle = null, string clientCNP = null)
         {
-            // If both filters are null, return all records
             if (string.IsNullOrEmpty(bookTitle) && string.IsNullOrEmpty(clientCNP))
                 return _library.AllBorrowRecords.ToList();
 
-            // Filter by book title if specified
             if (!string.IsNullOrEmpty(bookTitle))
             {
                 return _library.AllBorrowRecords
@@ -413,7 +480,6 @@ namespace ViLib
                     .ToList();
             }
 
-            // Filter by client CNP if specified
             if (!string.IsNullOrEmpty(clientCNP))
             {
                 return _library.AllBorrowRecords
@@ -423,21 +489,30 @@ namespace ViLib
 
             return new List<BorrowRecord>();
         }
+
+        /// <summary>
+        /// Gets all active borrows
+        /// </summary>
         public List<BorrowRecord> GetActiveBorrows()
         {
             return _library.GetActiveBorrows();
         }
 
+        /// <summary>
+        /// Gets all available books
+        /// </summary>
         public List<Book> GetAvailableBooks()
         {
             return _library.GetAvailableBooks();
         }
 
+        /// <summary>
+        /// Gets all books borrowed by a specific client
+        /// </summary>
         public List<Book> GetBorrowedBooksByClient(string clientCNP)
         {
             var client = _library.Clients.FirstOrDefault(c => c.CNP == clientCNP);
             return client?.BorrowedBooks ?? new List<Book>();
         }
-
     }
 }

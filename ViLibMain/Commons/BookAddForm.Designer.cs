@@ -84,6 +84,7 @@
             this.AuthorTextBox.Name = "AuthorTextBox";
             this.AuthorTextBox.Size = new System.Drawing.Size(247, 20);
             this.AuthorTextBox.TabIndex = 1;
+            this.AuthorTextBox.TextChanged += new System.EventHandler(this.AuthorTextBox_TextChanged);
             // 
             // buttonAdd
             // 
