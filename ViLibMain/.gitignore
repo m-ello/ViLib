@@ -1,10 +1,1 @@
 .vs/
-
-# Ignore build output
-bin/
-obj/
-
-# Ignore help files if generated
-*.user
-*.suo
-*.vsidx
