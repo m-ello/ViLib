@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -245,6 +246,20 @@ namespace View
                     var updatedBook = bookEditForm.UpdatedBook;
                     _presenter.EditBook(selectedBook.title, updatedBook);
                 }
+            }
+        }
+
+        private void help_Click(object sender, EventArgs e)
+        {
+            string helpFilePath = System.IO.Path.Combine(Application.StartupPath, "help.chm");
+
+            if (File.Exists(helpFilePath))
+            {
+                Help.ShowHelp(this, helpFilePath);
+            }
+            else
+            {
+                MessageBox.Show("Nu se poate deschide fisierul help!");
             }
         }
     }
