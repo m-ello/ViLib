@@ -180,7 +180,7 @@
             this.OptionsTabControl.SelectedIndex = 0;
             this.OptionsTabControl.Size = new System.Drawing.Size(491, 395);
             this.OptionsTabControl.TabIndex = 5;
-            this.OptionsTabControl.Click += new System.EventHandler(this.help_Click);
+            this.OptionsTabControl.SelectedIndexChanged += new System.EventHandler(this.Open_HelpFile);
             // 
             // helpButton
             // 

@@ -154,6 +154,9 @@ namespace View
         /// </summary>
         private void detailsBookButton_Click(object sender, EventArgs e)
         {
+            // Open help topic for details of a book
+            OpenHelpTopic("Detalii_Carte.htm");
+
             // Validate selection
             if (bookListBox.SelectedIndex == -1)
             {
@@ -174,11 +177,15 @@ namespace View
         /// </summary>
         private void deleteBookButton_Click(object sender, EventArgs e)
         {
+            // Open help topic for deleting books
+            OpenHelpTopic("Stergere_Carte.htm");
+
             // Validate selection
             if (bookListBox.SelectedIndex == -1)
             {
                 MessageBox.Show("Selecteaza o carte, te rog.", "Nicio selectie",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                 return;
             }
 
@@ -208,6 +215,9 @@ namespace View
         {
             using (var bookAddForm = new BookAddForm())
             {
+                // Open help topic for adding books
+                OpenHelpTopic("Adaugare_Carte.htm");
+
                 // Show the add form and process if user accepted
                 if (bookAddForm.ShowDialog() == DialogResult.OK)
                 {
@@ -223,6 +233,9 @@ namespace View
         /// </summary>
         private void editBookButton_Click(object sender, EventArgs e)
         {
+            // Open help topic for editing books
+            OpenHelpTopic("Editare_Carte.htm");
+
             // Validate selection
             if (bookListBox.SelectedIndex == -1)
             {
@@ -262,5 +275,30 @@ namespace View
                 MessageBox.Show("Nu se poate deschide fisierul help!");
             }
         }
+
+        private void Open_HelpFile(object sender, EventArgs e)
+        {
+            if (OptionsTabControl.SelectedTab == helpButton)
+            {
+                help_Click(sender, e);
+            }
+        }
+
+        private void OpenHelpTopic(string topic)
+        {
+            string helpFilePath = System.IO.Path.Combine(Application.StartupPath, "help.chm");
+
+            if (File.Exists(helpFilePath))
+            {
+                Help.ShowHelp(this, helpFilePath, topic);
+
+            }
+            else
+            {
+                MessageBox.Show("Nu se poate deschide fișierul help!");
+            }
+        }
+
+
     }
 }
