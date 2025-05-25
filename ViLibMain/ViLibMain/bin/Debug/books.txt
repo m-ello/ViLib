@@ -1,5 +1,15 @@
-Book_K36WQ	Author_d42z45kR	Publisher_JygEWb
-Book_5LtU3	Author_pjEyXspJ	Publisher_amAx7D
-Book_MbfuN	Author_JQcNgzBW	Publisher_Cfd5ai
-Book_CrrZG	Author_fGPwJpIB	Publisher_iBK9aa
-Book_gKnMW	Author_h8WWmn7r	Publisher_jP4WeBr
+To Kill a Mockingbird	Harper Lee	J. B. Lippincott & Co.  
+1984	George Orwell	Secker & Warburg  
+The Great Gatsby	F. Scott Fitzgerald	Charles Scribner’s Sons  
+Pride and Prejudice	Jane Austen	T. Egerton, Whitehall  
+The Catcher in the Rye	J.D. Salinger	Little, Brown and Company  
+Harry Potter and the Philosopher’s Stone	J.K. Rowling	Bloomsbury  
+The Hobbit	J.R.R. Tolkien	George Allen & Unwin  
+Brave New World	Aldous Huxley	Chatto & Windus  
+The Lord of the Rings	J.R.R. Tolkien	George Allen & Unwin  
+The Alchemist	Paulo Coelho	HarperTorch  
+The Da Vinci Code	Dan Brown	Doubleday  
+The Hunger Games	Suzanne Collins	Scholastic  
+The Road	Cormac McCarthy	Alfred A. Knopf  
+Gone Girl	Gillian Flynn	Crown Publishing Group  
+The Silent Patient	Alex Michaelides	Celadon Books  

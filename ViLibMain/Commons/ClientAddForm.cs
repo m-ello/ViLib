@@ -66,6 +66,11 @@ namespace Commons
             this.Close(); // Close the form
         }
 
+        private void ClientAddForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
         /// <summary>
         /// Handles the TextChanged event of the AuthorTextBox.
         /// Currently contains no implementation but provides a hook for future validation logic.

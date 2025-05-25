@@ -1,2 +1,2 @@
-Sarateanu	Alexandru	2003500123456	Balti_Oras_de_Loh
-rgwrgw	gwgwg	ewgwe	gwgw
+Ploiescu	Andrei	2003500123456	Moscova
+Dracescu	Gheorghe	2003500123457	Paris

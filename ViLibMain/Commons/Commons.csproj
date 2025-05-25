@@ -62,6 +62,12 @@
     <Compile Include="BookEditForm.Designer.cs">
       <DependentUpon>BookEditForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BorrowAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BorrowAddForm.Designer.cs">
+      <DependentUpon>BorrowAddForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BorrowRecord.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="ClientAddForm.cs">
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BookEditForm.resx">
       <DependentUpon>BookEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BorrowAddForm.resx">
+      <DependentUpon>BorrowAddForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClientAddForm.resx">
       <DependentUpon>ClientAddForm.cs</DependentUpon>

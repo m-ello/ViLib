@@ -30,8 +30,15 @@
         {
             this.StatusBox = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.helpButton = new System.Windows.Forms.TabPage();
+            this.HelpButton = new System.Windows.Forms.Button();
             this.borrowTab = new System.Windows.Forms.TabPage();
+            this.ClientsPage = new System.Windows.Forms.TabPage();
+            this.deleteClientButton = new System.Windows.Forms.Button();
+            this.detailsClientButton = new System.Windows.Forms.Button();
+            this.editClientButton = new System.Windows.Forms.Button();
+            this.addClientButton = new System.Windows.Forms.Button();
+            this.clientListBox = new System.Windows.Forms.ListBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.booksTab = new System.Windows.Forms.TabPage();
             this.bookListBox = new System.Windows.Forms.ListBox();
             this.deleteBookButton = new System.Windows.Forms.Button();
@@ -40,153 +47,62 @@
             this.addBookButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.OptionsTabControl = new System.Windows.Forms.TabControl();
-            this.ClientsPage = new System.Windows.Forms.TabPage();
-            this.deleteClientButton = new System.Windows.Forms.Button();
-            this.detailsClientButton = new System.Windows.Forms.Button();
-            this.editClientButton = new System.Windows.Forms.Button();
-            this.addClientButton = new System.Windows.Forms.Button();
-            this.clientListBox = new System.Windows.Forms.ListBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.borrowHistoryBox = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.borrowTab.SuspendLayout();
+            this.ClientsPage.SuspendLayout();
             this.booksTab.SuspendLayout();
             this.OptionsTabControl.SuspendLayout();
-            this.ClientsPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // StatusBox
             // 
-            this.StatusBox.Location = new System.Drawing.Point(16, 434);
-            this.StatusBox.Margin = new System.Windows.Forms.Padding(4);
+            this.StatusBox.Location = new System.Drawing.Point(12, 353);
             this.StatusBox.Name = "StatusBox";
             this.StatusBox.ReadOnly = true;
-            this.StatusBox.Size = new System.Drawing.Size(491, 85);
+            this.StatusBox.Size = new System.Drawing.Size(369, 70);
             this.StatusBox.TabIndex = 1;
             this.StatusBox.Text = "";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 415);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(12, 337);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
+            this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Status";
             // 
-            // helpButton
+            // HelpButton
             // 
-            this.helpButton.Location = new System.Drawing.Point(4, 25);
-            this.helpButton.Name = "helpButton";
-            this.helpButton.Padding = new System.Windows.Forms.Padding(3);
-            this.helpButton.Size = new System.Drawing.Size(483, 366);
-            this.helpButton.TabIndex = 4;
-            this.helpButton.Text = "Help";
-            this.helpButton.UseVisualStyleBackColor = true;
+            this.HelpButton.Location = new System.Drawing.Point(302, 4);
+            this.HelpButton.Name = "HelpButton";
+            this.HelpButton.Size = new System.Drawing.Size(76, 25);
+            this.HelpButton.TabIndex = 6;
+            this.HelpButton.Text = "Help";
+            this.HelpButton.UseVisualStyleBackColor = true;
+            this.HelpButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // borrowTab
             // 
-            this.borrowTab.Location = new System.Drawing.Point(4, 25);
-            this.borrowTab.Margin = new System.Windows.Forms.Padding(4);
+            this.borrowTab.Controls.Add(this.button3);
+            this.borrowTab.Controls.Add(this.button4);
+            this.borrowTab.Controls.Add(this.button1);
+            this.borrowTab.Controls.Add(this.button2);
+            this.borrowTab.Controls.Add(this.borrowHistoryBox);
+            this.borrowTab.Controls.Add(this.label4);
+            this.borrowTab.Location = new System.Drawing.Point(4, 22);
             this.borrowTab.Name = "borrowTab";
-            this.borrowTab.Padding = new System.Windows.Forms.Padding(4);
-            this.borrowTab.Size = new System.Drawing.Size(483, 366);
+            this.borrowTab.Padding = new System.Windows.Forms.Padding(3);
+            this.borrowTab.Size = new System.Drawing.Size(360, 295);
             this.borrowTab.TabIndex = 3;
             this.borrowTab.Text = "Împrumuturi";
             this.borrowTab.UseVisualStyleBackColor = true;
-            // 
-            // booksTab
-            // 
-            this.booksTab.Controls.Add(this.bookListBox);
-            this.booksTab.Controls.Add(this.deleteBookButton);
-            this.booksTab.Controls.Add(this.detailsBookButton);
-            this.booksTab.Controls.Add(this.editBookButton);
-            this.booksTab.Controls.Add(this.addBookButton);
-            this.booksTab.Controls.Add(this.label1);
-            this.booksTab.Location = new System.Drawing.Point(4, 25);
-            this.booksTab.Margin = new System.Windows.Forms.Padding(4);
-            this.booksTab.Name = "booksTab";
-            this.booksTab.Padding = new System.Windows.Forms.Padding(4);
-            this.booksTab.Size = new System.Drawing.Size(483, 366);
-            this.booksTab.TabIndex = 1;
-            this.booksTab.Text = "Cărți";
-            this.booksTab.UseVisualStyleBackColor = true;
-            // 
-            // bookListBox
-            // 
-            this.bookListBox.FormattingEnabled = true;
-            this.bookListBox.ItemHeight = 16;
-            this.bookListBox.Location = new System.Drawing.Point(2, 37);
-            this.bookListBox.Margin = new System.Windows.Forms.Padding(4);
-            this.bookListBox.Name = "bookListBox";
-            this.bookListBox.Size = new System.Drawing.Size(479, 292);
-            this.bookListBox.TabIndex = 6;
-            // 
-            // deleteBookButton
-            // 
-            this.deleteBookButton.Location = new System.Drawing.Point(376, 330);
-            this.deleteBookButton.Margin = new System.Windows.Forms.Padding(4);
-            this.deleteBookButton.Name = "deleteBookButton";
-            this.deleteBookButton.Size = new System.Drawing.Size(100, 30);
-            this.deleteBookButton.TabIndex = 5;
-            this.deleteBookButton.Text = "Șterge";
-            this.deleteBookButton.UseVisualStyleBackColor = true;
-            this.deleteBookButton.Click += new System.EventHandler(this.deleteBookButton_Click);
-            // 
-            // detailsBookButton
-            // 
-            this.detailsBookButton.Location = new System.Drawing.Point(268, 330);
-            this.detailsBookButton.Margin = new System.Windows.Forms.Padding(4);
-            this.detailsBookButton.Name = "detailsBookButton";
-            this.detailsBookButton.Size = new System.Drawing.Size(100, 30);
-            this.detailsBookButton.TabIndex = 4;
-            this.detailsBookButton.Text = "Detalii";
-            this.detailsBookButton.UseVisualStyleBackColor = true;
-            this.detailsBookButton.Click += new System.EventHandler(this.detailsBookButton_Click);
-            // 
-            // editBookButton
-            // 
-            this.editBookButton.Location = new System.Drawing.Point(108, 330);
-            this.editBookButton.Margin = new System.Windows.Forms.Padding(4);
-            this.editBookButton.Name = "editBookButton";
-            this.editBookButton.Size = new System.Drawing.Size(100, 30);
-            this.editBookButton.TabIndex = 3;
-            this.editBookButton.Text = "Editează";
-            this.editBookButton.UseVisualStyleBackColor = true;
-            this.editBookButton.Click += new System.EventHandler(this.editBookButton_Click);
-            // 
-            // addBookButton
-            // 
-            this.addBookButton.Location = new System.Drawing.Point(0, 330);
-            this.addBookButton.Margin = new System.Windows.Forms.Padding(4);
-            this.addBookButton.Name = "addBookButton";
-            this.addBookButton.Size = new System.Drawing.Size(100, 30);
-            this.addBookButton.TabIndex = 2;
-            this.addBookButton.Text = "Adaugă";
-            this.addBookButton.UseVisualStyleBackColor = true;
-            this.addBookButton.Click += new System.EventHandler(this.addBookButton_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 12);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Cărțile curente";
-            // 
-            // OptionsTabControl
-            // 
-            this.OptionsTabControl.Controls.Add(this.booksTab);
-            this.OptionsTabControl.Controls.Add(this.ClientsPage);
-            this.OptionsTabControl.Controls.Add(this.borrowTab);
-            this.OptionsTabControl.Controls.Add(this.helpButton);
-            this.OptionsTabControl.Location = new System.Drawing.Point(19, 16);
-            this.OptionsTabControl.Margin = new System.Windows.Forms.Padding(4);
-            this.OptionsTabControl.Name = "OptionsTabControl";
-            this.OptionsTabControl.SelectedIndex = 0;
-            this.OptionsTabControl.Size = new System.Drawing.Size(491, 395);
-            this.OptionsTabControl.TabIndex = 5;
-            this.OptionsTabControl.SelectedIndexChanged += new System.EventHandler(this.Open_HelpFile);
+            this.borrowTab.Click += new System.EventHandler(this.borrowTab_Click);
             // 
             // ClientsPage
             // 
@@ -196,21 +112,20 @@
             this.ClientsPage.Controls.Add(this.addClientButton);
             this.ClientsPage.Controls.Add(this.clientListBox);
             this.ClientsPage.Controls.Add(this.label3);
-            this.ClientsPage.Location = new System.Drawing.Point(4, 25);
-            this.ClientsPage.Margin = new System.Windows.Forms.Padding(4);
+            this.ClientsPage.Location = new System.Drawing.Point(4, 22);
             this.ClientsPage.Name = "ClientsPage";
-            this.ClientsPage.Padding = new System.Windows.Forms.Padding(4);
-            this.ClientsPage.Size = new System.Drawing.Size(483, 366);
+            this.ClientsPage.Padding = new System.Windows.Forms.Padding(3);
+            this.ClientsPage.Size = new System.Drawing.Size(360, 295);
             this.ClientsPage.TabIndex = 2;
             this.ClientsPage.Text = "Clienți";
             this.ClientsPage.UseVisualStyleBackColor = true;
+            this.ClientsPage.Click += new System.EventHandler(this.ClientsPage_Click);
             // 
             // deleteClientButton
             // 
-            this.deleteClientButton.Location = new System.Drawing.Point(376, 330);
-            this.deleteClientButton.Margin = new System.Windows.Forms.Padding(4);
+            this.deleteClientButton.Location = new System.Drawing.Point(282, 268);
             this.deleteClientButton.Name = "deleteClientButton";
-            this.deleteClientButton.Size = new System.Drawing.Size(100, 30);
+            this.deleteClientButton.Size = new System.Drawing.Size(75, 24);
             this.deleteClientButton.TabIndex = 6;
             this.deleteClientButton.Text = "Șterge";
             this.deleteClientButton.UseVisualStyleBackColor = true;
@@ -218,10 +133,9 @@
             // 
             // detailsClientButton
             // 
-            this.detailsClientButton.Location = new System.Drawing.Point(268, 330);
-            this.detailsClientButton.Margin = new System.Windows.Forms.Padding(4);
+            this.detailsClientButton.Location = new System.Drawing.Point(201, 268);
             this.detailsClientButton.Name = "detailsClientButton";
-            this.detailsClientButton.Size = new System.Drawing.Size(100, 30);
+            this.detailsClientButton.Size = new System.Drawing.Size(75, 24);
             this.detailsClientButton.TabIndex = 5;
             this.detailsClientButton.Text = "Detalii";
             this.detailsClientButton.UseVisualStyleBackColor = true;
@@ -229,9 +143,10 @@
             // 
             // editClientButton
             // 
-            this.editClientButton.Location = new System.Drawing.Point(108, 330);
+            this.editClientButton.Location = new System.Drawing.Point(81, 268);
+            this.editClientButton.Margin = new System.Windows.Forms.Padding(2);
             this.editClientButton.Name = "editClientButton";
-            this.editClientButton.Size = new System.Drawing.Size(100, 30);
+            this.editClientButton.Size = new System.Drawing.Size(75, 24);
             this.editClientButton.TabIndex = 3;
             this.editClientButton.Text = "Editează";
             this.editClientButton.UseVisualStyleBackColor = true;
@@ -239,9 +154,10 @@
             // 
             // addClientButton
             // 
-            this.addClientButton.Location = new System.Drawing.Point(0, 330);
+            this.addClientButton.Location = new System.Drawing.Point(0, 268);
+            this.addClientButton.Margin = new System.Windows.Forms.Padding(2);
             this.addClientButton.Name = "addClientButton";
-            this.addClientButton.Size = new System.Drawing.Size(100, 30);
+            this.addClientButton.Size = new System.Drawing.Size(75, 24);
             this.addClientButton.TabIndex = 2;
             this.addClientButton.Text = "Adaugă";
             this.addClientButton.UseVisualStyleBackColor = true;
@@ -250,41 +166,186 @@
             // clientListBox
             // 
             this.clientListBox.FormattingEnabled = true;
-            this.clientListBox.ItemHeight = 16;
-            this.clientListBox.Location = new System.Drawing.Point(2, 37);
+            this.clientListBox.Location = new System.Drawing.Point(0, 28);
             this.clientListBox.Name = "clientListBox";
-            this.clientListBox.Size = new System.Drawing.Size(479, 292);
+            this.clientListBox.Size = new System.Drawing.Size(360, 238);
             this.clientListBox.TabIndex = 1;
+            this.clientListBox.SelectedIndexChanged += new System.EventHandler(this.clientListBox_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 12);
+            this.label3.Location = new System.Drawing.Point(3, 10);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 16);
+            this.label3.Size = new System.Drawing.Size(72, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Clienții curenți";
             // 
+            // booksTab
+            // 
+            this.booksTab.Controls.Add(this.bookListBox);
+            this.booksTab.Controls.Add(this.deleteBookButton);
+            this.booksTab.Controls.Add(this.detailsBookButton);
+            this.booksTab.Controls.Add(this.editBookButton);
+            this.booksTab.Controls.Add(this.addBookButton);
+            this.booksTab.Controls.Add(this.label1);
+            this.booksTab.Location = new System.Drawing.Point(4, 22);
+            this.booksTab.Name = "booksTab";
+            this.booksTab.Padding = new System.Windows.Forms.Padding(3);
+            this.booksTab.Size = new System.Drawing.Size(360, 295);
+            this.booksTab.TabIndex = 1;
+            this.booksTab.Text = "Cărți";
+            this.booksTab.UseVisualStyleBackColor = true;
+            // 
+            // bookListBox
+            // 
+            this.bookListBox.FormattingEnabled = true;
+            this.bookListBox.Location = new System.Drawing.Point(0, 28);
+            this.bookListBox.Name = "bookListBox";
+            this.bookListBox.Size = new System.Drawing.Size(360, 238);
+            this.bookListBox.TabIndex = 6;
+            // 
+            // deleteBookButton
+            // 
+            this.deleteBookButton.Location = new System.Drawing.Point(282, 268);
+            this.deleteBookButton.Name = "deleteBookButton";
+            this.deleteBookButton.Size = new System.Drawing.Size(75, 24);
+            this.deleteBookButton.TabIndex = 5;
+            this.deleteBookButton.Text = "Șterge";
+            this.deleteBookButton.UseVisualStyleBackColor = true;
+            this.deleteBookButton.Click += new System.EventHandler(this.deleteBookButton_Click);
+            // 
+            // detailsBookButton
+            // 
+            this.detailsBookButton.Location = new System.Drawing.Point(201, 268);
+            this.detailsBookButton.Name = "detailsBookButton";
+            this.detailsBookButton.Size = new System.Drawing.Size(75, 24);
+            this.detailsBookButton.TabIndex = 4;
+            this.detailsBookButton.Text = "Detalii";
+            this.detailsBookButton.UseVisualStyleBackColor = true;
+            this.detailsBookButton.Click += new System.EventHandler(this.detailsBookButton_Click);
+            // 
+            // editBookButton
+            // 
+            this.editBookButton.Location = new System.Drawing.Point(81, 268);
+            this.editBookButton.Name = "editBookButton";
+            this.editBookButton.Size = new System.Drawing.Size(75, 24);
+            this.editBookButton.TabIndex = 3;
+            this.editBookButton.Text = "Editează";
+            this.editBookButton.UseVisualStyleBackColor = true;
+            this.editBookButton.Click += new System.EventHandler(this.editBookButton_Click);
+            // 
+            // addBookButton
+            // 
+            this.addBookButton.Location = new System.Drawing.Point(0, 268);
+            this.addBookButton.Name = "addBookButton";
+            this.addBookButton.Size = new System.Drawing.Size(75, 24);
+            this.addBookButton.TabIndex = 2;
+            this.addBookButton.Text = "Adaugă";
+            this.addBookButton.UseVisualStyleBackColor = true;
+            this.addBookButton.Click += new System.EventHandler(this.addBookButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Cărțile curente";
+            // 
+            // OptionsTabControl
+            // 
+            this.OptionsTabControl.Controls.Add(this.booksTab);
+            this.OptionsTabControl.Controls.Add(this.ClientsPage);
+            this.OptionsTabControl.Controls.Add(this.borrowTab);
+            this.OptionsTabControl.Location = new System.Drawing.Point(14, 13);
+            this.OptionsTabControl.Name = "OptionsTabControl";
+            this.OptionsTabControl.SelectedIndex = 0;
+            this.OptionsTabControl.Size = new System.Drawing.Size(368, 321);
+            this.OptionsTabControl.TabIndex = 5;
+            this.OptionsTabControl.SelectedIndexChanged += new System.EventHandler(this.Open_HelpFile);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Istoric ";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // borrowHistoryBox
+            // 
+            this.borrowHistoryBox.FormattingEnabled = true;
+            this.borrowHistoryBox.Location = new System.Drawing.Point(0, 28);
+            this.borrowHistoryBox.Name = "borrowHistoryBox";
+            this.borrowHistoryBox.Size = new System.Drawing.Size(360, 238);
+            this.borrowHistoryBox.TabIndex = 7;
+            this.borrowHistoryBox.SelectedIndexChanged += new System.EventHandler(this.borrowHistoryBox_SelectedIndexChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(201, 268);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 24);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Detalii";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(0, 268);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 24);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Adaugă";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(282, 268);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 24);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "Șterge";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(81, 268);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 24);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "Editează";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // FormView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 526);
+            this.ClientSize = new System.Drawing.Size(392, 434);
+            this.Controls.Add(this.HelpButton);
             this.Controls.Add(this.OptionsTabControl);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.StatusBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(539, 573);
-            this.MinimumSize = new System.Drawing.Size(539, 573);
+            this.MaximumSize = new System.Drawing.Size(408, 473);
+            this.MinimumSize = new System.Drawing.Size(408, 473);
             this.Name = "FormView";
             this.Text = "Gestionare Librărie";
+            this.borrowTab.ResumeLayout(false);
+            this.borrowTab.PerformLayout();
+            this.ClientsPage.ResumeLayout(false);
+            this.ClientsPage.PerformLayout();
             this.booksTab.ResumeLayout(false);
             this.booksTab.PerformLayout();
             this.OptionsTabControl.ResumeLayout(false);
-            this.ClientsPage.ResumeLayout(false);
-            this.ClientsPage.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,8 +355,15 @@
 
         private System.Windows.Forms.RichTextBox StatusBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TabPage helpButton;
+        private System.Windows.Forms.Button HelpButton;
         private System.Windows.Forms.TabPage borrowTab;
+        private System.Windows.Forms.TabPage ClientsPage;
+        private System.Windows.Forms.Button deleteClientButton;
+        private System.Windows.Forms.Button detailsClientButton;
+        private System.Windows.Forms.Button editClientButton;
+        private System.Windows.Forms.Button addClientButton;
+        private System.Windows.Forms.ListBox clientListBox;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabPage booksTab;
         private System.Windows.Forms.ListBox bookListBox;
         private System.Windows.Forms.Button deleteBookButton;
@@ -304,12 +372,11 @@
         private System.Windows.Forms.Button addBookButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl OptionsTabControl;
-        private System.Windows.Forms.TabPage ClientsPage;
-        private System.Windows.Forms.Button editClientButton;
-        private System.Windows.Forms.Button addClientButton;
-        private System.Windows.Forms.ListBox clientListBox;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button deleteClientButton;
-        private System.Windows.Forms.Button detailsClientButton;
+        private System.Windows.Forms.ListBox borrowHistoryBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

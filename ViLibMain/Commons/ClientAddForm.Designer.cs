@@ -42,72 +42,81 @@
             // nume
             // 
             this.nume.AutoSize = true;
-            this.nume.Location = new System.Drawing.Point(39, 13);
+            this.nume.Location = new System.Drawing.Point(29, 11);
+            this.nume.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nume.Name = "nume";
-            this.nume.Size = new System.Drawing.Size(43, 16);
+            this.nume.Size = new System.Drawing.Size(35, 13);
             this.nume.TabIndex = 0;
             this.nume.Text = "Nume";
             // 
             // prenume
             // 
             this.prenume.AutoSize = true;
-            this.prenume.Location = new System.Drawing.Point(21, 44);
+            this.prenume.Location = new System.Drawing.Point(16, 36);
+            this.prenume.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.prenume.Name = "prenume";
-            this.prenume.Size = new System.Drawing.Size(61, 16);
+            this.prenume.Size = new System.Drawing.Size(49, 13);
             this.prenume.TabIndex = 1;
             this.prenume.Text = "Prenume";
             // 
             // CNP
             // 
             this.CNP.AutoSize = true;
-            this.CNP.Location = new System.Drawing.Point(47, 74);
+            this.CNP.Location = new System.Drawing.Point(35, 60);
+            this.CNP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CNP.Name = "CNP";
-            this.CNP.Size = new System.Drawing.Size(35, 16);
+            this.CNP.Size = new System.Drawing.Size(29, 13);
             this.CNP.TabIndex = 2;
             this.CNP.Text = "CNP";
             // 
             // FamilyNameTextBox
             // 
-            this.FamilyNameTextBox.Location = new System.Drawing.Point(92, 13);
+            this.FamilyNameTextBox.Location = new System.Drawing.Point(69, 11);
+            this.FamilyNameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.FamilyNameTextBox.Name = "FamilyNameTextBox";
-            this.FamilyNameTextBox.Size = new System.Drawing.Size(310, 22);
+            this.FamilyNameTextBox.Size = new System.Drawing.Size(234, 20);
             this.FamilyNameTextBox.TabIndex = 3;
             // 
             // FirstNameTextBox
             // 
-            this.FirstNameTextBox.Location = new System.Drawing.Point(92, 44);
+            this.FirstNameTextBox.Location = new System.Drawing.Point(69, 36);
+            this.FirstNameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.FirstNameTextBox.Name = "FirstNameTextBox";
-            this.FirstNameTextBox.Size = new System.Drawing.Size(310, 22);
+            this.FirstNameTextBox.Size = new System.Drawing.Size(234, 20);
             this.FirstNameTextBox.TabIndex = 4;
             // 
             // CNPTextBox
             // 
-            this.CNPTextBox.Location = new System.Drawing.Point(92, 71);
+            this.CNPTextBox.Location = new System.Drawing.Point(69, 58);
+            this.CNPTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CNPTextBox.Name = "CNPTextBox";
-            this.CNPTextBox.Size = new System.Drawing.Size(310, 22);
+            this.CNPTextBox.Size = new System.Drawing.Size(234, 20);
             this.CNPTextBox.TabIndex = 5;
             // 
             // adresa
             // 
             this.adresa.AutoSize = true;
-            this.adresa.Location = new System.Drawing.Point(31, 104);
+            this.adresa.Location = new System.Drawing.Point(23, 84);
+            this.adresa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.adresa.Name = "adresa";
-            this.adresa.Size = new System.Drawing.Size(51, 16);
+            this.adresa.Size = new System.Drawing.Size(40, 13);
             this.adresa.TabIndex = 6;
             this.adresa.Text = "Adresă";
             // 
             // AddressTextBox
             // 
-            this.AddressTextBox.Location = new System.Drawing.Point(92, 101);
+            this.AddressTextBox.Location = new System.Drawing.Point(69, 82);
+            this.AddressTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AddressTextBox.Name = "AddressTextBox";
-            this.AddressTextBox.Size = new System.Drawing.Size(310, 22);
+            this.AddressTextBox.Size = new System.Drawing.Size(234, 20);
             this.AddressTextBox.TabIndex = 7;
             // 
             // addClientButton
             // 
-            this.addClientButton.Location = new System.Drawing.Point(92, 140);
+            this.addClientButton.Location = new System.Drawing.Point(69, 114);
+            this.addClientButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addClientButton.Name = "addClientButton";
-            this.addClientButton.Size = new System.Drawing.Size(100, 28);
+            this.addClientButton.Size = new System.Drawing.Size(75, 23);
             this.addClientButton.TabIndex = 8;
             this.addClientButton.Text = "Adaugă";
             this.addClientButton.UseVisualStyleBackColor = true;
@@ -115,9 +124,9 @@
             // 
             // ClientAddForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 180);
+            this.ClientSize = new System.Drawing.Size(315, 146);
             this.Controls.Add(this.addClientButton);
             this.Controls.Add(this.AddressTextBox);
             this.Controls.Add(this.adresa);
@@ -127,8 +136,10 @@
             this.Controls.Add(this.CNP);
             this.Controls.Add(this.prenume);
             this.Controls.Add(this.nume);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ClientAddForm";
             this.Text = "ClientAddForm";
+            this.Load += new System.EventHandler(this.ClientAddForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

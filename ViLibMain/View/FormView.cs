@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Commons;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace View
 {
@@ -143,14 +144,13 @@ namespace View
             // Add formatted book details for each book
             foreach (var client in clients)
             {
-                string clientDetails = $"\"{client.familyName}\" {client.firstName}, cu CNP {client.CNP}, ce traieste la {client.address}";
+                string clientDetails = $"NP: {client.familyName} {client.firstName}, CNP: {client.CNP}, Adresa: {client.address}";
                 clientListBox.Items.Add(clientDetails);
             }
         }
 
         // The following methods are not yet implemented but required by IView interface
         void IView.ShowBorrowHistory(List<BorrowRecord> borrowRecords) => throw new NotImplementedException();
-        void IView.ShowBorrowRecordDetails(BorrowRecord record) => throw new NotImplementedException();
 
         /// <summary>
         /// Shows detailed information about a specific book in a dialog
@@ -263,32 +263,6 @@ namespace View
                     var updatedBook = bookEditForm.UpdatedBook;
                     _presenter.EditBook(selectedBook.title, updatedBook);
                 }
-            }
-        }
-
-        //---------------------------------------------------------------------
-        //-------------------- Help and Options Tab Control -------------------
-        //---------------------------------------------------------------------
-
-        private void help_Click(object sender, EventArgs e)
-        {
-            string helpFilePath = System.IO.Path.Combine(Application.StartupPath, "help.chm");
-
-            if (File.Exists(helpFilePath))
-            {
-                Help.ShowHelp(this, helpFilePath);
-            }
-            else
-            {
-                MessageBox.Show("Nu se poate deschide fisierul help!");
-            }
-        }
-
-        private void Open_HelpFile(object sender, EventArgs e)
-        {
-            if (OptionsTabControl.SelectedTab == helpButton)
-            {
-                help_Click(sender, e);
             }
         }
 
@@ -408,6 +382,61 @@ namespace View
                 // Refresh the client list
                 _presenter.ShowAllClients();
             }
+        }
+        //---------------------------------------------------------------------
+        //-------------------------------- Help -------------------------------
+        //---------------------------------------------------------------------
+
+        private void Open_HelpFile(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string helpFilePath = System.IO.Path.Combine(Application.StartupPath, "help.chm");
+
+            if (File.Exists(helpFilePath))
+            {
+                Help.ShowHelp(this, helpFilePath);
+            }
+            else
+            {
+                MessageBox.Show("Nu se poate deschide fisierul help!");
+            }
+        }
+
+        private void borrowTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clientListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ClientsPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void borrowHistoryBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        void IView.ShowBorrowRecordDetails(BorrowRecord borrowRecord)
+        {
+            /*using (var borrowRecordDetailsForm = new ClientDetailsForm())
+            {
+                borrowRecordDetailsForm.SetBorrowDetails(borrowRecord);
+                borrowRecordDetailsForm.ShowDialog(); // Show as modal dialog
+            }*/
         }
     }
 }
