@@ -65,6 +65,9 @@ namespace PresenterNamespace
 
             // Display all books in the view
             ((IPresenter)this).ShowAllBooks();
+
+            // Display all clients in the view
+            ((IPresenter)this).ShowAllClients();
         }
 
         /// <summary>
@@ -137,6 +140,15 @@ namespace PresenterNamespace
         }
 
         /// <summary>
+        /// Displays detailed information about a specific book
+        /// </summary>
+        /// <param name="book">Book object to display</param>
+        void IPresenter.ShowBookDetails(Book book)
+        {
+            _view.ShowBookDetails(book);
+        }
+
+        /// <summary>
         /// Removes a book from the library
         /// </summary>
         /// <param name="name">Title of the book to remove</param>
@@ -153,6 +165,59 @@ namespace PresenterNamespace
         }
 
         /// <summary>
+        /// Adds a new book to the library
+        /// </summary>
+        /// <param name="b">Book object to add</param>
+        void IPresenter.AddBook(Book b)
+        {
+            bool success = _model.AddBook(b);
+
+            if (success)
+            {
+                _view.LogStatus($"Cartea \"{b.title}\" a fost adaugata.", "green");
+                ((IPresenter)this).ShowAllBooks();
+            }
+            else
+            {
+                _view.LogStatus($"Cartea \"{b.title}\" exista deja.", "red");
+            }
+        }
+
+        /// <summary>
+        /// Updates an existing book's information
+        /// </summary>
+        /// <param name="oldTitle">Current title of the book to update</param>
+        /// <param name="updatedBook">Updated Book object with new information</param>
+        void IPresenter.EditBook(string oldTitle, Book updatedBook)
+        {
+            // Check if the book exists
+            if (!_model.BookExists(oldTitle))
+            {
+                _view.LogStatus($"Cartea \"{oldTitle}\" nu exista.", "red");
+                return;
+            }
+
+            // Update the book in the model
+            _model.DeleteBook(oldTitle); // Remove the old book
+            bool success = _model.AddBook(updatedBook); // Add the updated book
+
+            // Notify the user of the result
+            if (success)
+            {
+                _view.LogStatus($"Cartea \"{oldTitle}\" a fost actualizata.", "green");
+                ((IPresenter)this).ShowAllBooks();
+            }
+            else
+            {
+                _view.LogStatus($"Eroare la actualizarea cartii \"{oldTitle}\".", "red");
+            }
+        }
+
+        //------------------------------------------------------------------------------
+        //--------------------------- Client Operations --------------------------------
+        //------------------------------------------------------------------------------
+
+        /// <summary>
         /// Checks if a client with the specified CNP exists
         /// </summary>
         /// <param name="CNP">Client's Personal Numeric Code</param>
@@ -160,6 +225,14 @@ namespace PresenterNamespace
         bool IPresenter.ClientExists(string CNP)
         {
             return _model.ClientExists(CNP);
+        }
+
+        /// <summary>
+        /// Displays all clients in the view
+        /// </summary>
+        void IPresenter.ShowAllClients()
+        {
+            _view.ShowClients(_model.GetAllClients());
         }
 
         /// <summary>
@@ -176,6 +249,7 @@ namespace PresenterNamespace
             {
                 _view.LogStatus($"Clientul {c.familyName} {c.firstName} a fost adaugat", "blue");
             }
+            ((IPresenter)this).ShowAllClients();
         }
 
         /// <summary>
@@ -203,6 +277,49 @@ namespace PresenterNamespace
         {
             return _model.SearchClient(cnp);
         }
+
+        /// <summary>
+        /// Displays detailed information about a specific client
+        /// </summary>
+        /// <param name="client">Client object to display</param>
+        void IPresenter.ShowClientDetails(Client client)
+        {
+            _view.ShowClientDetails(client);
+        }
+
+        /// <summary>
+        /// Updates an existing client's information
+        /// </summary>
+        /// <param name="oldCNP">Current CNP of the client to update</param>
+        /// <param name="updatedClient">Updated Client object with new information</param>
+        void IPresenter.EditClient(string oldCNP, Client updatedClient)
+        {
+            // Check if the Client exists
+            if (!_model.ClientExists(oldCNP))
+            {
+                _view.LogStatus($"Clientul \"{oldCNP}\" nu exista.", "red");
+                return;
+            }
+
+            // Update the client in the model
+            _model.DeleteClient(oldCNP); // Remove the old client
+            bool success = _model.AddClient(updatedClient); // Add the updated client
+
+            // Notify the user of the result
+            if (success)
+            {
+                _view.LogStatus($"Clientul \"{oldCNP}\" a fost actualizat.", "green");
+                ((IPresenter)this).ShowAllClients();
+            }
+            else
+            {
+                _view.LogStatus($"Eroare la actualizarea clientului \"{oldCNP}\".", "red");
+            }
+        }
+
+        //------------------------------------------------------------------------------
+        //------------------- Borrowing and Return Operations --------------------------
+        //------------------------------------------------------------------------------
 
         /// <summary>
         /// Handles the book borrowing process
@@ -267,64 +384,6 @@ namespace PresenterNamespace
                 sb.AppendLine("---------------------");
             }
             return sb.ToString();
-        }
-
-        /// <summary>
-        /// Displays detailed information about a specific book
-        /// </summary>
-        /// <param name="book">Book object to display</param>
-        void IPresenter.ShowBookDetails(Book book)
-        {
-            _view.ShowBookDetails(book);
-        }
-
-        /// <summary>
-        /// Adds a new book to the library
-        /// </summary>
-        /// <param name="b">Book object to add</param>
-        void IPresenter.AddBook(Book b)
-        {
-            bool success = _model.AddBook(b);
-
-            if (success)
-            {
-                _view.LogStatus($"Cartea \"{b.title}\" a fost adaugata.", "green");
-                ((IPresenter)this).ShowAllBooks();
-            }
-            else
-            {
-                _view.LogStatus($"Cartea \"{b.title}\" exista deja.", "red");
-            }
-        }
-
-        /// <summary>
-        /// Updates an existing book's information
-        /// </summary>
-        /// <param name="oldTitle">Current title of the book to update</param>
-        /// <param name="updatedBook">Updated Book object with new information</param>
-        void IPresenter.EditBook(string oldTitle, Book updatedBook)
-        {
-            // Check if the book exists
-            if (!_model.BookExists(oldTitle))
-            {
-                _view.LogStatus($"Cartea \"{oldTitle}\" nu exista.", "red");
-                return;
-            }
-
-            // Update the book in the model
-            _model.DeleteBook(oldTitle); // Remove the old book
-            bool success = _model.AddBook(updatedBook); // Add the updated book
-
-            // Notify the user of the result
-            if (success)
-            {
-                _view.LogStatus($"Cartea \"{oldTitle}\" a fost actualizata.", "green");
-                ((IPresenter)this).ShowAllBooks();
-            }
-            else
-            {
-                _view.LogStatus($"Eroare la actualizarea cartii \"{oldTitle}\".", "red");
-            }
         }
     }
 }

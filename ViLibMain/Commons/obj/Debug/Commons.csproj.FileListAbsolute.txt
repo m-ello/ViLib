@@ -8,7 +8,6 @@ C:\Users\sandu\OneDrive\Desktop\ViLib\ViLibMain\Commons\obj\Debug\Commons.BookAd
 C:\Users\sandu\OneDrive\Desktop\ViLib\ViLibMain\Commons\obj\Debug\Commons.BookDetailsForm.resources
 C:\Users\sandu\OneDrive\Desktop\ViLib\ViLibMain\Commons\obj\Debug\Commons.BookEditForm.resources
 C:\Users\sandu\OneDrive\Desktop\ViLib\ViLibMain\Commons\obj\Debug\Commons.csproj.GenerateResource.cache
-C:\Users\Ion\source\repos\ViLib\ViLibMain\Commons\bin\Debug\help.chm
 C:\Users\Ion\source\repos\ViLib\ViLibMain\Commons\bin\Debug\Commons.dll
 C:\Users\Ion\source\repos\ViLib\ViLibMain\Commons\bin\Debug\Commons.pdb
 C:\Users\Ion\source\repos\ViLib\ViLibMain\Commons\obj\Debug\Commons.csproj.AssemblyReference.cache
@@ -19,3 +18,6 @@ C:\Users\Ion\source\repos\ViLib\ViLibMain\Commons\obj\Debug\Commons.csproj.Gener
 C:\Users\Ion\source\repos\ViLib\ViLibMain\Commons\obj\Debug\Commons.csproj.CoreCompileInputs.cache
 C:\Users\Ion\source\repos\ViLib\ViLibMain\Commons\obj\Debug\Commons.dll
 C:\Users\Ion\source\repos\ViLib\ViLibMain\Commons\obj\Debug\Commons.pdb
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Commons\obj\Debug\Commons.ClientAddForm.resources
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Commons\obj\Debug\Commons.ClientDetailsForm.resources
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Commons\obj\Debug\Commons.ClientEditForm.resources

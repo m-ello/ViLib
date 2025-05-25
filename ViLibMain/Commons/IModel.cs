@@ -111,5 +111,9 @@ namespace Commons
         /// <summary>Gets all books in the library</summary>
         /// <returns>Complete list of all books</returns>
         List<Book> GetAllBooks();
+
+        /// <summary>Gets all clients in the library</summary>
+        /// <returns>Complete list of all clients</returns>
+        List<Client> GetAllClients();
     }
 }

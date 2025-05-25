@@ -20,6 +20,7 @@ namespace View
     {
         private IPresenter _presenter; // Reference to the presenter for business logic
         private List<Book> _books = new List<Book>(); // Local cache of books displayed in the list
+        private List<Client> _clients = new List<Client>(); // Local cache of clients displayed in the list
 
         // Random generator for creating random books (used in potential test scenarios)
         private Random _random = new Random();
@@ -130,10 +131,25 @@ namespace View
             }
         }
 
+        /// <summary>
+        /// Displays a list of clients in the book list box
+        /// </summary>
+        /// <param name="clients">List of clients to display</param>
+        void IView.ShowClients(List<Client> clients)
+        {
+            _clients = clients; // Update local client cache
+            clientListBox.Items.Clear(); // Clear existing items
+
+            // Add formatted book details for each book
+            foreach (var client in clients)
+            {
+                string clientDetails = $"\"{client.familyName}\" {client.firstName}, cu CNP {client.CNP}, ce traieste la {client.address}";
+                clientListBox.Items.Add(clientDetails);
+            }
+        }
+
         // The following methods are not yet implemented but required by IView interface
-        void IView.ShowClients(List<Client> clients) => throw new NotImplementedException();
         void IView.ShowBorrowHistory(List<BorrowRecord> borrowRecords) => throw new NotImplementedException();
-        void IView.ShowClientDetails(Client client) => throw new NotImplementedException();
         void IView.ShowBorrowRecordDetails(BorrowRecord record) => throw new NotImplementedException();
 
         /// <summary>
@@ -154,9 +170,6 @@ namespace View
         /// </summary>
         private void detailsBookButton_Click(object sender, EventArgs e)
         {
-            // Open help topic for details of a book
-            OpenHelpTopic("Detalii_Carte.htm");
-
             // Validate selection
             if (bookListBox.SelectedIndex == -1)
             {
@@ -177,9 +190,6 @@ namespace View
         /// </summary>
         private void deleteBookButton_Click(object sender, EventArgs e)
         {
-            // Open help topic for deleting books
-            OpenHelpTopic("Stergere_Carte.htm");
-
             // Validate selection
             if (bookListBox.SelectedIndex == -1)
             {
@@ -215,9 +225,6 @@ namespace View
         {
             using (var bookAddForm = new BookAddForm())
             {
-                // Open help topic for adding books
-                OpenHelpTopic("Adaugare_Carte.htm");
-
                 // Show the add form and process if user accepted
                 if (bookAddForm.ShowDialog() == DialogResult.OK)
                 {
@@ -233,9 +240,6 @@ namespace View
         /// </summary>
         private void editBookButton_Click(object sender, EventArgs e)
         {
-            // Open help topic for editing books
-            OpenHelpTopic("Editare_Carte.htm");
-
             // Validate selection
             if (bookListBox.SelectedIndex == -1)
             {
@@ -262,6 +266,10 @@ namespace View
             }
         }
 
+        //---------------------------------------------------------------------
+        //-------------------- Help and Options Tab Control -------------------
+        //---------------------------------------------------------------------
+
         private void help_Click(object sender, EventArgs e)
         {
             string helpFilePath = System.IO.Path.Combine(Application.StartupPath, "help.chm");
@@ -284,21 +292,122 @@ namespace View
             }
         }
 
-        private void OpenHelpTopic(string topic)
+        //---------------------------------------------------------------------
+        //-------------------- Client Management Tab Control -------------------
+        //---------------------------------------------------------------------
+
+        /// <summary>
+        /// Shows detailed information about a specific client in a dialog
+        /// </summary>
+        /// <param name="client">The client to display</param>
+        void IView.ShowClientDetails(Client client)
         {
-            string helpFilePath = System.IO.Path.Combine(Application.StartupPath, "help.chm");
-
-            if (File.Exists(helpFilePath))
+            using (var clientDetailsForm = new ClientDetailsForm())
             {
-                Help.ShowHelp(this, helpFilePath, topic);
-
-            }
-            else
-            {
-                MessageBox.Show("Nu se poate deschide fișierul help!");
+                clientDetailsForm.SetClientDetails(client);
+                clientDetailsForm.ShowDialog(); // Show as modal dialog
             }
         }
 
+        /// <summary>
+        /// Handles click event for the add book button
+        /// </summary>
+        private void addClientButton_Click(object sender, EventArgs e)
+        {
+            using (var clientAddForm = new ClientAddForm())
+            {
+                // Show the add form and process if user accepted
+                if (clientAddForm.ShowDialog() == DialogResult.OK)
+                {
+                    // Get the new client from the form and delegate to presenter
+                    var newClient = clientAddForm.NewClient;
+                    _presenter.AddClient(newClient);
+                }
+            }
+        }
 
+        /// <summary>
+        /// Handles click event for the edit client button
+        /// </summary>
+        private void editClientButton_Click(object sender, EventArgs e)
+        {
+            // Validate selection
+            if (clientListBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecteaza un client, te rog.", "Nicio selectie",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Get selected client from local cache
+            var selectedClient = _clients[clientListBox.SelectedIndex];
+
+            using (var clientEditForm = new ClientEditForm())
+            {
+                // Pre-fill form with current client details
+                clientEditForm.SetClientDetails(selectedClient);
+
+                // Process if user submitted changes
+                if (clientEditForm.ShowDialog() == DialogResult.OK)
+                {
+                    // Get updated client and delegate to presenter
+                    var updatedClient = clientEditForm.UpdatedClient;
+                    _presenter.EditClient(selectedClient.CNP, updatedClient);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Handles click event for the client details button
+        /// </summary>
+        private void detailsClientButton_Click(object sender, EventArgs e)
+        {
+            // Validate selection
+            if (clientListBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecteaza un client, te rog.", "Nicio selectie",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Get selected client from local cache
+            var selectedClient = _clients[clientListBox.SelectedIndex];
+
+            // Delegate to presenter to show details
+            _presenter.ShowClientDetails(selectedClient);
+        }
+
+        /// <summary>
+        /// Handles click event for the delete client button
+        /// </summary>
+        private void deleteClientButton_Click(object sender, EventArgs e)
+        {
+            // Validate selection
+            if (clientListBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecteaza un client, te rog.", "Nicio selectie",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            // Get selected client from local cache
+            var selectedClient = _clients[clientListBox.SelectedIndex];
+
+            // Confirm deletion with user
+            var result = MessageBox.Show($"Esti sigur ca vrei sa stergi clientul \"{selectedClient.firstName}\"?",
+                                      "Confirmare stergere",
+                                      MessageBoxButtons.YesNo,
+                                      MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Delegate to presenter for deletion
+                _presenter.RemoveClient(selectedClient.CNP);
+
+                // Refresh the client list
+                _presenter.ShowAllClients();
+            }
+        }
     }
 }

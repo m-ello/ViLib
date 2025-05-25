@@ -64,6 +64,24 @@
     </Compile>
     <Compile Include="BorrowRecord.cs" />
     <Compile Include="Client.cs" />
+    <Compile Include="ClientAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientAddForm.Designer.cs">
+      <DependentUpon>ClientAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientDetailsForm.Designer.cs">
+      <DependentUpon>ClientDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientEditForm.Designer.cs">
+      <DependentUpon>ClientEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="IModel.cs" />
     <Compile Include="IPresenter.cs" />
     <Compile Include="IView.cs" />
@@ -80,11 +98,15 @@
     <EmbeddedResource Include="BookEditForm.resx">
       <DependentUpon>BookEditForm.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="help.chm">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <EmbeddedResource Include="ClientAddForm.resx">
+      <DependentUpon>ClientAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientDetailsForm.resx">
+      <DependentUpon>ClientDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientEditForm.resx">
+      <DependentUpon>ClientEditForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

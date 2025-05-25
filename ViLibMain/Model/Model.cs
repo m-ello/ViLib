@@ -236,6 +236,15 @@ namespace ViLib
         }
 
         /// <summary>
+        /// Gets all clients in the library
+        /// </summary>
+        /// <returns>List of all clients</returns>
+        public List<Client> GetAllClients()
+        {
+            return new List<Client>(_library.Clients);
+        }
+
+        /// <summary>
         /// Saves all modified data to files
         /// </summary>
         /// <returns>True if any data was saved, false otherwise</returns>

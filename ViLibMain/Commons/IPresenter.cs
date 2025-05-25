@@ -50,10 +50,15 @@ namespace Commons
         void RemoveBook(string title);
 
         /// <summary>
-        /// Adds a new client to the library system
+        /// Displays information about all books in the library
         /// </summary>
-        /// <param name="c">Client object to add</param>
-        void AddClient(Client c);
+        void ShowAllBooks();
+
+        /// <summary>
+        /// Displays detailed information about a specific book
+        /// </summary>
+        /// <param name="book">Book object to display</param>
+        void ShowBookDetails(Book book);
 
         /// <summary>
         /// Updates an existing book's information
@@ -61,6 +66,19 @@ namespace Commons
         /// <param name="title">Current title of the book to edit</param>
         /// <param name="b">Updated Book object</param>
         void EditBook(string title, Book b);
+
+        /// <summary>
+        /// Adds a new client to the library system
+        /// </summary>
+        /// <param name="c">Client object to add</param>
+        void AddClient(Client c);
+
+        /// <summary>
+        /// Updates an existing client's information
+        /// </summary>
+        /// <param name="CNP">Current CNP of the client to edit</param>
+        /// <param name="c">Updated Client object</param>
+        void EditClient(string CNP, Client c);
 
         /// <summary>
         /// Checks if a client with the given CNP exists in the system
@@ -83,6 +101,17 @@ namespace Commons
         Client GetClient(string cnp);
 
         /// <summary>
+        /// Displays detailed information about a specific client
+        /// </summary>
+        /// <param name="client">Client object to display</param>
+        void ShowClientDetails(Client client);
+
+        /// <summary>
+        /// Displays information about all clients in the library
+        /// </summary>
+        void ShowAllClients();
+
+        /// <summary>
         /// Processes the return of a borrowed book
         /// </summary>
         /// <param name="bookTitle">Title of the book being returned</param>
@@ -96,17 +125,6 @@ namespace Commons
         /// <param name="clientCNP">Optional filter by client CNP</param>
         /// <returns>Formatted string containing the borrowing history</returns>
         string GetBorrowHistory(string bookTitle = null, string clientCNP = null);
-
-        /// <summary>
-        /// Displays detailed information about a specific book
-        /// </summary>
-        /// <param name="book">Book object to display</param>
-        void ShowBookDetails(Book book);
-
-        /// <summary>
-        /// Displays information about all books in the library
-        /// </summary>
-        void ShowAllBooks();
 
         /// <summary>
         /// Processes a book borrowing request
