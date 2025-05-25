@@ -43,12 +43,7 @@ namespace Commons
             client.BorrowedBooks.Add(book);
 
             // Create new borrow record
-            var record = new BorrowRecord
-            {
-                Book = book,
-                Client = client,
-                BorrowDate = DateTime.Now
-            };
+            var record = new BorrowRecord(client, book);
 
             // Add to all tracking collections
             client.BorrowHistory.Add(record);

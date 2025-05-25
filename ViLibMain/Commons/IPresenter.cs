@@ -133,5 +133,17 @@ namespace Commons
         /// <param name="clientCNP">Personal Numeric Code of the borrowing client</param>
         /// <returns>True if borrowing was successful, false otherwise</returns>
         bool BorrowBook(string bookTitle, string clientCNP);
+
+        /// <summary>
+        /// Adds a new borrow record to the library collection
+        /// </summary>
+        /// <param name="br">Borrow record object to add</param>
+        void AddBorrowRecord(BorrowRecord br);
+
+        /// <summary>
+        /// Processes the borrow history
+        /// </summary>
+        /// <param name="borrowRecords">Borrow Records</param>
+        void ShowAllBorrowRecords();
     }
 }

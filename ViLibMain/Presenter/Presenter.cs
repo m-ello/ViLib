@@ -68,6 +68,9 @@ namespace PresenterNamespace
 
             // Display all clients in the view
             ((IPresenter)this).ShowAllClients();
+
+            // Display all borrow records in the view
+            ((IPresenter)this).ShowAllBorrowRecords();
         }
 
         /// <summary>
@@ -322,6 +325,14 @@ namespace PresenterNamespace
         //------------------------------------------------------------------------------
 
         /// <summary>
+        /// Displays all borrow records in the view
+        /// </summary>
+        void IPresenter.ShowAllBorrowRecords()
+        {
+            _view.ShowBorrowHistory(_model.GetBorrowHistory());
+        }
+
+        /// <summary>
         /// Handles the book borrowing process
         /// </summary>
         /// <param name="bookTitle">Title of the book to borrow</param>
@@ -333,12 +344,33 @@ namespace PresenterNamespace
             if (success)
             {
                 _view.LogStatus($"Cartea '{bookTitle}' a fost împrumutată cu succes.", "blue");
+                // Optionally, refresh the borrow records view
+                ((IPresenter)this).ShowAllBorrowRecords();
             }
             else
             {
                 _view.LogStatus($"Nu s-a putut împrumuta cartea '{bookTitle}'. Verificați disponibilitatea sau datele clientului.", "red");
             }
             return success;
+        }
+
+        /// <summary>
+        /// Adds a new borrow record to the library
+        /// </summary>
+        /// <param name="br">Borrow record object to add</param>
+        void IPresenter.AddBorrowRecord(BorrowRecord br)
+        {
+            bool success = _model.AddBorrowRecord(br);
+
+            if (success)
+            {
+                _view.LogStatus($"Împrumutul \"{br.BookTitle}\" de \"{br.Client.firstName}\" a fost adaugat.", "green");
+                ((IPresenter)this).ShowAllBorrowRecords();
+            }
+            else
+            {
+                _view.LogStatus($"Cartea \"{br.BookTitle}\" exista deja.", "red");
+            }
         }
 
         /// <summary>

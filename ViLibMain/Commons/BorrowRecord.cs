@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -52,5 +53,21 @@ namespace Commons
         /// Returns null if Client is null
         /// </summary>
         public string ClientCNP => Client?.CNP;
+
+        /// <summary>
+        /// Initializes a new BorrowRecord instance with the specified client and book.
+        /// Sets the borrow date to the current time and leaves return date as null.
+        /// </summary>
+        /// <param name="client">The client who borrows the book</param>
+        /// <param name="book">The book being borrowed</param>
+        public BorrowRecord(Client client, Book book)
+        {
+            Client = client;
+            Book = book;
+            BorrowDate = DateTime.Now;
+            ReturnDate = null;
+        }
+
+        public BorrowRecord() {}
     }
 }

@@ -97,6 +97,11 @@ namespace Commons
         /// <returns>True if borrow was successful, false otherwise</returns>
         bool BorrowBook(string bookTitle, string clientCNP);
 
+        /// <summary>Adds a new borrow record to the system</summary>
+        /// <param name="br">Borrow record object to add</param>
+        /// <returns>True if borrow record was added successfully, false if book is already borrowed</returns>
+        bool AddBorrowRecord(BorrowRecord br);
+
         /// <summary>Processes a book return operation</summary>
         /// <param name="bookTitle">Title of book being returned</param>
         /// <returns>True if return was successful, false otherwise</returns>

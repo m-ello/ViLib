@@ -22,6 +22,8 @@ namespace View
         private IPresenter _presenter; // Reference to the presenter for business logic
         private List<Book> _books = new List<Book>(); // Local cache of books displayed in the list
         private List<Client> _clients = new List<Client>(); // Local cache of clients displayed in the list
+        private List<BorrowRecord> _borrowRecords = new List<BorrowRecord>(); // Local cache of borrow records displayed in the list
+        private Library _library = new Library();
 
         // Random generator for creating random books (used in potential test scenarios)
         private Random _random = new Random();
@@ -149,8 +151,22 @@ namespace View
             }
         }
 
-        // The following methods are not yet implemented but required by IView interface
-        void IView.ShowBorrowHistory(List<BorrowRecord> borrowRecords) => throw new NotImplementedException();
+        /// <summary>
+        /// Displays the borrow records in the borrow history box
+        /// </summary>
+        /// <param name="borrowRecords">List of borrow records to display</param>
+        void IView.ShowBorrowHistory(List<BorrowRecord> borrowRecords)
+        {
+            _borrowRecords = borrowRecords; // Update local borrow record cache
+            borrowHistoryBox.Items.Clear(); // Clear existing items
+
+            // Add formatted book details for each book
+            foreach (var borrowRecord in borrowRecords)
+            {
+                string borrowDetails = $"Carte: {borrowRecord.BookTitle}, Client: {borrowRecord.Client.firstName}, Data: {borrowRecord.BorrowDate}";
+                borrowHistoryBox.Items.Add(borrowDetails);
+            }
+        }
 
         /// <summary>
         /// Shows detailed information about a specific book in a dialog
@@ -383,16 +399,12 @@ namespace View
                 _presenter.ShowAllClients();
             }
         }
+
         //---------------------------------------------------------------------
         //-------------------------------- Help -------------------------------
         //---------------------------------------------------------------------
 
-        private void Open_HelpFile(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void helpButton_Click(object sender, EventArgs e)
         {
             string helpFilePath = System.IO.Path.Combine(Application.StartupPath, "help.chm");
 
@@ -404,11 +416,6 @@ namespace View
             {
                 MessageBox.Show("Nu se poate deschide fisierul help!");
             }
-        }
-
-        private void borrowTab_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void clientListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -437,6 +444,47 @@ namespace View
                 borrowRecordDetailsForm.SetBorrowDetails(borrowRecord);
                 borrowRecordDetailsForm.ShowDialog(); // Show as modal dialog
             }*/
+        }
+
+        /// <summary>
+        /// Handles click event for the add borrow button
+        /// </summary>
+        private void addBorrowButton_Click(object sender, EventArgs e)
+        {
+            using (var borrowAddForm = new BorrowAddForm(_clients, _books))
+            {
+                if (borrowAddForm.ShowDialog() == DialogResult.OK)
+                {
+                    var newBorrowRecord = borrowAddForm.NewBorrowRecord;
+
+                    // Optionally update UI or notify presenter that data changed
+                    MessageBox.Show($"Împrumut adăugat:\n{newBorrowRecord.Client.firstName} a împrumutat '{newBorrowRecord.Book.title}'",
+                                    "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Delegate to presenter to handle the new borrow record
+                    _presenter.AddBorrowRecord(newBorrowRecord);
+
+                    // Refresh the borrow history
+                    _presenter.ShowAllBorrowRecords();
+
+                }
+            }
+        }
+
+
+        private void editBorrowButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void detailsBorrowButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteBorrowButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

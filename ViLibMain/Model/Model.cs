@@ -41,7 +41,7 @@ namespace ViLib
         /// <summary>
         /// Core library data structure
         /// </summary>
-        private Library _library = new Library();
+        public static Library _library = new Library();
 
         // Flags to track file modifications for efficient saving
         private bool _borrowHistoryFileWasModified;
@@ -448,6 +448,17 @@ namespace ViLib
             {
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Adds a borrow record to the library
+        /// </summary>
+        public bool AddBorrowRecord(BorrowRecord br)
+        {
+            _library.AllBorrowRecords.Add(br);
+            br.Book.IsAvailable = false; // Mark book as borrowed
+            _borrowHistoryFileWasModified = true;
+            return true;
         }
 
         /// <summary>
