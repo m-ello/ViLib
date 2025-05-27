@@ -16,3 +16,12 @@ C:\Users\Ion\source\repos\ViLib\ViLibMain\Presenter\obj\Debug\Presenter.csproj.C
 C:\Users\Ion\source\repos\ViLib\ViLibMain\Presenter\obj\Debug\Presenter.csproj.Up2Date
 C:\Users\Ion\source\repos\ViLib\ViLibMain\Presenter\obj\Debug\Presenter.dll
 C:\Users\Ion\source\repos\ViLib\ViLibMain\Presenter\obj\Debug\Presenter.pdb
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\Presenter\bin\Debug\Presenter.dll
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\Presenter\bin\Debug\Presenter.pdb
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\Presenter\bin\Debug\Commons.dll
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\Presenter\bin\Debug\Commons.pdb
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\Presenter\obj\Debug\Presenter.csproj.AssemblyReference.cache
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\Presenter\obj\Debug\Presenter.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\Presenter\obj\Debug\Presenter.csproj.Up2Date
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\Presenter\obj\Debug\Presenter.dll
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\Presenter\obj\Debug\Presenter.pdb

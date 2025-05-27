@@ -20,3 +20,14 @@ C:\Users\Ion\source\repos\ViLib\ViLibMain\View\obj\Debug\View.csproj.CoreCompile
 C:\Users\Ion\source\repos\ViLib\ViLibMain\View\obj\Debug\View.csproj.Up2Date
 C:\Users\Ion\source\repos\ViLib\ViLibMain\View\obj\Debug\View.dll
 C:\Users\Ion\source\repos\ViLib\ViLibMain\View\obj\Debug\View.pdb
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\View\bin\Debug\View.dll
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\View\bin\Debug\View.pdb
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\View\bin\Debug\Commons.dll
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\View\bin\Debug\Commons.pdb
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\View\obj\Debug\View.csproj.AssemblyReference.cache
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\View\obj\Debug\View.FormView.resources
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\View\obj\Debug\View.csproj.GenerateResource.cache
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\View\obj\Debug\View.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\View\obj\Debug\View.csproj.Up2Date
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\View\obj\Debug\View.dll
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\View\obj\Debug\View.pdb

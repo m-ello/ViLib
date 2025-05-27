@@ -16,3 +16,12 @@ C:\Users\Ion\source\repos\ViLib\ViLibMain\Model\obj\Debug\Model.csproj.CoreCompi
 C:\Users\Ion\source\repos\ViLib\ViLibMain\Model\obj\Debug\Model.csproj.Up2Date
 C:\Users\Ion\source\repos\ViLib\ViLibMain\Model\obj\Debug\Model.dll
 C:\Users\Ion\source\repos\ViLib\ViLibMain\Model\obj\Debug\Model.pdb
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\Model\bin\Debug\Model.dll
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\Model\bin\Debug\Model.pdb
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\Model\bin\Debug\Commons.dll
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\Model\bin\Debug\Commons.pdb
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\Model\obj\Debug\Model.csproj.AssemblyReference.cache
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\Model\obj\Debug\Model.csproj.Up2Date
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\Model\obj\Debug\Model.dll
+C:\Users\user\Documents\GitHub\ViLib\ViLibMain\Model\obj\Debug\Model.pdb
