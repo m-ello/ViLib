@@ -554,34 +554,13 @@ namespace ViLib
                 return null;
             }
 
-            var format = "dd.MM.yyyy HH:mm:ss";
-            var culture = CultureInfo.InvariantCulture;
-
-            if (!DateTime.TryParseExact(toks[3], format, culture, DateTimeStyles.None, out DateTime borrowDate))
-            {
-                return null;
-            }
-
-            DateTime? returnDate = null;
-            if (!string.IsNullOrEmpty(toks[4]))
-            {
-                if (DateTime.TryParseExact(toks[4], format, culture, DateTimeStyles.None, out DateTime parsedReturnDate))
-                {
-                    returnDate = parsedReturnDate;
-                }
-                else
-                {
-                    return null;
-                }
-            }
-
             return new BorrowRecord
             {
                 Id = int.Parse(toks[0]),
                 Book = book,
                 Client = client,
-                BorrowDate = borrowDate,
-                ReturnDate = returnDate
+                BorrowDate = DateTime.Parse(toks[3]),
+                ReturnDate = string.IsNullOrEmpty(toks[4]) ? null : (DateTime?)DateTime.Parse(toks[4])
             };
         }
     }
