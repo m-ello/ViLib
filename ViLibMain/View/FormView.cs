@@ -485,7 +485,7 @@ namespace View
             if (result == DialogResult.Yes)
             {
                 // Delegate to presenter for returning, if we delete a record, we have to make a returning operation
-                _presenter.ReturnBook(selectedBorrowRecord.BookTitle);
+                _presenter.ReturnBook(selectedBorrowRecord.BookTitle, selectedBorrowRecord.Client.firstName);
 
                 // Delegate to presenter for deletion
                 _presenter.RemoveBorrowRecord(selectedBorrowRecord.BookTitle);
@@ -535,7 +535,7 @@ namespace View
             if (result == DialogResult.Yes)
             {
                 // Delegate to presenter for deletion
-                _presenter.ReturnBook(selectedBorrow.BookTitle);
+                _presenter.ReturnBook(selectedBorrow.BookTitle, selectedBorrow.Client.firstName);
 
                 // Refresh the client list
                 _presenter.ShowAllBorrowRecords();

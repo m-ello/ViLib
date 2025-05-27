@@ -377,13 +377,14 @@ namespace PresenterNamespace
         /// Handles the book return process
         /// </summary>
         /// <param name="bookTitle">Title of the book being returned</param>
+        /// /// <param name="clientFirstName">First name of the client returning the book</param>
         /// <returns>True if return was successful, false otherwise</returns>
-        bool IPresenter.ReturnBook(string bookTitle)
+        bool IPresenter.ReturnBook(string bookTitle, string clientFirstName)
         {
             bool success = _model.ReturnBook(bookTitle);
             if (success)
             {
-                _view.LogStatus($"Cartea '{bookTitle}' a fost returnată cu succes.", "blue");
+                _view.LogStatus($"Cartea '{bookTitle}', imprumutata de '{clientFirstName}' a fost returnată cu succes.", "blue");
             }
             else
             {

@@ -124,7 +124,7 @@ namespace Commons
         //---------------------------------------------------------------------
 
 
-        bool ReturnBook(string bookTitle);
+        bool ReturnBook(string bookTitle, string clientFirstName);
 
         /// <summary>
         /// Retrieves borrowing history with optional filters
