@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|solutionrelative:commons\\clienteditform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|c:\\users\\ion\\source\\repos\\vilib\\vilibmain\\commons\\editborrowform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\commons\\editborrowform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|solutionrelative:commons\\editborrowform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -15,7 +15,7 @@
       "RelativeMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|solutionrelative:commons\\borrowaddform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{92055BCF-4DAD-4CFE-805F-8DE5EE05F447}|Model\\Model.csproj|c:\\users\\ion\\source\\repos\\vilib\\vilibmain\\model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{92055BCF-4DAD-4CFE-805F-8DE5EE05F447}|Model\\Model.csproj|C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{92055BCF-4DAD-4CFE-805F-8DE5EE05F447}|Model\\Model.csproj|solutionrelative:model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -64,7 +64,7 @@
               "RelativeDocumentMoniker": "Commons\\ClientEditForm.cs",
               "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\ClientEditForm.cs",
               "RelativeToolTip": "Commons\\ClientEditForm.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAgwEAAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAgwDoAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-26T20:49:48.223Z",
               "EditorCaption": ""
@@ -79,8 +79,7 @@
               "RelativeToolTip": "Commons\\EditBorrowForm.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T20:45:32.654Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-26T20:45:32.654Z"
             },
             {
               "$type": "Document",
@@ -88,12 +87,11 @@
               "Title": "BorrowAddForm.cs",
               "DocumentMoniker": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\BorrowAddForm.cs",
               "RelativeDocumentMoniker": "Commons\\BorrowAddForm.cs",
-              "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\BorrowAddForm.cs*",
-              "RelativeToolTip": "Commons\\BorrowAddForm.cs*",
+              "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\BorrowAddForm.cs",
+              "RelativeToolTip": "Commons\\BorrowAddForm.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T15:17:57.67Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-26T15:17:57.67Z"
             },
             {
               "$type": "Document",
@@ -105,8 +103,7 @@
               "RelativeToolTip": "Model\\Model.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAowMgBAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T17:33:06.541Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-25T17:33:06.541Z"
             },
             {
               "$type": "Document",
@@ -118,8 +115,7 @@
               "RelativeToolTip": "View\\FormView.Designer.cs",
               "ViewState": "AgIAAGUAAAAAAAAAAAAMwH4AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T17:33:06.574Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-25T17:33:06.574Z"
             },
             {
               "$type": "Document",
@@ -131,8 +127,7 @@
               "RelativeToolTip": "View\\FormView.cs",
               "ViewState": "AgIAAAgCAAAAAAAAAAAuwA4CAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T17:33:06.641Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-25T17:33:06.641Z"
             },
             {
               "$type": "Document",
@@ -143,8 +138,7 @@
               "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\View\\FormView.cs [Design]",
               "RelativeToolTip": "View\\FormView.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T17:33:06.707Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-25T17:33:06.707Z"
             },
             {
               "$type": "Document",
@@ -156,8 +150,7 @@
               "RelativeToolTip": "ViLibMain\\Program.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABwAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T17:33:06.707Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-25T17:33:06.707Z"
             }
           ]
         }
