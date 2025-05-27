@@ -120,5 +120,10 @@ namespace Commons
         /// <summary>Gets all clients in the library</summary>
         /// <returns>Complete list of all clients</returns>
         List<Client> GetAllClients();
+
+        /// <summary>Processes a borrow record detelion operation</summary>
+        /// <param name="bookTitle">Title of book which is deleted from the borrow record</param>
+        /// <returns>True if return was successful, false otherwise</returns>
+        bool DeleteBorrowRecord(string bookTitle);
     }
 }

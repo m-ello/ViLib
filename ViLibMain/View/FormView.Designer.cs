@@ -32,8 +32,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.helpButton = new System.Windows.Forms.Button();
             this.borrowTab = new System.Windows.Forms.TabPage();
+            this.returnBorrowButton = new System.Windows.Forms.Button();
             this.deleteBorrowButton = new System.Windows.Forms.Button();
-            this.editBorrowButton = new System.Windows.Forms.Button();
             this.detailsBorrowButton = new System.Windows.Forms.Button();
             this.addBorrowButton = new System.Windows.Forms.Button();
             this.borrowHistoryBox = new System.Windows.Forms.ListBox();
@@ -69,12 +69,12 @@
             this.StatusBox.TabIndex = 1;
             this.StatusBox.Text = "";
             // 
-            // titleLabel
+            // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(16, 415);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "titleLabel";
+            this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Status";
@@ -92,8 +92,8 @@
             // 
             // borrowTab
             // 
+            this.borrowTab.Controls.Add(this.returnBorrowButton);
             this.borrowTab.Controls.Add(this.deleteBorrowButton);
-            this.borrowTab.Controls.Add(this.editBorrowButton);
             this.borrowTab.Controls.Add(this.detailsBorrowButton);
             this.borrowTab.Controls.Add(this.addBorrowButton);
             this.borrowTab.Controls.Add(this.borrowHistoryBox);
@@ -107,27 +107,27 @@
             this.borrowTab.Text = "Împrumuturi";
             this.borrowTab.UseVisualStyleBackColor = true;
             // 
+            // returnBorrowButton
+            // 
+            this.returnBorrowButton.Location = new System.Drawing.Point(376, 330);
+            this.returnBorrowButton.Margin = new System.Windows.Forms.Padding(4);
+            this.returnBorrowButton.Name = "returnBorrowButton";
+            this.returnBorrowButton.Size = new System.Drawing.Size(100, 30);
+            this.returnBorrowButton.TabIndex = 11;
+            this.returnBorrowButton.Text = "Returnează";
+            this.returnBorrowButton.UseVisualStyleBackColor = true;
+            this.returnBorrowButton.Click += new System.EventHandler(this.returnBorrowButton_Click);
+            // 
             // deleteBorrowButton
             // 
-            this.deleteBorrowButton.Location = new System.Drawing.Point(376, 330);
-            this.deleteBorrowButton.Margin = new System.Windows.Forms.Padding(4);
+            this.deleteBorrowButton.Location = new System.Drawing.Point(108, 330);
+            this.deleteBorrowButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.deleteBorrowButton.Name = "deleteBorrowButton";
             this.deleteBorrowButton.Size = new System.Drawing.Size(100, 30);
-            this.deleteBorrowButton.TabIndex = 11;
+            this.deleteBorrowButton.TabIndex = 10;
             this.deleteBorrowButton.Text = "Șterge";
             this.deleteBorrowButton.UseVisualStyleBackColor = true;
             this.deleteBorrowButton.Click += new System.EventHandler(this.deleteBorrowButton_Click);
-            // 
-            // editBorrowButton
-            // 
-            this.editBorrowButton.Location = new System.Drawing.Point(108, 330);
-            this.editBorrowButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.editBorrowButton.Name = "editBorrowButton";
-            this.editBorrowButton.Size = new System.Drawing.Size(100, 30);
-            this.editBorrowButton.TabIndex = 10;
-            this.editBorrowButton.Text = "Editează";
-            this.editBorrowButton.UseVisualStyleBackColor = true;
-            this.editBorrowButton.Click += new System.EventHandler(this.editBorrowButton_Click);
             // 
             // detailsBorrowButton
             // 
@@ -160,7 +160,6 @@
             this.borrowHistoryBox.Name = "borrowHistoryBox";
             this.borrowHistoryBox.Size = new System.Drawing.Size(479, 292);
             this.borrowHistoryBox.TabIndex = 7;
-            this.borrowHistoryBox.SelectedIndexChanged += new System.EventHandler(this.borrowHistoryBox_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -171,7 +170,6 @@
             this.label4.Size = new System.Drawing.Size(45, 16);
             this.label4.TabIndex = 2;
             this.label4.Text = "Istoric ";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // ClientsPage
             // 
@@ -189,7 +187,6 @@
             this.ClientsPage.TabIndex = 2;
             this.ClientsPage.Text = "Clienți";
             this.ClientsPage.UseVisualStyleBackColor = true;
-            this.ClientsPage.Click += new System.EventHandler(this.ClientsPage_Click);
             // 
             // deleteClientButton
             // 
@@ -244,7 +241,6 @@
             this.clientListBox.Name = "clientListBox";
             this.clientListBox.Size = new System.Drawing.Size(479, 292);
             this.clientListBox.TabIndex = 1;
-            this.clientListBox.SelectedIndexChanged += new System.EventHandler(this.clientListBox_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -401,7 +397,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button detailsBorrowButton;
         private System.Windows.Forms.Button addBorrowButton;
+        private System.Windows.Forms.Button returnBorrowButton;
         private System.Windows.Forms.Button deleteBorrowButton;
-        private System.Windows.Forms.Button editBorrowButton;
     }
 }

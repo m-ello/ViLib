@@ -417,5 +417,69 @@ namespace PresenterNamespace
             }
             return sb.ToString();
         }
+
+        /// <summary>
+        /// Displays detailed information about a specific borrow record
+        /// </summary>
+        /// <param name="br">Borrow Record object to display</param>
+        void IPresenter.ShowBorrowRecordDetails(BorrowRecord br)
+        {
+            _view.ShowBorrowRecordDetails(br);
+        }
+
+
+        /// <summary>
+        /// Updates an existing borrowRecord's information
+        /// </summary>
+        /// <param name="oldCNP">Current CNP of the client who borrowed</param>
+        /// /// <param name="oldTitle">Current title of the borrowed book</param>
+        /// <param name="updatedBorrowRecord">Updated BorrowRecord object with new information</param>
+        void IPresenter.EditBorrowRecord(string oldCNP, string oldTitle, BorrowRecord updatedBorrowRecord)
+        {
+            // Check if the Client exists
+            if (!_model.ClientExists(oldCNP))
+            {
+                _view.LogStatus($"Clientul \"{oldCNP}\" nu exista.", "red");
+                return;
+            }
+
+            // Check if the Book exists
+            if (!_model.BookExists(oldTitle))
+            {
+                _view.LogStatus($"Cartea \"{oldTitle}\" nu exista.", "red");
+                return;
+            }
+
+            // Update the client in the model
+            _model.ReturnBook(oldTitle); // Remove the old borrowRecord
+            bool success = _model.AddBorrowRecord(updatedBorrowRecord); // Add the updated borrow Record
+
+            // Notify the user of the result
+            if (success)
+            {
+                _view.LogStatus($"Imprumutul \"{oldTitle}\" de catre \"{oldCNP}\" a fost actualizat.", "green");
+                ((IPresenter)this).ShowAllBorrowRecords();
+            }
+            else
+            {
+                _view.LogStatus($"Eroare la actualizarea imprumutului \"{oldTitle}\".", "red");
+            }
+        }
+
+        /// <summary>
+        /// Removes a borrow record from the system
+        /// </summary>
+        /// <param name="bookTitle">Title of the book to remove from the borrow record</param>
+        void IPresenter.RemoveBorrowRecord(string bookTitle)
+        {
+            if (_model.DeleteBorrowRecord(bookTitle))
+            {
+                _view.LogStatus($"Împrumutul a fost sters.", "blue");
+            }
+            else
+            {
+                _view.LogStatus($"Împrumutul nu a fost gasit in lista.", "red");
+            }
+        }
     }
 }

@@ -418,32 +418,19 @@ namespace View
             }
         }
 
-        private void clientListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
+        //---------------------------------------------------------------------
+        //------------------------  Borrow Records ----------------------------
+        //---------------------------------------------------------------------
 
-        private void ClientsPage_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void borrowHistoryBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
         void IView.ShowBorrowRecordDetails(BorrowRecord borrowRecord)
         {
-            /*using (var borrowRecordDetailsForm = new ClientDetailsForm())
+            using (var borrowRecordDetailsForm = new BorrowDetailsForm())
             {
-                borrowRecordDetailsForm.SetBorrowDetails(borrowRecord);
+                borrowRecordDetailsForm.SetBorrowRecordDetails(borrowRecord);
                 borrowRecordDetailsForm.ShowDialog(); // Show as modal dialog
-            }*/
+            }
         }
 
         /// <summary>
@@ -472,19 +459,87 @@ namespace View
         }
 
 
-        private void editBorrowButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Handles click event for the edit borrow record button
+        /// </summary>
+        private void deleteBorrowButton_Click(object sender, EventArgs e)
         {
+            // Validate selection
+            if (borrowHistoryBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecteaza un imprumut, te rog.", "Nicio selectie",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+                return;
+            }
+
+            // Get selected borrow record from local cache
+            var selectedBorrowRecord = _borrowRecords[borrowHistoryBox.SelectedIndex];
+
+            // Confirm deletion with user
+            var result = MessageBox.Show($"Sigur vrei sa stergi imprumutul \"{selectedBorrowRecord.Client.firstName}\" cu cartea {selectedBorrowRecord.BookTitle} ?",
+                                      "Confirmare stergere",
+                                      MessageBoxButtons.YesNo,
+                                      MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Delegate to presenter for returning, if we delete a record, we have to make a returning operation
+                _presenter.ReturnBook(selectedBorrowRecord.BookTitle);
+
+                // Delegate to presenter for deletion
+                _presenter.RemoveBorrowRecord(selectedBorrowRecord.BookTitle);
+
+                // Refresh the client list
+                _presenter.ShowAllBorrowRecords();
+            }
         }
 
         private void detailsBorrowButton_Click(object sender, EventArgs e)
         {
+            // Validate selection
+            if (borrowHistoryBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecteaza un imprumut, te rog.", "Nicio selectie",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            // Get selected borrow from local cache
+            var selectedBorrow = _borrowRecords[borrowHistoryBox.SelectedIndex];
+
+            // Delegate to presenter to show details
+            _presenter.ShowBorrowRecordDetails(selectedBorrow);
         }
 
-        private void deleteBorrowButton_Click(object sender, EventArgs e)
+        private void returnBorrowButton_Click(object sender, EventArgs e)
         {
+            // Validate selection
+            if (borrowHistoryBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecteaza un imprumut, te rog.", "Nicio selectie",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+                return;
+            }
+
+            // Get selected borrow from local cache
+            var selectedBorrow = _borrowRecords[borrowHistoryBox.SelectedIndex];
+
+            // Confirm deletion with user
+            var result = MessageBox.Show($"Esti sigur ca vrei sa returnezi cartea \"{selectedBorrow.BookTitle}\"?",
+                                      "Confirmare stergere",
+                                      MessageBoxButtons.YesNo,
+                                      MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Delegate to presenter for deletion
+                _presenter.ReturnBook(selectedBorrow.BookTitle);
+
+                // Refresh the client list
+                _presenter.ShowAllBorrowRecords();
+            }
         }
     }
 }

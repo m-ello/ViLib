@@ -17,7 +17,7 @@ namespace Commons
     public partial class ClientEditForm : Form
     {
         /// <summary>
-        /// Gets the updated Book object containing the modified information.
+        /// Gets the updated Client object containing the modified information.
         /// This property is set when the user confirms the edit with valid data.
         /// </summary>
         public Client UpdatedClient { get; private set; }
@@ -76,12 +76,5 @@ namespace Commons
             this.DialogResult = DialogResult.OK;
             this.Close(); // Close the form
         }
-
-        /// <summary>
-        /// Handles the Load event of the form.
-        /// Currently contains no implementation but can be used for additional form initialization.
-        /// </summary>
-        /// <param name="sender">The source of the event</param>
-        /// <param name="e">Event arguments</param>
     }
 }

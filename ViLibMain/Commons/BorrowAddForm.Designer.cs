@@ -51,7 +51,7 @@
             this.CNPTextBox.Location = new System.Drawing.Point(101, 14);
             this.CNPTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CNPTextBox.Name = "CNPTextBox";
-            this.CNPTextBox.Size = new System.Drawing.Size(295, 22);
+            this.CNPTextBox.Size = new System.Drawing.Size(300, 22);
             this.CNPTextBox.TabIndex = 10;
             // 
             // CNP
@@ -78,7 +78,7 @@
             this.TitleTextBox.Location = new System.Drawing.Point(101, 44);
             this.TitleTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.TitleTextBox.Name = "TitleTextBox";
-            this.TitleTextBox.Size = new System.Drawing.Size(295, 22);
+            this.TitleTextBox.Size = new System.Drawing.Size(300, 22);
             this.TitleTextBox.TabIndex = 12;
             // 
             // BorrowAddForm

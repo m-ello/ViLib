@@ -144,11 +144,16 @@ namespace ViLib
                             var book = _library.Books.FirstOrDefault(b => b.title == record.BookTitle);
                             var client = _library.Clients.FirstOrDefault(c => c.CNP == record.ClientCNP);
 
-                            if (book != null) book.BorrowHistory.Add(record);
-                            if (client != null) client.BorrowHistory.Add(record);
-
                             // Update book availability
                             if (book != null && record.IsActive) book.IsAvailable = false;
+
+                            if (book != null) book.BorrowHistory.Add(record);
+
+                            if (client != null)
+                            {
+                                client.BorrowHistory.Add(record);
+                                client.BorrowedBooks.Add(record.Book);
+                            }
                         }
                     }
                 }
@@ -303,7 +308,7 @@ namespace ViLib
         /// <summary>
         /// Parses a client record from a file line
         /// </summary>
-        private static Client ParseClientLine(string line)
+        private Client ParseClientLine(string line)
         {
             string[] toks = line.Split('\t');
             return new Client(toks[0], toks[1], toks[2], toks[3]);
@@ -316,31 +321,6 @@ namespace ViLib
         {
             string[] toks = line.Split('\t');
             return new Book(toks[0], toks[1], toks[2]);
-        }
-
-        /// <summary>
-        /// Parses a borrow record from a file line
-        /// </summary>
-        private BorrowRecord ParseBorrowRecordLine(string line, List<Book> books, List<Client> clients)
-        {
-            string[] toks = line.Split('\t');
-
-            var book = books.FirstOrDefault(b => b.title == toks[1]);
-            var client = clients.FirstOrDefault(c => c.CNP == toks[2]);
-
-            if (book == null || client == null)
-            {
-                return null;
-            }
-
-            return new BorrowRecord
-            {
-                Id = int.Parse(toks[0]),
-                Book = book,
-                Client = client,
-                BorrowDate = DateTime.Parse(toks[3]),
-                ReturnDate = string.IsNullOrEmpty(toks[4]) ? null : (DateTime?)DateTime.Parse(toks[4])
-            };
         }
 
         /// <summary>
@@ -383,14 +363,12 @@ namespace ViLib
         /// </summary>
         public bool DeleteClient(string cnp)
         {
-            for (int i = 0; i < _library.Clients.Count; i++)
+            var client = _library.Clients.FirstOrDefault(c => c.CNP == cnp);
+            if (client != null)
             {
-                if (_library.Clients[i].CNP == cnp)
-                {
-                    _library.Clients.RemoveAt(i);
-                    _clientFileWasModified = true;
-                    return true;
-                }
+                _library.Clients.Remove(client);
+                _clientFileWasModified = true;
+                return true;
             }
             return false;
         }
@@ -462,6 +440,17 @@ namespace ViLib
         }
 
         /// <summary>
+        /// Edits a borrow record
+        /// </summary>
+        public bool EditBorrowRecord(BorrowRecord br)
+        {
+            _library.AllBorrowRecords.Add(br);
+            br.Book.IsAvailable = false; // Mark book as borrowed
+            _borrowHistoryFileWasModified = true;
+            return true;
+        }
+
+        /// <summary>
         /// Processes a book return operation
         /// </summary>
         public bool ReturnBook(string bookTitle)
@@ -483,6 +472,21 @@ namespace ViLib
             {
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Deletes a borrow record by book title
+        /// </summary>
+        public bool DeleteBorrowRecord(string bookTitle)
+        {
+            var borrowRecord = _library.AllBorrowRecords.FirstOrDefault(br => br.BookTitle == bookTitle);
+            if (borrowRecord != null)
+            {
+                _library.AllBorrowRecords.Remove(borrowRecord);
+                _borrowHistoryFileWasModified = true;
+                return true;
+            }
+            return false;
         }
 
         /// <summary>
@@ -533,6 +537,31 @@ namespace ViLib
         {
             var client = _library.Clients.FirstOrDefault(c => c.CNP == clientCNP);
             return client?.BorrowedBooks ?? new List<Book>();
+        }
+
+        /// <summary>
+        /// Parses a borrow record from a file line
+        /// </summary>
+        private BorrowRecord ParseBorrowRecordLine(string line, List<Book> books, List<Client> clients)
+        {
+            string[] toks = line.Split('\t');
+
+            var book = books.FirstOrDefault(b => b.title == toks[1]);
+            var client = clients.FirstOrDefault(c => c.CNP == toks[2]);
+
+            if (book == null || client == null)
+            {
+                return null;
+            }
+
+            return new BorrowRecord
+            {
+                Id = int.Parse(toks[0]),
+                Book = book,
+                Client = client,
+                BorrowDate = DateTime.Parse(toks[3]),
+                ReturnDate = string.IsNullOrEmpty(toks[4]) ? null : (DateTime?)DateTime.Parse(toks[4])
+            };
         }
     }
 }

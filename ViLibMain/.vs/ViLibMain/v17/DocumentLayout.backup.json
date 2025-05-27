@@ -3,76 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|c:\\users\\ion\\source\\repos\\vilib\\vilibmain\\commons\\clienteditform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|solutionrelative:commons\\clienteditform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|c:\\users\\ion\\source\\repos\\vilib\\vilibmain\\commons\\editborrowform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|solutionrelative:commons\\editborrowform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\commons\\borrowaddform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|solutionrelative:commons\\borrowaddform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\view\\formview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|solutionrelative:view\\formview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|c:\\users\\ion\\source\\repos\\vilib\\vilibmain\\commons\\borrowaddform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|solutionrelative:commons\\borrowaddform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5559A9A9-FAFE-4E51-88E3-68EBD0FFCD06}|Presenter\\Presenter.csproj|C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\presenter\\presenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5559A9A9-FAFE-4E51-88E3-68EBD0FFCD06}|Presenter\\Presenter.csproj|solutionrelative:presenter\\presenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92055BCF-4DAD-4CFE-805F-8DE5EE05F447}|Model\\Model.csproj|C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{92055BCF-4DAD-4CFE-805F-8DE5EE05F447}|Model\\Model.csproj|c:\\users\\ion\\source\\repos\\vilib\\vilibmain\\model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{92055BCF-4DAD-4CFE-805F-8DE5EE05F447}|Model\\Model.csproj|solutionrelative:model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\commons\\borrowrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|solutionrelative:commons\\borrowrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\view\\formview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|solutionrelative:view\\formview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\commons\\iview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|solutionrelative:commons\\iview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|c:\\users\\ion\\source\\repos\\vilib\\vilibmain\\commons\\ipresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|solutionrelative:commons\\ipresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|c:\\users\\ion\\source\\repos\\vilib\\vilibmain\\commons\\imodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|solutionrelative:commons\\imodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|c:\\users\\ion\\source\\repos\\vilib\\vilibmain\\commons\\borrowaddform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|solutionrelative:commons\\borrowaddform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\commons\\library.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|solutionrelative:commons\\library.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|c:\\users\\ion\\source\\repos\\vilib\\vilibmain\\commons\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|solutionrelative:commons\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\commons\\clientaddform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|solutionrelative:commons\\clientaddform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\commons\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|solutionrelative:commons\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\view\\formview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|solutionrelative:view\\formview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{411012B4-6C66-4F38-A961-C7183FE4FE75}|ViLibMain\\ViLibMain.csproj|C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\vilibmain\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{411012B4-6C66-4F38-A961-C7183FE4FE75}|ViLibMain\\ViLibMain.csproj|solutionrelative:vilibmain\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\commons\\clientaddform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{46B235E8-D68A-47EA-8CA9-2B73FD696287}|Commons\\Commons.csproj|solutionrelative:commons\\clientaddform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\view\\formview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|solutionrelative:view\\formview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\view\\formview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|solutionrelative:view\\formview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\view\\formview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|solutionrelative:view\\formview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -82,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 334,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -98,154 +58,78 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Book.cs",
-              "DocumentMoniker": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\Book.cs",
-              "RelativeDocumentMoniker": "Commons\\Book.cs",
-              "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\Book.cs",
-              "RelativeToolTip": "Commons\\Book.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ClientEditForm.cs",
+              "DocumentMoniker": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\ClientEditForm.cs",
+              "RelativeDocumentMoniker": "Commons\\ClientEditForm.cs",
+              "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\ClientEditForm.cs",
+              "RelativeToolTip": "Commons\\ClientEditForm.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAgwEAAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T20:35:53.607Z",
+              "WhenOpened": "2025-05-26T20:49:48.223Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IPresenter.cs",
-              "DocumentMoniker": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\IPresenter.cs",
-              "RelativeDocumentMoniker": "Commons\\IPresenter.cs",
-              "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\IPresenter.cs",
-              "RelativeToolTip": "Commons\\IPresenter.cs",
-              "ViewState": "AgIAAIEAAAAAAAAAAAAkwIoAAAAWAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "EditBorrowForm.cs",
+              "DocumentMoniker": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\EditBorrowForm.cs",
+              "RelativeDocumentMoniker": "Commons\\EditBorrowForm.cs",
+              "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\EditBorrowForm.cs",
+              "RelativeToolTip": "Commons\\EditBorrowForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T19:17:32.833Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IModel.cs",
-              "DocumentMoniker": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\IModel.cs",
-              "RelativeDocumentMoniker": "Commons\\IModel.cs",
-              "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\IModel.cs",
-              "RelativeToolTip": "Commons\\IModel.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAA7wGIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T19:12:24.923Z",
+              "WhenOpened": "2025-05-26T20:45:32.654Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "BorrowAddForm.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Ion\\Source\\Repos\\ViLib\\ViLibMain\\Commons\\BorrowAddForm.Designer.cs",
-              "RelativeDocumentMoniker": "Commons\\BorrowAddForm.Designer.cs",
-              "ToolTip": "C:\\Users\\Ion\\Source\\Repos\\ViLib\\ViLibMain\\Commons\\BorrowAddForm.Designer.cs",
-              "RelativeToolTip": "Commons\\BorrowAddForm.Designer.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T18:35:27.488Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "BorrowAddForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\BorrowAddForm.cs",
-              "RelativeDocumentMoniker": "Commons\\BorrowAddForm.cs",
-              "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\BorrowAddForm.cs [Design]",
-              "RelativeToolTip": "Commons\\BorrowAddForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T17:33:06.574Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "BorrowAddForm.cs",
               "DocumentMoniker": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\BorrowAddForm.cs",
               "RelativeDocumentMoniker": "Commons\\BorrowAddForm.cs",
-              "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\BorrowAddForm.cs",
-              "RelativeToolTip": "Commons\\BorrowAddForm.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAnwBkAAAAIAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\BorrowAddForm.cs*",
+              "RelativeToolTip": "Commons\\BorrowAddForm.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T17:33:06.574Z",
+              "WhenOpened": "2025-05-26T15:17:57.67Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ClientAddForm.cs",
-              "DocumentMoniker": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\ClientAddForm.cs",
-              "RelativeDocumentMoniker": "Commons\\ClientAddForm.cs",
-              "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\ClientAddForm.cs",
-              "RelativeToolTip": "Commons\\ClientAddForm.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAYwDAAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T17:33:06.574Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Model.cs",
               "DocumentMoniker": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Model\\Model.cs",
               "RelativeDocumentMoniker": "Model\\Model.cs",
               "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Model\\Model.cs",
               "RelativeToolTip": "Model\\Model.cs",
-              "ViewState": "AgIAANgBAAAAAAAAAADgv/4BAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAowMgBAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-25T17:33:06.541Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ClientAddForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\ClientAddForm.cs",
-              "RelativeDocumentMoniker": "Commons\\ClientAddForm.cs",
-              "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\ClientAddForm.cs [Design]",
-              "RelativeToolTip": "Commons\\ClientAddForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T17:33:06.574Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Presenter.cs",
-              "DocumentMoniker": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Presenter\\Presenter.cs",
-              "RelativeDocumentMoniker": "Presenter\\Presenter.cs",
-              "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Presenter\\Presenter.cs",
-              "RelativeToolTip": "Presenter\\Presenter.cs",
-              "ViewState": "AgIAADcBAAAAAAAAAADgv0wBAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T17:33:06.574Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 7,
               "Title": "FormView.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\View\\FormView.Designer.cs",
               "RelativeDocumentMoniker": "View\\FormView.Designer.cs",
               "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\View\\FormView.Designer.cs",
               "RelativeToolTip": "View\\FormView.Designer.cs",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAiwGsAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAMwH4AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-25T17:33:06.574Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "FormView.cs",
               "DocumentMoniker": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\View\\FormView.cs",
               "RelativeDocumentMoniker": "View\\FormView.cs",
               "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\View\\FormView.cs",
               "RelativeToolTip": "View\\FormView.cs",
-              "ViewState": "AgIAAPgAAAAAAAAAAAAlwAMBAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAgCAAAAAAAAAAAuwA4CAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-25T17:33:06.641Z",
               "EditorCaption": ""
@@ -264,67 +148,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Library.cs",
-              "DocumentMoniker": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\Library.cs",
-              "RelativeDocumentMoniker": "Commons\\Library.cs",
-              "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\Library.cs",
-              "RelativeToolTip": "Commons\\Library.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwCQAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T17:33:06.707Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\ViLibMain\\Program.cs",
               "RelativeDocumentMoniker": "ViLibMain\\Program.cs",
               "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\ViLibMain\\Program.cs",
               "RelativeToolTip": "ViLibMain\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABwAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-25T17:33:06.707Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IView.cs",
-              "DocumentMoniker": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\IView.cs",
-              "RelativeDocumentMoniker": "Commons\\IView.cs",
-              "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\IView.cs",
-              "RelativeToolTip": "Commons\\IView.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAkwCUAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T17:33:06.724Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Client.cs",
-              "DocumentMoniker": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\Client.cs",
-              "RelativeDocumentMoniker": "Commons\\Client.cs",
-              "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\Client.cs",
-              "RelativeToolTip": "Commons\\Client.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAAwDoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T17:33:06.724Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BorrowRecord.cs",
-              "DocumentMoniker": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\BorrowRecord.cs",
-              "RelativeDocumentMoniker": "Commons\\BorrowRecord.cs",
-              "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Commons\\BorrowRecord.cs",
-              "RelativeToolTip": "Commons\\BorrowRecord.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAvwEQAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T17:33:06.724Z",
               "EditorCaption": ""
             }
           ]

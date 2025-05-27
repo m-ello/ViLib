@@ -68,6 +68,12 @@
     <Compile Include="BorrowAddForm.Designer.cs">
       <DependentUpon>BorrowAddForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BorrowDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BorrowDetailsForm.Designer.cs">
+      <DependentUpon>BorrowDetailsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BorrowRecord.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="ClientAddForm.cs">
@@ -88,6 +94,12 @@
     <Compile Include="ClientEditForm.Designer.cs">
       <DependentUpon>ClientEditForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditBorrowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditBorrowForm.Designer.cs">
+      <DependentUpon>EditBorrowForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="IModel.cs" />
     <Compile Include="IPresenter.cs" />
     <Compile Include="IView.cs" />
@@ -107,6 +119,9 @@
     <EmbeddedResource Include="BorrowAddForm.resx">
       <DependentUpon>BorrowAddForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BorrowDetailsForm.resx">
+      <DependentUpon>BorrowDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientAddForm.resx">
       <DependentUpon>ClientAddForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClientEditForm.resx">
       <DependentUpon>ClientEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditBorrowForm.resx">
+      <DependentUpon>EditBorrowForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

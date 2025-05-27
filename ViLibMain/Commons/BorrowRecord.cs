@@ -68,6 +68,10 @@ namespace Commons
             ReturnDate = null;
         }
 
+        /// <summary>
+        /// Initializes a new BorrowRecord instance.
+        /// Sets the borrow date to the current time and leaves return date as null.
+        /// </summary>
         public BorrowRecord() {}
     }
 }

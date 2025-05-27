@@ -116,6 +116,14 @@ namespace Commons
         /// </summary>
         /// <param name="bookTitle">Title of the book being returned</param>
         /// <returns>True if return was successful, false otherwise</returns>
+        /// 
+
+
+        //---------------------------------------------------------------------
+        //-------------------------  borrow operations ------------------------
+        //---------------------------------------------------------------------
+
+
         bool ReturnBook(string bookTitle);
 
         /// <summary>
@@ -141,9 +149,28 @@ namespace Commons
         void AddBorrowRecord(BorrowRecord br);
 
         /// <summary>
+        /// Updates an existing client's information
+        /// </summary>
+        /// <param name="CNP">Current CNP of the client to edit</param>
+        ///<param name="bookTitle">Current bookTitleto edit</param>
+        /// <param name="br">Updated BorrowRecord object</param>
+        void EditBorrowRecord(string CNP, string bookTitle, BorrowRecord br);
+
+        /// <summary>
         /// Processes the borrow history
         /// </summary>
-        /// <param name="borrowRecords">Borrow Records</param>
         void ShowAllBorrowRecords();
+
+        /// <summary>
+        /// Shows the borrow record details
+        /// /// <param name="br">Borrow record object to show</param>
+        /// </summary>
+        void ShowBorrowRecordDetails(BorrowRecord br);
+
+        /// <summary>
+        /// Removes a borrow record from the system by title of the book
+        /// </summary>
+        /// <param name="bookTitle">Book title of the borrow record to remove</param>
+        void RemoveBorrowRecord(string bookTitle);
     }
 }
