@@ -1,3 +1,4 @@
 Ploiescu	Andrei	2003500123456	Moscova
 Dracescu	Gheorghe	2003500123458	Paris
 ion	ion	123	1234
+ion	matei	1234	balti

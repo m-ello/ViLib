@@ -1,0 +1,174 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "Commons/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Commons.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Commons.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
+      "Presenter/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Presenter.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Presenter.dll": {}
+        }
+      },
+      "View/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/View.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/View.dll": {}
+        }
+      },
+      "ViLibMain/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/ViLibMain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViLibMain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Commons/1.0.0": {
+      "type": "project",
+      "path": "../Commons/Commons.csproj",
+      "msbuildProject": "../Commons/Commons.csproj"
+    },
+    "Model/1.0.0": {
+      "type": "project",
+      "path": "../Model/Model.csproj",
+      "msbuildProject": "../Model/Model.csproj"
+    },
+    "Presenter/1.0.0": {
+      "type": "project",
+      "path": "../Presenter/Presenter.csproj",
+      "msbuildProject": "../Presenter/Presenter.csproj"
+    },
+    "View/1.0.0": {
+      "type": "project",
+      "path": "../View/View.csproj",
+      "msbuildProject": "../View/View.csproj"
+    },
+    "ViLibMain/1.0.0": {
+      "type": "project",
+      "path": "../ViLibMain/ViLibMain.csproj",
+      "msbuildProject": "../ViLibMain/ViLibMain.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "Commons >= 1.0.0",
+      "Model >= 1.0.0",
+      "Presenter >= 1.0.0",
+      "ViLibMain >= 1.0.0",
+      "View >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Ion\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Ion\\Source\\Repos\\ViLib\\ViLibMain\\Diagrams\\Diagrams.csproj",
+      "projectName": "Diagrams",
+      "projectPath": "C:\\Users\\Ion\\Source\\Repos\\ViLib\\ViLibMain\\Diagrams\\Diagrams.csproj",
+      "packagesPath": "C:\\Users\\Ion\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ion\\Source\\Repos\\ViLib\\ViLibMain\\Diagrams\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Ion\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {
+            "C:\\Users\\Ion\\Source\\Repos\\ViLib\\ViLibMain\\Commons\\Commons.csproj": {
+              "projectPath": "C:\\Users\\Ion\\Source\\Repos\\ViLib\\ViLibMain\\Commons\\Commons.csproj"
+            },
+            "C:\\Users\\Ion\\Source\\Repos\\ViLib\\ViLibMain\\Model\\Model.csproj": {
+              "projectPath": "C:\\Users\\Ion\\Source\\Repos\\ViLib\\ViLibMain\\Model\\Model.csproj"
+            },
+            "C:\\Users\\Ion\\Source\\Repos\\ViLib\\ViLibMain\\Presenter\\Presenter.csproj": {
+              "projectPath": "C:\\Users\\Ion\\Source\\Repos\\ViLib\\ViLibMain\\Presenter\\Presenter.csproj"
+            },
+            "C:\\Users\\Ion\\Source\\Repos\\ViLib\\ViLibMain\\View\\View.csproj": {
+              "projectPath": "C:\\Users\\Ion\\Source\\Repos\\ViLib\\ViLibMain\\View\\View.csproj"
+            },
+            "C:\\Users\\Ion\\Source\\Repos\\ViLib\\ViLibMain\\ViLibMain\\ViLibMain.csproj": {
+              "projectPath": "C:\\Users\\Ion\\Source\\Repos\\ViLib\\ViLibMain\\ViLibMain\\ViLibMain.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.300"
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

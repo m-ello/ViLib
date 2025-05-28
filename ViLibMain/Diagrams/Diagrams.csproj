@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Commons\Commons.csproj" />
+    <ProjectReference Include="..\Model\Model.csproj" />
+    <ProjectReference Include="..\Presenter\Presenter.csproj" />
+    <ProjectReference Include="..\View\View.csproj" />
+    <ProjectReference Include="..\ViLibMain\ViLibMain.csproj" />
+  </ItemGroup>
+
+</Project>
