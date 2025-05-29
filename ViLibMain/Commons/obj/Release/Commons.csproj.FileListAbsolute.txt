@@ -1,0 +1,16 @@
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Commons\bin\Release\Commons.dll
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Commons\bin\Release\Commons.pdb
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Commons\obj\Release\Commons.csproj.AssemblyReference.cache
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Commons\obj\Release\Commons.BookAddForm.resources
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Commons\obj\Release\Commons.BookDetailsForm.resources
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Commons\obj\Release\Commons.BookEditForm.resources
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Commons\obj\Release\Commons.BorrowAddForm.resources
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Commons\obj\Release\Commons.BorrowDetailsForm.resources
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Commons\obj\Release\Commons.ClientAddForm.resources
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Commons\obj\Release\Commons.ClientDetailsForm.resources
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Commons\obj\Release\Commons.ClientEditForm.resources
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Commons\obj\Release\Commons.EditBorrowForm.resources
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Commons\obj\Release\Commons.csproj.GenerateResource.cache
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Commons\obj\Release\Commons.csproj.CoreCompileInputs.cache
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Commons\obj\Release\Commons.dll
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Commons\obj\Release\Commons.pdb

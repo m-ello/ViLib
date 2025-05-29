@@ -1,0 +1,9 @@
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Presenter\bin\Release\Presenter.dll
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Presenter\bin\Release\Presenter.pdb
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Presenter\bin\Release\Commons.dll
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Presenter\bin\Release\Commons.pdb
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Presenter\obj\Release\Presenter.csproj.AssemblyReference.cache
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Presenter\obj\Release\Presenter.csproj.CoreCompileInputs.cache
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Presenter\obj\Release\Presenter.csproj.Up2Date
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Presenter\obj\Release\Presenter.dll
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\Presenter\obj\Release\Presenter.pdb

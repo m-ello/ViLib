@@ -1,0 +1,17 @@
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\ViLibMain\bin\Release\help.chm
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\ViLibMain\bin\Release\ViLibMain.exe.config
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\ViLibMain\bin\Release\ViLibMain.exe
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\ViLibMain\bin\Release\ViLibMain.pdb
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\ViLibMain\bin\Release\Commons.dll
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\ViLibMain\bin\Release\Model.dll
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\ViLibMain\bin\Release\Presenter.dll
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\ViLibMain\bin\Release\View.dll
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\ViLibMain\bin\Release\Commons.pdb
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\ViLibMain\bin\Release\Model.pdb
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\ViLibMain\bin\Release\Presenter.pdb
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\ViLibMain\bin\Release\View.pdb
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\ViLibMain\obj\Release\ViLibMain.csproj.AssemblyReference.cache
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\ViLibMain\obj\Release\ViLibMain.csproj.CoreCompileInputs.cache
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\ViLibMain\obj\Release\ViLibMain.csproj.Up2Date
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\ViLibMain\obj\Release\ViLibMain.exe
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\ViLibMain\obj\Release\ViLibMain.pdb

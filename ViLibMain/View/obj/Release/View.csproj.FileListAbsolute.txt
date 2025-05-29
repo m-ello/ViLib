@@ -1,0 +1,11 @@
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\View\bin\Release\View.dll
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\View\bin\Release\View.pdb
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\View\bin\Release\Commons.dll
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\View\bin\Release\Commons.pdb
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\View\obj\Release\View.csproj.AssemblyReference.cache
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\View\obj\Release\View.FormView.resources
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\View\obj\Release\View.csproj.GenerateResource.cache
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\View\obj\Release\View.csproj.CoreCompileInputs.cache
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\View\obj\Release\View.csproj.Up2Date
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\View\obj\Release\View.dll
+C:\Users\Ion\Source\Repos\ViLib\ViLibMain\View\obj\Release\View.pdb

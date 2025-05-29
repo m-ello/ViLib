@@ -163,7 +163,8 @@ namespace View
             // Add formatted book details for each book
             foreach (var borrowRecord in borrowRecords)
             {
-                string borrowDetails = $"Carte: {borrowRecord.BookTitle}, Client: {borrowRecord.Client.firstName}, Data: {borrowRecord.BorrowDate}";
+                string borrowDetails = $"Carte: {borrowRecord.BookTitle}, Client: {borrowRecord.Client.firstName}, Data de imprumut: {borrowRecord.BorrowDate}";
+                if (borrowRecord.ReturnDate != null) borrowDetails += $"Data de returnare: {borrowRecord.ReturnDate}";
                 borrowHistoryBox.Items.Add(borrowDetails);
             }
         }
