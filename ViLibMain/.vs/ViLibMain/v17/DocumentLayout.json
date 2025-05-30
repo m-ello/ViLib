@@ -54,7 +54,8 @@
               "RelativeToolTip": "View\\FormView.cs",
               "ViewState": "AgIAADMAAAAAAAAAAAAYwJ8AAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T07:51:54.253Z"
+              "WhenOpened": "2025-05-29T07:51:54.253Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -90,7 +91,8 @@
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\ViLib\\ViLibMain\\View\\FormView.cs [Design]",
               "RelativeToolTip": "View\\FormView.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T07:51:41.768Z"
+              "WhenOpened": "2025-05-29T07:51:41.768Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
