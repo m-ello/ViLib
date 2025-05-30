@@ -1,21 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\",
+  "WorkspaceRootPath": "C:\\Users\\user\\Documents\\GitHub\\ViLib\\ViLibMain\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{92055BCF-4DAD-4CFE-805F-8DE5EE05F447}|Model\\Model.csproj|c:\\users\\ion\\source\\repos\\vilib\\vilibmain\\model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{92055BCF-4DAD-4CFE-805F-8DE5EE05F447}|Model\\Model.csproj|c:\\users\\user\\documents\\github\\vilib\\vilibmain\\model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{92055BCF-4DAD-4CFE-805F-8DE5EE05F447}|Model\\Model.csproj|solutionrelative:model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\view\\formview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|solutionrelative:view\\formview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{411012B4-6C66-4F38-A961-C7183FE4FE75}|ViLibMain\\ViLibMain.csproj|C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\vilibmain\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{411012B4-6C66-4F38-A961-C7183FE4FE75}|ViLibMain\\ViLibMain.csproj|C:\\Users\\user\\Documents\\GitHub\\ViLib\\ViLibMain\\vilibmain\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{411012B4-6C66-4F38-A961-C7183FE4FE75}|ViLibMain\\ViLibMain.csproj|solutionrelative:vilibmain\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\view\\formview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|C:\\Users\\user\\Documents\\GitHub\\ViLib\\ViLibMain\\view\\formview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|solutionrelative:view\\formview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|C:\\Users\\user\\Documents\\GitHub\\ViLib\\ViLibMain\\view\\formview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D29EF954-985C-41CB-9520-9F31D44D8C7A}|View\\View.csproj|solutionrelative:view\\formview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -26,77 +26,55 @@
       "DocumentGroups": [
         {
           "DockedWidth": 334,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormView.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\ViLib\\ViLibMain\\View\\FormView.cs",
+              "RelativeDocumentMoniker": "View\\FormView.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\ViLib\\ViLibMain\\View\\FormView.cs",
+              "RelativeToolTip": "View\\FormView.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAYwJ8AAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T07:51:54.253Z"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\ViLib\\ViLibMain\\ViLibMain\\Program.cs",
+              "RelativeDocumentMoniker": "ViLibMain\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\ViLib\\ViLibMain\\ViLibMain\\Program.cs",
+              "RelativeToolTip": "ViLibMain\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAjwBMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T07:45:51.542Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Model.cs",
-              "DocumentMoniker": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Model\\Model.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\ViLib\\ViLibMain\\Model\\Model.cs",
               "RelativeDocumentMoniker": "Model\\Model.cs",
-              "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\Model\\Model.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\ViLib\\ViLibMain\\Model\\Model.cs",
               "RelativeToolTip": "Model\\Model.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABcCAAAAAAAAAAA8wCEAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-29T08:21:23.35Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormView.cs",
-              "DocumentMoniker": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\View\\FormView.cs",
-              "RelativeDocumentMoniker": "View\\FormView.cs",
-              "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\View\\FormView.cs",
-              "RelativeToolTip": "View\\FormView.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAYwJ8AAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T07:51:54.253Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "FormView.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\View\\FormView.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\ViLib\\ViLibMain\\View\\FormView.cs",
               "RelativeDocumentMoniker": "View\\FormView.cs",
-              "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\View\\FormView.cs [Design]",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\ViLib\\ViLibMain\\View\\FormView.cs [Design]",
               "RelativeToolTip": "View\\FormView.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T07:51:41.768Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\ViLibMain\\Program.cs",
-              "RelativeDocumentMoniker": "ViLibMain\\Program.cs",
-              "ToolTip": "C:\\Users\\Ion\\source\\repos\\ViLib\\ViLibMain\\ViLibMain\\Program.cs",
-              "RelativeToolTip": "ViLibMain\\Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T07:45:51.542Z"
+              "WhenOpened": "2025-05-29T07:51:41.768Z"
             }
           ]
         }

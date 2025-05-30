@@ -1,0 +1,19 @@
+# Build results
+**/bin/
+**/obj/
+
+# Visual Studio specific folders
+.vs/
+*.user
+*.suo
+*.db
+*.pdb
+*.cache
+*.log
+
+# Copilot / SQLite temporary files
+*.db-shm
+*.db-wal
+
+# File index junk
+**/.vs/**/*.vsidx

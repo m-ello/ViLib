@@ -1,40 +1,3 @@
-C:\Users\sandu\OneDrive\Desktop\ViLib\ViLibMain\ViLibMain\bin\Debug\ViLibMain.exe.config
-C:\Users\sandu\OneDrive\Desktop\ViLib\ViLibMain\ViLibMain\bin\Debug\ViLibMain.exe
-C:\Users\sandu\OneDrive\Desktop\ViLib\ViLibMain\ViLibMain\bin\Debug\ViLibMain.pdb
-C:\Users\sandu\OneDrive\Desktop\ViLib\ViLibMain\ViLibMain\bin\Debug\Commons.dll
-C:\Users\sandu\OneDrive\Desktop\ViLib\ViLibMain\ViLibMain\bin\Debug\Model.dll
-C:\Users\sandu\OneDrive\Desktop\ViLib\ViLibMain\ViLibMain\bin\Debug\Presenter.dll
-C:\Users\sandu\OneDrive\Desktop\ViLib\ViLibMain\ViLibMain\bin\Debug\View.dll
-C:\Users\sandu\OneDrive\Desktop\ViLib\ViLibMain\ViLibMain\bin\Debug\Commons.pdb
-C:\Users\sandu\OneDrive\Desktop\ViLib\ViLibMain\ViLibMain\bin\Debug\Model.pdb
-C:\Users\sandu\OneDrive\Desktop\ViLib\ViLibMain\ViLibMain\bin\Debug\Presenter.pdb
-C:\Users\sandu\OneDrive\Desktop\ViLib\ViLibMain\ViLibMain\bin\Debug\View.pdb
-C:\Users\sandu\OneDrive\Desktop\ViLib\ViLibMain\ViLibMain\obj\Debug\ViLibMain.csproj.AssemblyReference.cache
-C:\Users\sandu\OneDrive\Desktop\ViLib\ViLibMain\ViLibMain\obj\Debug\ViLibMain.csproj.CoreCompileInputs.cache
-C:\Users\sandu\OneDrive\Desktop\ViLib\ViLibMain\ViLibMain\obj\Debug\ViLibMain.csproj.Up2Date
-C:\Users\sandu\OneDrive\Desktop\ViLib\ViLibMain\ViLibMain\obj\Debug\ViLibMain.exe
-C:\Users\sandu\OneDrive\Desktop\ViLib\ViLibMain\ViLibMain\obj\Debug\ViLibMain.pdb
-C:\Users\Ion\source\repos\ViLib\ViLibMain\ViLibMain\bin\Debug\help.chm
-C:\Users\Ion\source\repos\ViLib\ViLibMain\ViLibMain\bin\Debug\ViLibMain.exe.config
-C:\Users\Ion\source\repos\ViLib\ViLibMain\ViLibMain\bin\Debug\ViLibMain.exe
-C:\Users\Ion\source\repos\ViLib\ViLibMain\ViLibMain\bin\Debug\ViLibMain.pdb
-C:\Users\Ion\source\repos\ViLib\ViLibMain\ViLibMain\bin\Debug\Commons.dll
-C:\Users\Ion\source\repos\ViLib\ViLibMain\ViLibMain\bin\Debug\Model.dll
-C:\Users\Ion\source\repos\ViLib\ViLibMain\ViLibMain\bin\Debug\Presenter.dll
-C:\Users\Ion\source\repos\ViLib\ViLibMain\ViLibMain\bin\Debug\View.dll
-C:\Users\Ion\source\repos\ViLib\ViLibMain\ViLibMain\bin\Debug\Commons.pdb
-C:\Users\Ion\source\repos\ViLib\ViLibMain\ViLibMain\bin\Debug\Model.pdb
-C:\Users\Ion\source\repos\ViLib\ViLibMain\ViLibMain\bin\Debug\Presenter.pdb
-C:\Users\Ion\source\repos\ViLib\ViLibMain\ViLibMain\bin\Debug\View.pdb
-C:\Users\Ion\source\repos\ViLib\ViLibMain\ViLibMain\obj\Debug\ViLibMain.csproj.AssemblyReference.cache
-C:\Users\Ion\source\repos\ViLib\ViLibMain\ViLibMain\obj\Debug\ViLibMain.csproj.CoreCompileInputs.cache
-C:\Users\Ion\source\repos\ViLib\ViLibMain\ViLibMain\obj\Debug\ViLibMain.csproj.Up2Date
-C:\Users\Ion\source\repos\ViLib\ViLibMain\ViLibMain\obj\Debug\ViLibMain.exe
-C:\Users\Ion\source\repos\ViLib\ViLibMain\ViLibMain\obj\Debug\ViLibMain.pdb
-C:\Users\sandu\OneDrive\Desktop\ViLib\ViLibMain\ViLibMain\bin\Debug\help.chm
-<<<<<<< HEAD
-C:\Users\Ion\Source\Repos\ViLib\ViLibMain\ViLibMain\obj\Debug\ViLibMain.exe.config
-=======
 C:\Users\user\Documents\GitHub\ViLib\ViLibMain\ViLibMain\bin\Debug\help.chm
 C:\Users\user\Documents\GitHub\ViLib\ViLibMain\ViLibMain\bin\Debug\ViLibMain.exe.config
 C:\Users\user\Documents\GitHub\ViLib\ViLibMain\ViLibMain\bin\Debug\ViLibMain.exe
@@ -53,4 +16,3 @@ C:\Users\user\Documents\GitHub\ViLib\ViLibMain\ViLibMain\obj\Debug\ViLibMain.csp
 C:\Users\user\Documents\GitHub\ViLib\ViLibMain\ViLibMain\obj\Debug\ViLibMain.csproj.Up2Date
 C:\Users\user\Documents\GitHub\ViLib\ViLibMain\ViLibMain\obj\Debug\ViLibMain.exe
 C:\Users\user\Documents\GitHub\ViLib\ViLibMain\ViLibMain\obj\Debug\ViLibMain.pdb
->>>>>>> ec3d563f8d1526456cbbbb1a0ac17f12e3780863
