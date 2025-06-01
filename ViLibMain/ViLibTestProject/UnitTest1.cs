@@ -101,6 +101,9 @@ namespace ViLibTestProject
             var list = model.GetAllBooks();
             Assert.IsTrue(list != null, "Expected GetAllBooks to return a list!=null");
         }
+        /// <summary>
+        /// checks whether BookCount return the bumber of booksi in the library
+        /// </summary>
         [TestMethod]
         public void BookCount()
         {

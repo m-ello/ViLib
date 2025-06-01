@@ -13,6 +13,10 @@ namespace Commons
     /// </summary>
     public interface IPresenter
     {
+        //---------------------------------------------------------------------
+        //-------------------------  book operations ------------------------
+        //---------------------------------------------------------------------
+
         /// <summary>
         /// Adds a new book to the library collection
         /// </summary>
@@ -67,6 +71,10 @@ namespace Commons
         /// <param name="b">Updated Book object</param>
         void EditBook(string title, Book b);
 
+        //---------------------------------------------------------------------
+        //-------------------------  client operations ------------------------
+        //---------------------------------------------------------------------
+
         /// <summary>
         /// Adds a new client to the library system
         /// </summary>
@@ -110,20 +118,16 @@ namespace Commons
         /// Displays information about all clients in the library
         /// </summary>
         void ShowAllClients();
+        //---------------------------------------------------------------------
+        //-------------------------  borrow operations ------------------------
+        //---------------------------------------------------------------------
+
 
         /// <summary>
         /// Processes the return of a borrowed book
         /// </summary>
         /// <param name="bookTitle">Title of the book being returned</param>
         /// <returns>True if return was successful, false otherwise</returns>
-        /// 
-
-
-        //---------------------------------------------------------------------
-        //-------------------------  borrow operations ------------------------
-        //---------------------------------------------------------------------
-
-
         bool ReturnBook(string bookTitle, string clientFirstName);
 
         /// <summary>
